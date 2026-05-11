@@ -258,10 +258,10 @@ CMS CLIA Q1 2026 (все лаборатории)              ~300,000
 
 | #   | Кампания         | Готовность    | Что блокирует                                               |
 | --- | ---------------- | ------------- | ----------------------------------------------------------- |
-| 1   | CLIA Fresh       | 🟢 Готов      | Нет — можно стартовать                                      |
-| 2   | Russian NJ       | 🟢 Готов      | Координация с Andrew                                        |
-| 3   | LabWare Conquest | 🟡 Готов план | Нужен прогон lims-detector для идентификации LabWare-юзеров |
-| 4   | ADLM 2026        | 🟡 Готов план | Нужен confirmed-attendee list (acquisition path TBD)        |
+| 1   | [[outreach-plan-vivica-clia-fresh|CLIA Fresh]]       | 🟢 Готов      | Нет — можно стартовать                                      |
+| 2   | [[outreach-plan-vivica-russian-nj|Russian NJ]]       | 🟢 Готов      | Координация с Andrew                                        |
+| 3   | [[outreach-plan-vivica-using-labware|LabWare Conquest]] | 🟡 Готов план | Нужен прогон lims-detector для идентификации LabWare-юзеров |
+| 4   | [[outreach-plan-vivica-adlm-2026|ADLM 2026]]        | 🟡 Готов план | Нужен confirmed-attendee list (acquisition path TBD)        |
 
 
 ---

@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vivica Outreach — Dashboard v2 · Editorial Split-Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   VIVICA OUTREACH — DASHBOARD v2
+   Universal pattern: split-panel composite cards
+   (focused readout · left | breakdown table · right)
+   ========================================================= */
+
+:root {
+  --c-p-900:#1F2D45; --c-p-800:#2D4163; --c-p-700:#3F5882;
+  --c-p-600:#5575A3; --c-p-500:#7090BD; --c-p-400:#8FA8CC;
+  --c-p-300:#B0C2DA; --c-p-200:#CDD9E8; --c-p-100:#E4ECF4; --c-p-50:#F2F6FB;
+
+  --c-a-700:#3F9090; --c-a-600:#50A8A8; --c-a-500:#5FBDBD;
+  --c-a-400:#82CECE; --c-a-300:#A5DCDC; --c-a-200:#C2E8E8;
+  --c-a-100:#DDF2F2; --c-a-50:#EEF9F9;
+
+  --c-n-900:#1A1F2A; --c-n-800:#283142; --c-n-700:#3D4862;
+  --c-n-600:#5A6680; --c-n-500:#7E8AA0; --c-n-400:#9CA7BA;
+  --c-n-300:#BDC6D2; --c-n-200:#D8DDE5; --c-n-100:#ECEFF3; --c-n-50:#F6F8FB;
+
+  --c-paper:    #FFFFFF;
+  --c-data:     #F4F8FC;
+  --c-canvas:   #F5F8FC;
+  --c-graphite: #2D4163;
+  --c-hairline: #DDE4ED;
+
+  --s-good:    #5FA585;
+  --s-warn:    #C89146;
+  --s-bad:     #D85055;
+
+  --led-green:  #82B58E;
+  --led-amber:  #E0A574;
+  --led-blue:   #6BA8E0;
+
+  --f-display:'DM Serif Display', Georgia, serif;
+  --f-body:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono:'JetBrains Mono', Consolas, monospace;
+
+  --t-xxs: 0.6875rem;
+  --t-xs:  0.75rem;
+  --t-sm:  0.875rem;
+  --t-base:1rem;
+  --t-md:  1.125rem;
+  --t-lg:  1.375rem;
+  --t-xl:  1.75rem;
+  --t-2xl: 2.25rem;
+  --t-3xl: 3rem;
+  --t-4xl: 4rem;
+  --t-5xl: 5.5rem;
+  --t-mega:11rem;
+
+  --tr-tight:-0.025em; --tr-wide:0.03em; --tr-wider:0.06em; --tr-widest:0.12em;
+  --w-r:400; --w-m:500; --w-sb:600; --w-b:700;
+
+  --sp-1:0.25rem; --sp-2:0.5rem; --sp-3:0.75rem; --sp-4:1rem;
+  --sp-5:1.25rem; --sp-6:1.5rem; --sp-8:2rem; --sp-10:2.5rem;
+  --sp-12:3rem; --sp-16:4rem; --sp-20:5rem; --sp-24:6rem;
+
+  --r-sm:6px; --r-md:10px; --r-lg:16px; --r-xl:22px;
+
+  --sh-card: 0 1px 0 rgba(45,65,99,0.04), 0 8px 32px rgba(45,65,99,0.06);
+  --sh-led: 0 0 0 2px rgba(255,255,255,0.85), 0 0 10px currentColor;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--f-body);
+  font-size: var(--t-base);
+  line-height: 1.55;
+  color: var(--c-graphite);
+  background: var(--c-canvas);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'cv11','ss01','tnum';
+}
+
+.page { max-width: 1440px; margin: 0 auto; padding: var(--sp-16) var(--sp-12); }
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.unit { font-family: var(--f-mono); font-size: 0.4em; color: var(--c-n-500); font-weight: var(--w-r); margin-left: 0.2em; vertical-align: 0.55em; letter-spacing: var(--tr-wide); }
+.code-id { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-400); font-weight: var(--w-m); }
+.led { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: var(--sh-led); vertical-align: middle; margin-right: 8px; }
+.led-pulse { animation: ledpulse 1.6s ease-in-out infinite; }
+@keyframes ledpulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.delta { font-family: var(--f-mono); font-size: var(--t-xs); font-weight: var(--w-sb); letter-spacing: var(--tr-wide); }
+.delta-up   { color: var(--s-good); }
+.delta-down { color: var(--s-bad); }
+.delta-flat { color: var(--c-n-500); }
+
+/* =========================================================
+   REPORT META STRIP — lightweight header
+   ========================================================= */
+.meta-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-5) 0;
+  border-bottom: 1px solid var(--c-hairline);
+  margin-bottom: var(--sp-16);
+}
+.meta-brand {
+  font-family: var(--f-display);
+  font-size: var(--t-xl);
+  color: var(--c-p-800);
+  letter-spacing: var(--tr-tight);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.meta-brand .model {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--c-n-500);
+  font-weight: var(--w-sb);
+}
+.meta-period {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  color: var(--c-n-600);
+  letter-spacing: var(--tr-wide);
+}
+.meta-leds {
+  display: flex;
+  gap: var(--sp-4);
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--c-n-700);
+  font-weight: var(--w-sb);
+}
+
+/* =========================================================
+   EDITORIAL SECTION HEADER
+   ========================================================= */
+.sec {
+  position: relative;
+  margin-bottom: var(--sp-20);
+}
+.sec-head {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--sp-10);
+  align-items: end;
+  margin-bottom: var(--sp-10);
+  padding-bottom: var(--sp-6);
+  border-bottom: 1px solid var(--c-hairline);
+}
+.sec-num {
+  font-family: var(--f-display);
+  font-size: var(--t-mega);
+  line-height: 0.85;
+  color: var(--c-p-100);
+  letter-spacing: var(--tr-tight);
+  user-select: none;
+}
+.sec-meta { padding-bottom: var(--sp-3); }
+.sec-kicker {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--c-a-700);
+  font-weight: var(--w-sb);
+  margin-bottom: var(--sp-3);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.sec-kicker::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--c-a-600);
+}
+.sec-title {
+  font-family: var(--f-display);
+  font-size: var(--t-4xl);
+  line-height: 1.02;
+  color: var(--c-p-800);
+  letter-spacing: var(--tr-tight);
+  margin-bottom: var(--sp-3);
+}
+.sec-desc {
+  font-size: var(--t-md);
+  color: var(--c-n-600);
+  line-height: 1.55;
+  max-width: 680px;
+}
+
+/* =========================================================
+   SPLIT PANEL — universal composite component
+   ========================================================= */
+.split {
+  background: var(--c-paper);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--sh-card);
+  display: grid;
+  grid-template-columns: 240px 1fr;
+}
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+
+/* LEFT zone — focused readout */
+.split-readout {
+  padding: var(--sp-6);
+  background: var(--c-data);
+  border-right: 1px solid var(--c-hairline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: var(--sp-2);
+}
+.split-readout .lbl {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  color: var(--c-n-600);
+  font-weight: var(--w-sb);
+  margin-bottom: var(--sp-3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.split-readout .val {
+  font-family: var(--f-display);
+  font-size: var(--t-4xl);
+  color: var(--c-p-800);
+  line-height: 1;
+  letter-spacing: var(--tr-tight);
+  margin-top: var(--sp-2);
+}
+.split-readout .val .u { font-family: var(--f-mono); font-size: 0.3em; color: var(--c-n-500); margin-left: 0.2em; vertical-align: 0.85em; font-weight: var(--w-r); }
+.split-readout .bench {
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wide);
+  color: var(--c-n-500);
+}
+
+.gauge-svg { width: 160px; height: 100px; display: block; }
+
+/* RIGHT zone — breakdown table */
+.split-breakdown {
+  padding: var(--sp-6) var(--sp-6) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+}
+.split-breakdown .head {
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--c-n-500);
+  font-weight: var(--w-sb);
+  margin-bottom: var(--sp-3);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--c-hairline);
+  display: flex;
+  justify-content: space-between;
+}
+.split-breakdown .row {
+  display: grid;
+  grid-template-columns: 1fr 60px 50px;
+  gap: var(--sp-2);
+  align-items: center;
+  padding: 7px 0;
+  font-size: var(--t-sm);
+}
+.split-breakdown .row + .row { border-top: 1px dashed var(--c-hairline); }
+.split-breakdown .row .name { color: var(--c-n-700); font-weight: var(--w-m); }
+.split-breakdown .row .v { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: var(--w-sb); color: var(--c-p-800); text-align: right; }
+.split-breakdown .row .bar-mini { height: 4px; background: var(--c-n-100); border-radius: 2px; overflow: hidden; position: relative; }
+.split-breakdown .row .bar-mini .fl { position: absolute; inset: 0 auto 0 0; background: var(--c-a-500); border-radius: 2px; }
+.split-breakdown .row.is-good .bar-mini .fl { background: var(--s-good); }
+.split-breakdown .row.is-warn .bar-mini .fl { background: var(--s-warn); }
+.split-breakdown .row.is-bad  .bar-mini .fl { background: var(--s-bad); }
+
+/* Delta variant for breakdown (e.g. KPI with delta column) */
+.split-breakdown .row.with-delta { grid-template-columns: 1fr 60px 50px 56px; }
+.split-breakdown .row.with-delta .d { text-align: right; }
+
+/* =========================================================
+   FUNNEL — single composite panel, no side stats
+   ========================================================= */
+.funnel-panel {
+  background: var(--c-paper);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--sh-card);
+}
+.funnel-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-5);
+  padding: var(--sp-5) var(--sp-6);
+  border-bottom: 1px solid var(--c-hairline);
+}
+.funnel-panel-head .ttl {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--c-n-700);
+  font-weight: var(--w-sb);
+}
+.funnel-panel-head .sub {
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wide);
+  color: var(--c-n-500);
+}
+
+.funnel-bars {
+  padding: var(--sp-6) var(--sp-8);
+  background: var(--c-data);
+}
+.funnel-stage {
+  display: grid;
+  grid-template-columns: 130px 1fr 80px 100px;
+  gap: var(--sp-4);
+  align-items: center;
+  padding: var(--sp-2) 0;
+}
+.fs-label {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  color: var(--c-n-700);
+  font-weight: var(--w-sb);
+  text-align: right;
+}
+.fs-track {
+  height: 32px;
+  background: var(--c-paper);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+.fs-fill {
+  height: 100%;
+  border-radius: 0;
+}
+.fs-fill.f-1 { background: var(--c-p-700); }
+.fs-fill.f-2 { background: var(--c-p-500); }
+.fs-fill.f-3 { background: var(--c-a-500); }
+.fs-fill.f-4 { background: var(--s-good); }
+.fs-fill.f-5 { background: var(--c-p-800); }
+.fs-count {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--t-md);
+  font-weight: var(--w-sb);
+  color: var(--c-p-800);
+  text-align: right;
+  letter-spacing: -0.01em;
+}
+.fs-conv {
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  font-weight: var(--w-sb);
+  text-align: center;
+  padding: 4px 10px;
+  border-radius: var(--r-sm);
+  background: var(--c-paper);
+  border: 1px solid var(--c-hairline);
+  color: var(--c-n-600);
+}
+.fs-conv.good { color: var(--s-good); border-color: rgba(95,165,133,0.4); background: rgba(235,247,241,0.7); }
+.fs-conv.warn { color: var(--s-warn); border-color: rgba(200,145,70,0.35); background: rgba(254,245,224,0.7); }
+.fs-conv.muted { color: var(--c-n-400); border-style: dashed; }
+
+/* =========================================================
+   STANDARD PANEL (single, no split)
+   ========================================================= */
+.panel {
+  background: var(--c-paper);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--sh-card);
+}
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-5);
+  padding: var(--sp-5) var(--sp-6);
+  border-bottom: 1px solid var(--c-hairline);
+}
+.panel-head .ttl {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--c-n-700);
+  font-weight: var(--w-sb);
+}
+.panel-head .sub {
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wide);
+  color: var(--c-n-500);
+}
+
+/* =========================================================
+   SEQUENCE PROTOCOL — vertical stepped list
+   ========================================================= */
+.proto {
+  padding: var(--sp-2) 0 0;
+  background: var(--c-data);
+}
+.proto-step {
+  display: grid;
+  grid-template-columns: 60px 1.4fr auto;
+  gap: var(--sp-5);
+  align-items: center;
+  padding: var(--sp-5) var(--sp-8);
+  border-bottom: 1px solid var(--c-hairline);
+  background: var(--c-data);
+}
+.proto-step:last-child { border-bottom: none; }
+.proto-step.peak { background: rgba(95,189,189,0.06); }
+.proto-mark {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--c-p-700);
+  background: var(--c-paper);
+  border-radius: var(--r-md);
+  display: grid;
+  place-items: center;
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+  font-weight: var(--w-sb);
+  color: var(--c-p-800);
+}
+.proto-step.peak .proto-mark { border-color: var(--c-a-500); color: var(--c-a-700); }
+.proto-body .ttl-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  margin-bottom: 4px;
+}
+.proto-body .ttl {
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+  letter-spacing: var(--tr-wide);
+  color: var(--c-p-800);
+  font-weight: var(--w-sb);
+  text-transform: uppercase;
+}
+.proto-body .cond {
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wide);
+  color: var(--c-n-500);
+}
+.proto-stats {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: var(--sp-6);
+}
+.proto-stats .cell { text-align: right; }
+.proto-stats .cell .l {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  color: var(--c-n-500);
+  font-weight: var(--w-sb);
+}
+.proto-stats .cell .v {
+  display: block;
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--t-md);
+  font-weight: var(--w-sb);
+  color: var(--c-p-800);
+  letter-spacing: -0.01em;
+}
+.proto-stats .cell .v.dim { color: var(--c-n-400); font-weight: var(--w-r); }
+
+/* =========================================================
+   SPECIMEN LOG — pipeline table
+   ========================================================= */
+.speclog {
+  background: var(--c-paper);
+}
+.speclog-row {
+  display: grid;
+  grid-template-columns: 110px 1.4fr 1fr 200px 70px 100px;
+  gap: var(--sp-4);
+  align-items: center;
+  padding: var(--sp-4) var(--sp-6);
+  border-bottom: 1px solid var(--c-hairline);
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+}
+.speclog-row.hd {
+  background: var(--c-data);
+  font-size: var(--t-xxs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-wider);
+  color: var(--c-n-500);
+  font-weight: var(--w-sb);
+}
+.speclog-row:last-child { border-bottom: none; }
+.speclog-row:not(.hd):hover { background: var(--c-data); }
+.spec-id { color: var(--c-n-500); }
+.spec-name {
+  font-family: var(--f-body);
+  color: var(--c-p-800);
+  font-weight: var(--w-sb);
+  letter-spacing: var(--tr-wide);
+}
+.spec-name .sub {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  color: var(--c-n-500);
+  font-weight: var(--w-r);
+  margin-top: 2px;
+  letter-spacing: var(--tr-wide);
+}
+.spec-contact { color: var(--c-n-700); font-family: var(--f-body); }
+.spec-contact .sub {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  color: var(--c-n-500);
+  margin-top: 2px;
+}
+.touch-track { display: flex; align-items: center; gap: 3px; }
+.touch-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--c-n-200);
+  border: 1px solid var(--c-hairline);
+}
+.touch-dot.t-sent    { background: #A8C9E0; border-color: #A8C9E0; }
+.touch-dot.t-opened  { background: #82CECE; border-color: #82CECE; }
+.touch-dot.t-replied { background: var(--s-good); border-color: var(--s-good); }
+.touch-dot.t-meeting { background: var(--c-p-700); border-color: var(--c-p-700); }
+.touch-dot.t-bounce  { background: var(--s-bad); border-color: var(--s-bad); }
+.touch-connector { width: 8px; height: 1px; background: var(--c-hairline); }
+.score {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--w-sb);
+  text-align: right;
+  font-size: var(--t-md);
+}
+.score-hi  { color: var(--s-good); }
+.score-mid { color: var(--s-warn); }
+.score-lo  { color: var(--c-n-400); }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  font-weight: var(--w-sb);
+  padding: 4px 9px;
+  border-radius: var(--r-sm);
+  border: 1px solid;
+  white-space: nowrap;
+}
+.tag-meeting { background: var(--c-p-100); color: var(--c-p-800); border-color: var(--c-p-300); }
+.tag-replied { background: rgba(235,247,241,0.85); color: var(--s-good); border-color: rgba(95,165,133,0.4); }
+.tag-opened  { background: var(--c-a-50);  color: var(--c-a-700); border-color: var(--c-a-200); }
+.tag-sent    { background: var(--c-p-50);  color: var(--c-p-600); border-color: var(--c-p-200); }
+.tag-bounce  { background: rgba(254,242,242,0.85); color: var(--s-bad); border-color: rgba(216,80,85,0.3); }
+
+/* =========================================================
+   COHORT BREAKDOWN — 3 split-panels with donuts
+   ========================================================= */
+.cohort-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--sp-5);
+}
+.donut-svg { width: 140px; height: 140px; display: block; }
+
+/* =========================================================
+   HEATMAP — engagement matrix
+   ========================================================= */
+.hm-wrap { padding: var(--sp-6) var(--sp-6) var(--sp-5); overflow-x: auto; }
+.hm-grid {
+  display: grid;
+  grid-template-columns: 150px repeat(8, 1fr);
+  gap: 2px;
+  background: var(--c-hairline);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--r-sm);
+  min-width: 820px;
+}
+.hm-cell {
+  background: var(--c-paper);
+  padding: var(--sp-3) var(--sp-2);
+  text-align: center;
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--t-sm);
+  font-weight: var(--w-sb);
+  color: var(--c-p-800);
+}
+.hm-cell.hd {
+  background: var(--c-data);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  color: var(--c-n-600);
+}
+.hm-cell.row-lbl {
+  background: var(--c-data);
+  font-size: var(--t-xs);
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+  color: var(--c-n-700);
+  letter-spacing: var(--tr-wide);
+}
+.hm-v0 { background: var(--c-data); color: var(--c-n-400); }
+.hm-v1 { background: var(--c-a-50); color: var(--c-n-700); }
+.hm-v2 { background: var(--c-a-100); color: var(--c-a-700); }
+.hm-v3 { background: var(--c-a-300); color: var(--c-p-900); }
+.hm-v4 { background: var(--c-a-500); color: #fff; }
+.hm-v5 { background: var(--c-p-600); color: #fff; }
+.hm-legend {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wide);
+  color: var(--c-n-500);
+}
+.hm-legend .scale { display: flex; gap: 0; margin: 0 8px; }
+.hm-legend .scale span { width: 22px; height: 12px; }
+
+/* =========================================================
+   ACTIVITY FEED — terminal-style log
+   ========================================================= */
+.feed { padding: 0; }
+.feed-line {
+  display: grid;
+  grid-template-columns: 88px 60px 1fr auto;
+  gap: var(--sp-4);
+  align-items: center;
+  padding: var(--sp-3) var(--sp-6);
+  border-bottom: 1px dashed var(--c-hairline);
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+}
+.feed-line:last-child { border-bottom: none; }
+.feed-line:hover { background: var(--c-data); }
+.feed-time { color: var(--c-n-400); font-size: var(--t-xxs); letter-spacing: var(--tr-wide); }
+.feed-code {
+  font-size: var(--t-xxs);
+  font-weight: var(--w-sb);
+  letter-spacing: var(--tr-widest);
+  padding: 3px 8px;
+  border-radius: var(--r-sm);
+  text-align: center;
+  border: 1px solid;
+}
+.feed-code.c-sent    { color: var(--c-p-600); background: var(--c-p-50);  border-color: var(--c-p-200); }
+.feed-code.c-opened  { color: var(--c-a-700); background: var(--c-a-50);  border-color: var(--c-a-200); }
+.feed-code.c-replied { color: var(--s-good);  background: rgba(235,247,241,0.7); border-color: rgba(95,165,133,0.4); }
+.feed-code.c-meeting { color: var(--c-p-800); background: var(--c-p-100); border-color: var(--c-p-300); }
+.feed-code.c-bounce  { color: var(--s-bad);   background: rgba(254,242,242,0.7); border-color: rgba(216,80,85,0.3); }
+.feed-code.c-sys     { color: var(--c-n-500); background: var(--c-n-50);  border-color: var(--c-n-200); }
+.feed-msg { color: var(--c-graphite); font-family: var(--f-body); font-size: var(--t-sm); }
+.feed-msg .acc { font-family: var(--f-mono); color: var(--c-p-700); font-weight: var(--w-sb); }
+.feed-tag { font-size: var(--t-xxs); color: var(--c-n-400); letter-spacing: var(--tr-wide); }
+
+/* =========================================================
+   INSIGHT NOTES — 4-up grid
+   ========================================================= */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+.note {
+  background: var(--c-paper);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--sh-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  position: relative;
+  overflow: hidden;
+}
+.note::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 3px;
+  background: currentColor;
+}
+.note.n-win   { color: var(--s-good); }
+.note.n-watch { color: var(--s-warn); }
+.note.n-tip   { color: var(--c-a-600); }
+.note.n-data  { color: var(--c-p-600); }
+.note-prefix {
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  font-weight: var(--w-sb);
+  color: currentColor;
+}
+.note-body {
+  font-size: var(--t-sm);
+  color: var(--c-graphite);
+  line-height: 1.55;
+}
+.note-body b { color: var(--c-p-800); }
+.note-meta {
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-wide);
+  color: var(--c-n-500);
+  padding-top: var(--sp-2);
+  border-top: 1px dashed var(--c-hairline);
+}
+
+/* =========================================================
+   FOOT
+   ========================================================= */
+.foot {
+  margin-top: var(--sp-20);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--c-hairline);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--f-mono);
+  font-size: var(--t-xxs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--c-n-500);
+}
+
+@media (max-width: 1100px) {
+  .split { grid-template-columns: 1fr; }
+  .split-readout { border-right: none; border-bottom: 1px solid var(--c-hairline); }
+  .split-grid { grid-template-columns: 1fr; }
+  .sec-head { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .sec-num { font-size: var(--t-5xl); }
+  .funnel-stage { grid-template-columns: 100px 1fr 70px 90px; gap: var(--sp-2); }
+  .cohort-grid { grid-template-columns: 1fr; }
+  .notes-grid { grid-template-columns: 1fr 1fr; }
+  .speclog-row { grid-template-columns: 1fr; gap: var(--sp-1); }
+  .speclog-row.hd { display: none; }
+  .proto-step { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .proto-stats { grid-template-columns: repeat(4, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- =========================================================
+       META STRIP — minimal header
+       ========================================================= -->
+  <div class="meta-strip">
+    <div>
+      <div class="meta-brand">
+        Vivica Outreach
+        <span class="model">VX-OUT-01 · RUN 0427</span>
+      </div>
+      <div class="meta-period" style="margin-top: 4px;">Week 19 · May 5 → 11, 2026 · CLIA Labs Segment</div>
+    </div>
+    <div class="meta-leds">
+      <span><span class="led led-pulse" style="color: var(--led-green);"></span>STREAM LIVE</span>
+      <span><span class="led" style="color: var(--led-green);"></span>SMTP OK</span>
+      <span><span class="led" style="color: var(--led-amber);"></span>Q 312</span>
+      <span><span class="led" style="color: var(--led-blue);"></span>SYNC 14:02</span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 01 — PRIMARY METRICS
+       ========================================================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Primary Metrics · PM</div>
+        <h2 class="sec-title">Headline rates with<br>per-sequence breakdown</h2>
+        <p class="sec-desc">Four headline rates, each paired with the cadences pulling them up or down.</p>
+      </div>
+    </div>
+
+    <div class="split-grid">
+
+      <!-- Open Rate -->
+      <div class="split">
+        <div class="split-readout">
+          <div class="lbl"><span class="led" style="color: var(--c-a-500);"></span>Open Rate · M-01</div>
+          <div class="val">38.2<span class="u">%</span></div>
+          <div class="bench">target 30–45 · within range</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>By Sequence</span><span class="delta delta-up">Δ +2.1 pp</span></div>
+          <div class="row is-good">
+            <span class="name">SEQ-LD-LIGO-V3</span>
+            <span class="bar-mini"><span class="fl" style="width: 84%;"></span></span>
+            <span class="v">42.1%</span>
+          </div>
+          <div class="row">
+            <span class="name">SEQ-IT-SQ-V2</span>
+            <span class="bar-mini"><span class="fl" style="width: 76%;"></span></span>
+            <span class="v">38.4%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">SEQ-PATH-SCC</span>
+            <span class="bar-mini"><span class="fl" style="width: 64%;"></span></span>
+            <span class="v">32.1%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">SEQ-COO-ORCH</span>
+            <span class="bar-mini"><span class="fl" style="width: 56%;"></span></span>
+            <span class="v">28.0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reply Rate -->
+      <div class="split">
+        <div class="split-readout">
+          <div class="lbl"><span class="led" style="color: var(--s-good);"></span>Reply Rate · M-02</div>
+          <div class="val">6.2<span class="u">%</span></div>
+          <div class="bench">target ≥ 5.0 · above</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>By Sequence</span><span class="delta delta-up">Δ +1.4 pp</span></div>
+          <div class="row is-good">
+            <span class="name">SEQ-LD-LIGO-V3</span>
+            <span class="bar-mini"><span class="fl" style="width: 92%;"></span></span>
+            <span class="v">9.2%</span>
+          </div>
+          <div class="row is-good">
+            <span class="name">SEQ-IT-SQ-V2</span>
+            <span class="bar-mini"><span class="fl" style="width: 76%;"></span></span>
+            <span class="v">7.6%</span>
+          </div>
+          <div class="row">
+            <span class="name">SEQ-PATH-SCC</span>
+            <span class="bar-mini"><span class="fl" style="width: 48%;"></span></span>
+            <span class="v">4.8%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">SEQ-COO-ORCH</span>
+            <span class="bar-mini"><span class="fl" style="width: 28%;"></span></span>
+            <span class="v">2.8%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meeting Rate -->
+      <div class="split">
+        <div class="split-readout">
+          <div class="lbl"><span class="led" style="color: var(--c-p-600);"></span>Meeting Rate · M-03</div>
+          <div class="val">5.3<span class="u">%</span></div>
+          <div class="bench">of replies booked · 47 / 887</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>By Persona</span><span class="delta delta-up">Δ +0.8 pp</span></div>
+          <div class="row is-good">
+            <span class="name">Lab Director</span>
+            <span class="bar-mini"><span class="fl" style="width: 82%;"></span></span>
+            <span class="v">8.2%</span>
+          </div>
+          <div class="row">
+            <span class="name">IT Admin</span>
+            <span class="bar-mini"><span class="fl" style="width: 54%;"></span></span>
+            <span class="v">5.4%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">Pathologist</span>
+            <span class="bar-mini"><span class="fl" style="width: 39%;"></span></span>
+            <span class="v">3.9%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">COO / Finance</span>
+            <span class="bar-mini"><span class="fl" style="width: 28%;"></span></span>
+            <span class="v">2.8%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deliverability -->
+      <div class="split">
+        <div class="split-readout">
+          <div class="lbl"><span class="led" style="color: var(--s-warn);"></span>Deliverability · M-04</div>
+          <div class="val">98.4<span class="u">%</span></div>
+          <div class="bench">healthy ≥ 97 · bounce 1.6%</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>By Inbox</span><span class="delta delta-flat">Δ ±0.1</span></div>
+          <div class="row is-good">
+            <span class="name">inbox-01@vivica</span>
+            <span class="bar-mini"><span class="fl" style="width: 99%;"></span></span>
+            <span class="v">99.2%</span>
+          </div>
+          <div class="row is-good">
+            <span class="name">inbox-02@vivica</span>
+            <span class="bar-mini"><span class="fl" style="width: 98%;"></span></span>
+            <span class="v">98.6%</span>
+          </div>
+          <div class="row">
+            <span class="name">inbox-03@vivica</span>
+            <span class="bar-mini"><span class="fl" style="width: 97%;"></span></span>
+            <span class="v">97.8%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">inbox-04@vivica</span>
+            <span class="bar-mini"><span class="fl" style="width: 96%;"></span></span>
+            <span class="v">96.2%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 02 — FUNNEL
+       ========================================================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Conversion Funnel · FN</div>
+        <h2 class="sec-title">From 2,847 labs<br>down to 47 meetings</h2>
+        <p class="sec-desc">Five-stage funnel with stage-to-stage conversion rates. End-to-end 1.65% vs 2.00% target.</p>
+      </div>
+    </div>
+
+    <div class="funnel-panel">
+      <div class="funnel-panel-head">
+        <div class="ttl">CLIA Labs · 28-day</div>
+        <div class="sub">FN-01 · n=2,847 · e2e 1.65% (target 2.00%)</div>
+      </div>
+      <div class="funnel-bars">
+
+        <div class="funnel-stage">
+          <div class="fs-label">L1 · Universe</div>
+          <div class="fs-track"><div class="fs-fill f-1" style="width: 100%;"></div></div>
+          <div class="fs-count">2,847</div>
+          <div class="fs-conv muted">baseline</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L2 · Sent</div>
+          <div class="fs-track"><div class="fs-fill f-2" style="width: 67.6%;"></div></div>
+          <div class="fs-count">1,924</div>
+          <div class="fs-conv good">67.6%</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L3 · Opened</div>
+          <div class="fs-track"><div class="fs-fill f-3" style="width: 25.8%;"></div></div>
+          <div class="fs-count">735</div>
+          <div class="fs-conv good">38.2%</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L4 · Replied</div>
+          <div class="fs-track"><div class="fs-fill f-4" style="width: 4.2%;"></div></div>
+          <div class="fs-count">119</div>
+          <div class="fs-conv warn">16.2%</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L5 · Meeting</div>
+          <div class="fs-track"><div class="fs-fill f-5" style="width: 1.65%;"></div></div>
+          <div class="fs-count">47</div>
+          <div class="fs-conv good">39.5%</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 03 — DIAL READOUTS (kept as the reference pattern)
+       ========================================================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Dial Readouts · DR</div>
+        <h2 class="sec-title">Rate gauges with<br>breakdown by sequence</h2>
+        <p class="sec-desc">Each dial pairs the headline rate with a sequence-level breakdown — instantly see which cadence is pulling the average up or down.</p>
+      </div>
+    </div>
+
+    <div class="split-grid">
+
+      <div class="split">
+        <div class="split-readout">
+          <div class="lbl"><span class="led" style="color: var(--c-a-500);"></span>Open Rate · G-01</div>
+          <svg class="gauge-svg" viewBox="0 0 200 110">
+            <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="var(--c-n-100)" stroke-width="14" stroke-linecap="round"/>
+            <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="var(--c-a-500)" stroke-width="14"
+                  stroke-dasharray="251.3" stroke-dashoffset="155.8" stroke-linecap="round"/>
+            <g font-family="JetBrains Mono" font-size="9" fill="var(--c-n-500)" text-anchor="middle">
+              <text x="20" y="115">0</text>
+              <text x="100" y="14">50</text>
+              <text x="180" y="115">100</text>
+            </g>
+          </svg>
+          <div class="val">38.2<span class="u">%</span></div>
+          <div class="bench">target 30–45 · within range</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>By Sequence</span><span class="code-id">G-01-bd</span></div>
+          <div class="row is-good">
+            <span class="name">SEQ-LD-LIGO-V3</span>
+            <span class="bar-mini"><span class="fl" style="width: 84%;"></span></span>
+            <span class="v">42.1%</span>
+          </div>
+          <div class="row">
+            <span class="name">SEQ-IT-SQ-V2</span>
+            <span class="bar-mini"><span class="fl" style="width: 76%;"></span></span>
+            <span class="v">38.4%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">SEQ-PATH-SCC</span>
+            <span class="bar-mini"><span class="fl" style="width: 64%;"></span></span>
+            <span class="v">32.1%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">SEQ-COO-ORCH</span>
+            <span class="bar-mini"><span class="fl" style="width: 56%;"></span></span>
+            <span class="v">28.0%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="split-readout">
+          <div class="lbl"><span class="led" style="color: var(--s-good);"></span>Reply Rate · G-02</div>
+          <svg class="gauge-svg" viewBox="0 0 200 110">
+            <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="var(--c-n-100)" stroke-width="14" stroke-linecap="round"/>
+            <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="var(--s-good)" stroke-width="14"
+                  stroke-dasharray="251.3" stroke-dashoffset="235.7" stroke-linecap="round"/>
+            <g font-family="JetBrains Mono" font-size="9" fill="var(--c-n-500)" text-anchor="middle">
+              <text x="20" y="115">0</text>
+              <text x="100" y="14">10</text>
+              <text x="180" y="115">20</text>
+            </g>
+          </svg>
+          <div class="val">6.2<span class="u">%</span></div>
+          <div class="bench">target ≥ 5.0 · above</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>By Sequence</span><span class="code-id">G-02-bd</span></div>
+          <div class="row is-good">
+            <span class="name">SEQ-LD-LIGO-V3</span>
+            <span class="bar-mini"><span class="fl" style="width: 92%;"></span></span>
+            <span class="v">9.2%</span>
+          </div>
+          <div class="row is-good">
+            <span class="name">SEQ-IT-SQ-V2</span>
+            <span class="bar-mini"><span class="fl" style="width: 76%;"></span></span>
+            <span class="v">7.6%</span>
+          </div>
+          <div class="row">
+            <span class="name">SEQ-PATH-SCC</span>
+            <span class="bar-mini"><span class="fl" style="width: 48%;"></span></span>
+            <span class="v">4.8%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">SEQ-COO-ORCH</span>
+            <span class="bar-mini"><span class="fl" style="width: 28%;"></span></span>
+            <span class="v">2.8%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 04 — SEQUENCE PROTOCOL
+       ========================================================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Sequence Protocol · SP</div>
+        <h2 class="sec-title">6-touch cadence<br>step by step</h2>
+        <p class="sec-desc">SEQ-LD-LIGO-V3 · 21-day window · 487 prospects entered. Step 03 (ROI calc) is the conversion peak.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ttl">SEQ-LD-LIGO-V3 · 6-touch · 21 days</div>
+        <div class="sub">SP-01 · started 2026-04-14 · n=487</div>
+      </div>
+      <div class="proto">
+
+        <div class="proto-step">
+          <div class="proto-mark">01</div>
+          <div class="proto-body">
+            <div class="ttl-row"><span class="ttl">Initial Outreach</span></div>
+            <div class="cond">delay 0d · channel=email · subject A/B · personalization=high</div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Sent</span><span class="v">487</span></div>
+            <div class="cell"><span class="l">Open</span><span class="v">42.1%</span></div>
+            <div class="cell"><span class="l">Reply</span><span class="v">3.7%</span></div>
+            <div class="cell"><span class="l">Bnc</span><span class="v">1.4%</span></div>
+          </div>
+        </div>
+
+        <div class="proto-step">
+          <div class="proto-mark">02</div>
+          <div class="proto-body">
+            <div class="ttl-row"><span class="ttl">Follow-up · case study</span></div>
+            <div class="cond">delay 3d · skip if opened previous · attachment=PDF</div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Sent</span><span class="v">412</span></div>
+            <div class="cell"><span class="l">Open</span><span class="v">38.4%</span></div>
+            <div class="cell"><span class="l">Reply</span><span class="v">2.1%</span></div>
+            <div class="cell"><span class="l">Bnc</span><span class="v">0.7%</span></div>
+          </div>
+        </div>
+
+        <div class="proto-step peak">
+          <div class="proto-mark">03</div>
+          <div class="proto-body">
+            <div class="ttl-row"><span class="ttl">Peak · ROI calculator</span><span class="code-id" style="color: var(--c-a-700);">↑ HIGHEST REPLY</span></div>
+            <div class="cond">delay 5d · interactive · highest reply step</div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Sent</span><span class="v">385</span></div>
+            <div class="cell"><span class="l">Open</span><span class="v">45.2%</span></div>
+            <div class="cell"><span class="l">Reply</span><span class="v">4.8%</span></div>
+            <div class="cell"><span class="l">Bnc</span><span class="v">0.3%</span></div>
+          </div>
+        </div>
+
+        <div class="proto-step">
+          <div class="proto-mark">04</div>
+          <div class="proto-body">
+            <div class="ttl-row"><span class="ttl">Social Touch · LinkedIn</span></div>
+            <div class="cond">delay 4d · channel=LinkedIn · connection request</div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Sent</span><span class="v">342</span></div>
+            <div class="cell"><span class="l">Accept</span><span class="v">28.4%</span></div>
+            <div class="cell"><span class="l">Reply</span><span class="v">1.9%</span></div>
+            <div class="cell"><span class="l">Bnc</span><span class="v dim">—</span></div>
+          </div>
+        </div>
+
+        <div class="proto-step">
+          <div class="proto-mark">05</div>
+          <div class="proto-body">
+            <div class="ttl-row"><span class="ttl">Break-up · final ask</span></div>
+            <div class="cond">delay 5d · short · "should I close this out?"</div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Sent</span><span class="v">318</span></div>
+            <div class="cell"><span class="l">Open</span><span class="v">51.6%</span></div>
+            <div class="cell"><span class="l">Reply</span><span class="v">3.1%</span></div>
+            <div class="cell"><span class="l">Bnc</span><span class="v">0.2%</span></div>
+          </div>
+        </div>
+
+        <div class="proto-step">
+          <div class="proto-mark">06</div>
+          <div class="proto-body">
+            <div class="ttl-row"><span class="ttl">Revival · 90d nurture</span></div>
+            <div class="cond">delay 90d · low-touch monthly update</div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Sent</span><span class="v dim">—</span></div>
+            <div class="cell"><span class="l">Open</span><span class="v dim">—</span></div>
+            <div class="cell"><span class="l">Reply</span><span class="v dim">—</span></div>
+            <div class="cell"><span class="l">Bnc</span><span class="v dim">—</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 05 — SPECIMEN LOG (Pipeline)
+       ========================================================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Active Pipeline · SL</div>
+        <h2 class="sec-title">Top accounts<br>sorted by score</h2>
+        <p class="sec-desc">Accession-style IDs, touch history D1–D21, score 0–10, and current state. Sorted by composite engagement score.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ttl">Specimen Log · Tier-1 Accounts</div>
+        <div class="sub">SL-01 · 6 of 124 active · updated 14:02</div>
+      </div>
+      <div class="speclog">
+        <div class="speclog-row hd">
+          <div>Accession</div>
+          <div>Account</div>
+          <div>Contact</div>
+          <div>Touch · D1–D21</div>
+          <div>Score</div>
+          <div>Status</div>
+        </div>
+
+        <div class="speclog-row">
+          <div class="spec-id">A-26-0421</div>
+          <div class="spec-name">Midwest Pathology Group<span class="sub">280 beds · IL · LigoLab</span></div>
+          <div class="spec-contact">Dr. M. Chen<span class="sub">Lab Director</span></div>
+          <div class="touch-track">
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-opened"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-opened"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-replied"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-meeting"></span>
+          </div>
+          <div class="score score-hi">9.4</div>
+          <div><span class="tag tag-meeting">MTG</span></div>
+        </div>
+
+        <div class="speclog-row">
+          <div class="spec-id">A-26-0418</div>
+          <div class="spec-name">Coastal Clinical Labs<span class="sub">180 beds · CA · Sunquest</span></div>
+          <div class="spec-contact">J. Rodriguez<span class="sub">IT Admin</span></div>
+          <div class="touch-track">
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-opened"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-opened"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-replied"></span>
+          </div>
+          <div class="score score-hi">8.6</div>
+          <div><span class="tag tag-replied">REP</span></div>
+        </div>
+
+        <div class="speclog-row">
+          <div class="spec-id">A-26-0415</div>
+          <div class="spec-name">Summit Diagnostics<span class="sub">340 beds · CO · SCC Soft</span></div>
+          <div class="spec-contact">Dr. P. Singh<span class="sub">Pathologist</span></div>
+          <div class="touch-track">
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-opened"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-opened"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-opened"></span>
+          </div>
+          <div class="score score-mid">6.8</div>
+          <div><span class="tag tag-opened">OPN</span></div>
+        </div>
+
+        <div class="speclog-row">
+          <div class="spec-id">A-26-0412</div>
+          <div class="spec-name">Northwest Lab Services<span class="sub">220 beds · WA · Orchard</span></div>
+          <div class="spec-contact">K. Williams<span class="sub">COO</span></div>
+          <div class="touch-track">
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-opened"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-opened"></span>
+          </div>
+          <div class="score score-mid">5.7</div>
+          <div><span class="tag tag-opened">OPN</span></div>
+        </div>
+
+        <div class="speclog-row">
+          <div class="spec-id">A-26-0408</div>
+          <div class="spec-name">Riverside Health Labs<span class="sub">160 beds · TX · LigoLab</span></div>
+          <div class="spec-contact">L. Thompson<span class="sub">Lab Manager</span></div>
+          <div class="touch-track">
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot t-bounce"></span><span class="touch-connector"></span>
+            <span class="touch-dot"></span>
+          </div>
+          <div class="score score-lo">2.1</div>
+          <div><span class="tag tag-bounce">BNC</span></div>
+        </div>
+
+        <div class="speclog-row">
+          <div class="spec-id">A-26-0402</div>
+          <div class="spec-name">Greenfield Reference Lab<span class="sub">95 beds · OR · Epic Beaker</span></div>
+          <div class="spec-contact">R. Patel<span class="sub">IT Director</span></div>
+          <div class="touch-track">
+            <span class="touch-dot t-sent"></span><span class="touch-connector"></span>
+            <span class="touch-dot"></span><span class="touch-connector"></span>
+            <span class="touch-dot"></span><span class="touch-connector"></span>
+            <span class="touch-dot"></span><span class="touch-connector"></span>
+            <span class="touch-dot"></span>
+          </div>
+          <div class="score score-lo">1.4</div>
+          <div><span class="tag tag-sent">SNT</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 06 — COHORT BREAKDOWN (3 split-panels)
+       ========================================================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Cohort Breakdown · CB</div>
+        <h2 class="sec-title">Universe composition<br>across three axes</h2>
+        <p class="sec-desc">2,847 CLIA labs split by size, region, and incumbent LIS vendor.</p>
+      </div>
+    </div>
+
+    <div class="cohort-grid">
+
+      <div class="split" style="grid-template-columns: 200px 1fr;">
+        <div class="split-readout" style="padding: var(--sp-5);">
+          <div class="lbl">By Lab Size</div>
+          <svg class="donut-svg" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-n-100)" stroke-width="16"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-600)" stroke-width="16"
+              stroke-dasharray="147.7 351.86" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-a-500)" stroke-width="16"
+              stroke-dasharray="98.5 401.06" stroke-dashoffset="-147.7" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-300)" stroke-width="16"
+              stroke-dasharray="66.9 432.66" stroke-dashoffset="-246.2" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-a-300)" stroke-width="16"
+              stroke-dasharray="38.7 460.86" stroke-dashoffset="-313.1" transform="rotate(-90 70 70)"/>
+          </svg>
+          <div class="bench">n=2,847</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>Size band</span><span class="code-id">CB-01</span></div>
+          <div class="row"><span class="name">100–250 beds</span><span class="bar-mini"><span class="fl" style="width: 84%;"></span></span><span class="v">42%</span></div>
+          <div class="row"><span class="name">250–500 beds</span><span class="bar-mini"><span class="fl" style="width: 56%; background: var(--c-a-500);"></span></span><span class="v">28%</span></div>
+          <div class="row"><span class="name">50–100 beds</span><span class="bar-mini"><span class="fl" style="width: 38%;"></span></span><span class="v">19%</span></div>
+          <div class="row"><span class="name">500+ beds</span><span class="bar-mini"><span class="fl" style="width: 22%;"></span></span><span class="v">11%</span></div>
+        </div>
+      </div>
+
+      <div class="split" style="grid-template-columns: 200px 1fr;">
+        <div class="split-readout" style="padding: var(--sp-5);">
+          <div class="lbl">By Region</div>
+          <svg class="donut-svg" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-n-100)" stroke-width="16"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-500)" stroke-width="16"
+              stroke-dasharray="105.6 393.96" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-a-600)" stroke-width="16"
+              stroke-dasharray="91.5 408.06" stroke-dashoffset="-105.6" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-400)" stroke-width="16"
+              stroke-dasharray="81.0 418.56" stroke-dashoffset="-197.1" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-a-400)" stroke-width="16"
+              stroke-dasharray="74.5 425.06" stroke-dashoffset="-278.1" transform="rotate(-90 70 70)"/>
+          </svg>
+          <div class="bench">n=2,847</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>US region</span><span class="code-id">CB-02</span></div>
+          <div class="row"><span class="name">Northeast</span><span class="bar-mini"><span class="fl" style="width: 60%;"></span></span><span class="v">30%</span></div>
+          <div class="row"><span class="name">Midwest</span><span class="bar-mini"><span class="fl" style="width: 52%; background: var(--c-a-500);"></span></span><span class="v">26%</span></div>
+          <div class="row"><span class="name">South</span><span class="bar-mini"><span class="fl" style="width: 46%;"></span></span><span class="v">23%</span></div>
+          <div class="row"><span class="name">West</span><span class="bar-mini"><span class="fl" style="width: 42%;"></span></span><span class="v">21%</span></div>
+        </div>
+      </div>
+
+      <div class="split" style="grid-template-columns: 200px 1fr;">
+        <div class="split-readout" style="padding: var(--sp-5);">
+          <div class="lbl">By Incumbent LIS</div>
+          <svg class="donut-svg" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-n-100)" stroke-width="16"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-700)" stroke-width="16"
+              stroke-dasharray="123.2 376.36" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-a-500)" stroke-width="16"
+              stroke-dasharray="73.9 425.66" stroke-dashoffset="-123.2" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-400)" stroke-width="16"
+              stroke-dasharray="59.8 439.76" stroke-dashoffset="-197.1" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-a-300)" stroke-width="16"
+              stroke-dasharray="56.3 443.26" stroke-dashoffset="-256.9" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-n-300)" stroke-width="16"
+              stroke-dasharray="38.7 460.86" stroke-dashoffset="-313.2" transform="rotate(-90 70 70)"/>
+          </svg>
+          <div class="bench">n=2,847</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>Vendor share</span><span class="code-id">CB-03</span></div>
+          <div class="row is-good"><span class="name">LigoLab</span><span class="bar-mini"><span class="fl" style="width: 70%;"></span></span><span class="v">35%</span></div>
+          <div class="row"><span class="name">Sunquest</span><span class="bar-mini"><span class="fl" style="width: 42%;"></span></span><span class="v">21%</span></div>
+          <div class="row"><span class="name">SCC Soft</span><span class="bar-mini"><span class="fl" style="width: 34%;"></span></span><span class="v">17%</span></div>
+          <div class="row"><span class="name">Orchard</span><span class="bar-mini"><span class="fl" style="width: 32%;"></span></span><span class="v">16%</span></div>
+          <div class="row"><span class="name">Other</span><span class="bar-mini"><span class="fl" style="width: 22%; background: var(--c-n-300);"></span></span><span class="v">11%</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 07 — ENGAGEMENT HEATMAP
+       ========================================================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">07</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Engagement Heatmap · HM</div>
+        <h2 class="sec-title">Reply rate by<br>persona × incumbent</h2>
+        <p class="sec-desc">Cell values show reply rate %. Hottest combo: Lab Director × LigoLab at 11.4% — 2.5× the cohort mean of 4.6%.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ttl">Reply Rate Matrix</div>
+        <div class="sub">HM-01 · μ=4.6% · n=2,847</div>
+      </div>
+      <div class="hm-wrap">
+        <div class="hm-grid">
+          <div class="hm-cell hd"></div>
+          <div class="hm-cell hd">LigoLab</div>
+          <div class="hm-cell hd">Sunquest</div>
+          <div class="hm-cell hd">SCC</div>
+          <div class="hm-cell hd">Orchard</div>
+          <div class="hm-cell hd">CGM</div>
+          <div class="hm-cell hd">Beaker</div>
+          <div class="hm-cell hd">PathPro</div>
+          <div class="hm-cell hd">Other</div>
+
+          <div class="hm-cell row-lbl">Lab Director</div>
+          <div class="hm-cell hm-v5">11.4</div>
+          <div class="hm-cell hm-v4">9.2</div>
+          <div class="hm-cell hm-v3">7.1</div>
+          <div class="hm-cell hm-v2">5.4</div>
+          <div class="hm-cell hm-v3">7.8</div>
+          <div class="hm-cell hm-v1">2.1</div>
+          <div class="hm-cell hm-v2">4.2</div>
+          <div class="hm-cell hm-v1">3.0</div>
+
+          <div class="hm-cell row-lbl">IT Admin</div>
+          <div class="hm-cell hm-v4">8.6</div>
+          <div class="hm-cell hm-v3">6.8</div>
+          <div class="hm-cell hm-v3">6.2</div>
+          <div class="hm-cell hm-v2">4.8</div>
+          <div class="hm-cell hm-v2">4.1</div>
+          <div class="hm-cell hm-v1">1.4</div>
+          <div class="hm-cell hm-v1">2.8</div>
+          <div class="hm-cell hm-v1">2.2</div>
+
+          <div class="hm-cell row-lbl">Pathologist</div>
+          <div class="hm-cell hm-v3">7.2</div>
+          <div class="hm-cell hm-v2">5.1</div>
+          <div class="hm-cell hm-v2">4.6</div>
+          <div class="hm-cell hm-v1">3.2</div>
+          <div class="hm-cell hm-v1">2.8</div>
+          <div class="hm-cell hm-v0">0.9</div>
+          <div class="hm-cell hm-v1">2.1</div>
+          <div class="hm-cell hm-v0">1.5</div>
+
+          <div class="hm-cell row-lbl">COO / Finance</div>
+          <div class="hm-cell hm-v2">4.8</div>
+          <div class="hm-cell hm-v2">4.1</div>
+          <div class="hm-cell hm-v1">3.4</div>
+          <div class="hm-cell hm-v1">2.6</div>
+          <div class="hm-cell hm-v1">2.2</div>
+          <div class="hm-cell hm-v0">0.7</div>
+          <div class="hm-cell hm-v1">1.8</div>
+          <div class="hm-cell hm-v0">1.1</div>
+        </div>
+        <div class="hm-legend">
+          <span>0%</span>
+          <div class="scale">
+            <span class="hm-v0"></span>
+            <span class="hm-v1"></span>
+            <span class="hm-v2"></span>
+            <span class="hm-v3"></span>
+            <span class="hm-v4"></span>
+            <span class="hm-v5"></span>
+          </div>
+          <span>12%</span>
+          <span style="margin-left: auto;">cells = reply rate %</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 08 — ACTIVITY FEED
+       ========================================================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">08</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Activity Feed · AL</div>
+        <h2 class="sec-title">Real-time<br>event stream</h2>
+        <p class="sec-desc">320 events / hour. Filtered to high-signal events: replies, meetings booked, bounces, system warnings.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ttl"><span class="led led-pulse" style="color: var(--led-green);"></span>LIVE · tail -f</div>
+        <div class="sub">AL-01 · last 10 events</div>
+      </div>
+      <div class="feed">
+
+        <div class="feed-line">
+          <span class="feed-time">14:02:18</span>
+          <span class="feed-code c-meeting">MTG</span>
+          <span class="feed-msg">Meeting booked · <span class="acc">A-26-0421</span> · Dr. M. Chen accepted demo slot · 2026-05-14 10:00 CST</span>
+          <span class="feed-tag">SEQ-LD-LIGO-V3</span>
+        </div>
+        <div class="feed-line">
+          <span class="feed-time">13:58:42</span>
+          <span class="feed-code c-replied">REP</span>
+          <span class="feed-msg">Reply received · <span class="acc">A-26-0418</span> · J. Rodriguez: "interested, send pricing"</span>
+          <span class="feed-tag">step 03 · ROI</span>
+        </div>
+        <div class="feed-line">
+          <span class="feed-time">13:54:11</span>
+          <span class="feed-code c-opened">OPN</span>
+          <span class="feed-msg">Email opened · <span class="acc">A-26-0415</span> · Dr. P. Singh · 3rd open this thread</span>
+          <span class="feed-tag">step 05 · breakup</span>
+        </div>
+        <div class="feed-line">
+          <span class="feed-time">13:51:30</span>
+          <span class="feed-code c-sent">SNT</span>
+          <span class="feed-msg">Batch sent · 47 emails · cohort=CLIA-mid-LigoLab</span>
+          <span class="feed-tag">batch 0427-B</span>
+        </div>
+        <div class="feed-line">
+          <span class="feed-time">13:48:02</span>
+          <span class="feed-code c-opened">OPN</span>
+          <span class="feed-msg">Email opened · <span class="acc">A-26-0412</span> · K. Williams · 2nd open</span>
+          <span class="feed-tag">step 02 · case-study</span>
+        </div>
+        <div class="feed-line">
+          <span class="feed-time">13:42:15</span>
+          <span class="feed-code c-bounce">BNC</span>
+          <span class="feed-msg">Hard bounce · <span class="acc">A-26-0408</span> · L. Thompson · address invalid · removed from cadence</span>
+          <span class="feed-tag">SMTP 550</span>
+        </div>
+        <div class="feed-line">
+          <span class="feed-time">13:38:47</span>
+          <span class="feed-code c-replied">REP</span>
+          <span class="feed-msg">Reply received · <span class="acc">A-26-0397</span> · S. Park: "not interested, please remove"</span>
+          <span class="feed-tag">unsubscribe</span>
+        </div>
+        <div class="feed-line">
+          <span class="feed-time">13:32:08</span>
+          <span class="feed-code c-opened">OPN</span>
+          <span class="feed-msg">Email opened · <span class="acc">A-26-0388</span> · M. Davis · 1st open</span>
+          <span class="feed-tag">step 01 · initial</span>
+        </div>
+        <div class="feed-line">
+          <span class="feed-time">13:24:56</span>
+          <span class="feed-code c-sys">SYS</span>
+          <span class="feed-msg">Warm-up cycle complete · all inboxes healthy · deliverability 98.4%</span>
+          <span class="feed-tag">cron · daily</span>
+        </div>
+        <div class="feed-line">
+          <span class="feed-time">13:18:33</span>
+          <span class="feed-code c-sent">SNT</span>
+          <span class="feed-msg">Batch sent · 62 emails · cohort=CLIA-large-Sunquest</span>
+          <span class="feed-tag">batch 0427-A</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 09 — INSIGHTS
+       ========================================================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">09</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Lab Notes · LN</div>
+        <h2 class="sec-title">Observed signals<br>from run 0427</h2>
+        <p class="sec-desc">Four signals worth acting on this week — wins to replicate, watch-points, tips for next iteration, data points to monitor.</p>
+      </div>
+    </div>
+
+    <div class="notes-grid">
+      <div class="note n-win">
+        <div class="note-prefix">[WIN]</div>
+        <div class="note-body">Lab Director × LigoLab cohort hit <b>11.4%</b> reply rate — 2.5× the average. ROI calculator step is the conversion peak.</div>
+        <div class="note-meta">HM-01 · R1×C1 · n=287</div>
+      </div>
+      <div class="note n-watch">
+        <div class="note-prefix">[WATCH]</div>
+        <div class="note-body">Epic Beaker cohort underperforming across all personas (max <b>2.1%</b>). Hypothesis: incumbent stickiness too high.</div>
+        <div class="note-meta">HM-01 · col C6 · n=312</div>
+      </div>
+      <div class="note n-tip">
+        <div class="note-prefix">[TIP]</div>
+        <div class="note-body">Step 03 (ROI calc) consistently outperforms — replicate format across 2 other sequences. Test with Sunquest first.</div>
+        <div class="note-meta">SP-01 · step 03 · 4.8% reply</div>
+      </div>
+      <div class="note n-data">
+        <div class="note-prefix">[DATA]</div>
+        <div class="note-body">End-to-end conversion <b>1.65%</b> — below 2.0% target. Bottleneck at opened→replied (16.2%); benchmark 22–28%.</div>
+        <div class="note-meta">FN-01 · L3→L4 transition</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>Vivica Outreach · VX-OUT-01</span>
+    <span>Run 0427 · 2026-05-11 · 14:02 UTC</span>
+    <span>Confidential · Internal</span>
+  </div>
+
+</div>
+
+</body>
+</html>

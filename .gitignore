@@ -1,0 +1,49 @@
+# --- Sensitive data ---
+# Raw lead lists may contain PII before they go to gtm-mcp
+input-data/raw/
+input-data/*.csv.encrypted
+
+# API keys, even if accidentally written here
+.env
+.env.local
+*.key
+*_api_key.txt
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# --- gtm-mcp generated state (should never be here, but just in case) ---
+.gtm-mcp/
+*.run.json
+runs/
+
+# --- IDE ---
+.idea/
+.vscode/
+*.swp
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Generated competitor pain dumps (raw HTML before parsing) ---
+extensions/.claude/skills/lims-pain-extractor/scripts/raw_html/
+
+# --- Conference attendee lists (PII until processed) ---
+input-data/adlm_*_attendees.csv
+input-data/conference_*_raw.csv
+
+# Allow committing structure with placeholder
+!input-data/.gitkeep
+!tracking/.gitkeep
+
+# --- Local editor/IDE state ---
+.obsidian/
+.claude/
+.ruff_cache/

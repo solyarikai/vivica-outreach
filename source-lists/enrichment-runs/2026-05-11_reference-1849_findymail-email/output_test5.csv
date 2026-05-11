@@ -1,0 +1,6 @@
+src_name,src_domain,src_clia,persona,contact_name,contact_email,contact_title,contact_linkedin_url,contact_phone,email_found,email_verified
+LABORATORY CORPORATION OF AMERICA HOLDINGS,locations.labcorp.com,01D0304728,ceo_owner,Imran Ali,imran.ali@labcorp.com,"Senior Vice President, Global Head Early Development Research Operations and Country Head India",,(require direct fetch),true,false
+LABORATORY CORPORATION OF AMERICA HOLDINGS,locations.labcorp.com,01D0304728,medical_director,Shakti Ra***n,(require direct fetch),"CLIA Laboratory Medical Director, Labcorp Oncology (OmniSeq), Buffalo, NY",,(require direct fetch),false,false
+UAB OB/GYN RESEARCH AND DIAGNOSTIC LABORATORY,uab.edu,01D0641549,ceo_owner,Robert Ho***d,(require direct fetch),Vice President for Information Technology & Chief Information Officer,,(require direct fetch),false,false
+ALABAMA DEPARTMENT OF PUBLIC HEALTH,alabamapublichealth.gov,01D0641691,lab_director,Greg Do***d,(require direct fetch),Director of Operations,,(require direct fetch),false,false
+LABCORP OF AMERICA HOLDINGS,labcorp.com,01D0641706,ceo_owner,Imran Ali,imran.ali@labcorp.com,"Senior Vice President, Global Head Early Development Research Operations and Country Head India",,(require direct fetch),true,false

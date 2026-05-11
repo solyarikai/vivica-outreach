@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vivica · Project Intake Report · May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c-p-900:#1F2D45; --c-p-800:#2D4163; --c-p-700:#3F5882;
+  --c-p-600:#5575A3; --c-p-500:#7090BD; --c-p-400:#8FA8CC;
+  --c-p-300:#B0C2DA; --c-p-200:#CDD9E8; --c-p-100:#E4ECF4; --c-p-50:#F2F6FB;
+  --c-a-700:#3F9090; --c-a-600:#50A8A8; --c-a-500:#5FBDBD;
+  --c-a-400:#82CECE; --c-a-300:#A5DCDC; --c-a-200:#C2E8E8;
+  --c-a-100:#DDF2F2; --c-a-50:#EEF9F9;
+  --c-n-900:#1A1F2A; --c-n-800:#283142; --c-n-700:#3D4862;
+  --c-n-600:#5A6680; --c-n-500:#7E8AA0; --c-n-400:#9CA7BA;
+  --c-n-300:#BDC6D2; --c-n-200:#D8DDE5; --c-n-100:#ECEFF3; --c-n-50:#F6F8FB;
+  --c-paper:#FFFFFF; --c-data:#F4F8FC; --c-canvas:#F5F8FC;
+  --c-graphite:#2D4163; --c-hairline:#DDE4ED;
+  --s-good:#5FA585; --s-warn:#C89146; --s-bad:#D85055;
+  --led-green:#82B58E; --led-amber:#E0A574; --led-blue:#6BA8E0;
+  --f-display:'DM Serif Display', Georgia, serif;
+  --f-body:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono:'JetBrains Mono', Consolas, monospace;
+  --t-xxs:0.6875rem; --t-xs:0.75rem; --t-sm:0.875rem; --t-base:1rem;
+  --t-md:1.125rem; --t-lg:1.375rem; --t-xl:1.75rem; --t-2xl:2.25rem;
+  --t-3xl:3rem; --t-4xl:4rem; --t-5xl:5.5rem; --t-mega:11rem;
+  --tr-tight:-0.025em; --tr-wide:0.03em; --tr-wider:0.06em; --tr-widest:0.12em;
+  --w-r:400; --w-m:500; --w-sb:600; --w-b:700;
+  --sp-1:0.25rem; --sp-2:0.5rem; --sp-3:0.75rem; --sp-4:1rem;
+  --sp-5:1.25rem; --sp-6:1.5rem; --sp-8:2rem; --sp-10:2.5rem;
+  --sp-12:3rem; --sp-16:4rem; --sp-20:5rem; --sp-24:6rem;
+  --r-sm:6px; --r-md:10px; --r-lg:16px; --r-xl:22px;
+  --sh-card:0 1px 0 rgba(45,65,99,0.04), 0 8px 32px rgba(45,65,99,0.06);
+  --sh-led:0 0 0 2px rgba(255,255,255,0.85), 0 0 10px currentColor;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--f-body); font-size: var(--t-base); line-height: 1.55;
+  color: var(--c-graphite); background: var(--c-canvas);
+  font-variant-numeric: tabular-nums; font-feature-settings: 'cv11','ss01','tnum';
+}
+.page { max-width: 1440px; margin: 0 auto; padding: var(--sp-16) var(--sp-12); }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.code-id { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-400); font-weight: var(--w-m); }
+.led { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: var(--sh-led); vertical-align: middle; margin-right: 8px; }
+.led-pulse { animation: ledpulse 1.6s ease-in-out infinite; }
+@keyframes ledpulse { 0%,100%{opacity:1;} 50%{opacity:.5;} }
+.delta { font-family: var(--f-mono); font-size: var(--t-xs); font-weight: var(--w-sb); letter-spacing: var(--tr-wide); }
+.delta-up { color: var(--s-good); } .delta-down { color: var(--s-bad); } .delta-flat { color: var(--c-n-500); }
+
+/* META STRIP */
+.meta-strip { display: flex; justify-content: space-between; align-items: center; padding: var(--sp-5) 0; border-bottom: 1px solid var(--c-hairline); margin-bottom: var(--sp-16); }
+.meta-brand { font-family: var(--f-display); font-size: var(--t-xl); color: var(--c-p-800); letter-spacing: var(--tr-tight); line-height: 1; display: flex; align-items: center; gap: var(--sp-3); }
+.meta-brand .model { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-500); font-weight: var(--w-sb); }
+.meta-period { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--c-n-600); letter-spacing: var(--tr-wide); }
+.meta-leds { display: flex; gap: var(--sp-4); font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-700); font-weight: var(--w-sb); }
+
+/* SECTION */
+.sec { position: relative; margin-bottom: var(--sp-20); }
+.sec-head { display: grid; grid-template-columns: 240px 1fr; gap: var(--sp-10); align-items: end; margin-bottom: var(--sp-10); padding-bottom: var(--sp-6); border-bottom: 1px solid var(--c-hairline); }
+.sec-num { font-family: var(--f-display); font-size: var(--t-mega); line-height: 0.85; color: var(--c-p-100); letter-spacing: var(--tr-tight); user-select: none; }
+.sec-meta { padding-bottom: var(--sp-3); }
+.sec-kicker { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-a-700); font-weight: var(--w-sb); margin-bottom: var(--sp-3); display: flex; align-items: center; gap: var(--sp-3); }
+.sec-kicker::before { content: ''; width: 24px; height: 1px; background: var(--c-a-600); }
+.sec-title { font-family: var(--f-display); font-size: var(--t-4xl); line-height: 1.02; color: var(--c-p-800); letter-spacing: var(--tr-tight); margin-bottom: var(--sp-3); }
+.sec-desc { font-size: var(--t-md); color: var(--c-n-600); line-height: 1.55; max-width: 680px; }
+
+/* SPLIT PANEL */
+.split { background: var(--c-paper); border: 1px solid var(--c-hairline); border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-card); display: grid; grid-template-columns: 240px 1fr; }
+.split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); }
+.split-readout { padding: var(--sp-6); background: var(--c-data); border-right: 1px solid var(--c-hairline); display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; gap: var(--sp-2); }
+.split-readout .lbl { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: var(--tr-wider); text-transform: uppercase; color: var(--c-n-600); font-weight: var(--w-sb); margin-bottom: var(--sp-3); display: flex; align-items: center; gap: 8px; }
+.split-readout .val { font-family: var(--f-display); font-size: var(--t-4xl); color: var(--c-p-800); line-height: 1; letter-spacing: var(--tr-tight); margin-top: var(--sp-2); }
+.split-readout .val .u { font-family: var(--f-mono); font-size: 0.3em; color: var(--c-n-500); margin-left: 0.2em; vertical-align: 0.85em; font-weight: var(--w-r); }
+.split-readout .bench { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wide); color: var(--c-n-500); }
+.split-breakdown { padding: var(--sp-6) var(--sp-6) var(--sp-5); display: flex; flex-direction: column; }
+.split-breakdown .head { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-500); font-weight: var(--w-sb); margin-bottom: var(--sp-3); padding-bottom: var(--sp-2); border-bottom: 1px solid var(--c-hairline); display: flex; justify-content: space-between; }
+.split-breakdown .row { display: grid; grid-template-columns: 1fr 60px 50px; gap: var(--sp-2); align-items: center; padding: 7px 0; font-size: var(--t-sm); }
+.split-breakdown .row + .row { border-top: 1px dashed var(--c-hairline); }
+.split-breakdown .row .name { color: var(--c-n-700); font-weight: var(--w-m); }
+.split-breakdown .row .v { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: var(--w-sb); color: var(--c-p-800); text-align: right; }
+.split-breakdown .row .bar-mini { height: 4px; background: var(--c-n-100); border-radius: 2px; overflow: hidden; position: relative; }
+.split-breakdown .row .bar-mini .fl { position: absolute; inset: 0 auto 0 0; background: var(--c-a-500); border-radius: 2px; }
+.split-breakdown .row.is-good .bar-mini .fl { background: var(--s-good); }
+.split-breakdown .row.is-warn .bar-mini .fl { background: var(--s-warn); }
+.split-breakdown .row.is-bad .bar-mini .fl { background: var(--s-bad); }
+
+/* FUNNEL */
+.funnel-panel { background: var(--c-paper); border: 1px solid var(--c-hairline); border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-card); }
+.funnel-panel-head { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-5); padding: var(--sp-5) var(--sp-6); border-bottom: 1px solid var(--c-hairline); }
+.funnel-panel-head .ttl { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-700); font-weight: var(--w-sb); }
+.funnel-panel-head .sub { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wide); color: var(--c-n-500); }
+.funnel-bars { padding: var(--sp-6) var(--sp-8); background: var(--c-data); }
+.funnel-stage { display: grid; grid-template-columns: 220px 1fr 100px 130px; gap: var(--sp-4); align-items: center; padding: var(--sp-2) 0; }
+.fs-label { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: var(--tr-wider); text-transform: uppercase; color: var(--c-n-700); font-weight: var(--w-sb); text-align: right; }
+.fs-track { height: 32px; background: var(--c-paper); border: 1px solid var(--c-hairline); border-radius: var(--r-sm); overflow: hidden; }
+.fs-fill { height: 100%; }
+.fs-fill.f-1 { background: var(--c-p-700); } .fs-fill.f-2 { background: var(--c-p-500); } .fs-fill.f-3 { background: var(--c-a-500); } .fs-fill.f-4 { background: var(--s-good); } .fs-fill.f-5 { background: var(--c-p-800); }
+.fs-count { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: var(--t-md); font-weight: var(--w-sb); color: var(--c-p-800); text-align: right; letter-spacing: -0.01em; }
+.fs-conv { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wider); text-transform: uppercase; font-weight: var(--w-sb); text-align: center; padding: 4px 10px; border-radius: var(--r-sm); background: var(--c-paper); border: 1px solid var(--c-hairline); color: var(--c-n-600); }
+.fs-conv.good { color: var(--s-good); border-color: rgba(95,165,133,0.4); background: rgba(235,247,241,0.7); }
+.fs-conv.warn { color: var(--s-warn); border-color: rgba(200,145,70,0.35); background: rgba(254,245,224,0.7); }
+.fs-conv.muted { color: var(--c-n-400); border-style: dashed; }
+
+/* PANEL */
+.panel { background: var(--c-paper); border: 1px solid var(--c-hairline); border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-card); }
+.panel-head { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-5); padding: var(--sp-5) var(--sp-6); border-bottom: 1px solid var(--c-hairline); }
+.panel-head .ttl { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-700); font-weight: var(--w-sb); }
+.panel-head .sub { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wide); color: var(--c-n-500); }
+
+/* PROSE PANEL CONTENT */
+.prose { padding: var(--sp-6) var(--sp-8); font-size: var(--t-sm); line-height: 1.7; color: var(--c-graphite); }
+.prose p + p { margin-top: var(--sp-3); }
+.prose b { color: var(--c-p-800); font-weight: var(--w-sb); }
+.prose .lead { font-family: var(--f-display); font-size: var(--t-lg); color: var(--c-p-800); line-height: 1.35; margin-bottom: var(--sp-5); }
+
+.kv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--c-hairline); border-top: 1px solid var(--c-hairline); border-bottom: 1px solid var(--c-hairline); }
+.kv { background: var(--c-paper); padding: var(--sp-5) var(--sp-6); }
+.kv .k { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-500); font-weight: var(--w-sb); margin-bottom: var(--sp-2); }
+.kv .v { font-family: var(--f-display); font-size: var(--t-2xl); color: var(--c-p-800); line-height: 1; letter-spacing: var(--tr-tight); }
+.kv .v .u { font-family: var(--f-mono); font-size: 0.32em; color: var(--c-n-500); margin-left: 0.2em; vertical-align: 0.85em; font-weight: var(--w-r); }
+.kv .sub { font-family: var(--f-mono); font-size: var(--t-xxs); color: var(--c-n-500); margin-top: var(--sp-2); letter-spacing: var(--tr-wide); }
+
+/* SEQUENCE PROTOCOL */
+.proto { padding: var(--sp-2) 0 0; background: var(--c-data); }
+.proto-step { display: grid; grid-template-columns: 60px 1.4fr auto; gap: var(--sp-5); align-items: center; padding: var(--sp-5) var(--sp-8); border-bottom: 1px solid var(--c-hairline); background: var(--c-data); }
+.proto-step:last-child { border-bottom: none; }
+.proto-step.peak { background: rgba(95,189,189,0.06); }
+.proto-mark { width: 44px; height: 44px; border: 1.5px solid var(--c-p-700); background: var(--c-paper); border-radius: var(--r-md); display: grid; place-items: center; font-family: var(--f-mono); font-size: var(--t-sm); font-weight: var(--w-sb); color: var(--c-p-800); }
+.proto-step.peak .proto-mark { border-color: var(--c-a-500); color: var(--c-a-700); }
+.proto-body .ttl-row { display: flex; align-items: baseline; gap: var(--sp-3); margin-bottom: 4px; }
+.proto-body .ttl { font-family: var(--f-mono); font-size: var(--t-sm); letter-spacing: var(--tr-wide); color: var(--c-p-800); font-weight: var(--w-sb); text-transform: uppercase; }
+.proto-body .cond { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wide); color: var(--c-n-500); }
+.proto-body .desc { font-size: var(--t-sm); color: var(--c-graphite); line-height: 1.5; margin-top: 4px; }
+.proto-stats { display: grid; grid-template-columns: repeat(3, auto); gap: var(--sp-6); }
+.proto-stats .cell { text-align: right; }
+.proto-stats .cell .l { display: block; font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wider); text-transform: uppercase; color: var(--c-n-500); font-weight: var(--w-sb); }
+.proto-stats .cell .v { display: block; font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: var(--t-md); font-weight: var(--w-sb); color: var(--c-p-800); letter-spacing: -0.01em; }
+.proto-stats .cell .v.dim { color: var(--c-n-400); font-weight: var(--w-r); }
+
+/* SPECIMEN LOG (used for competitor table) */
+.speclog { background: var(--c-paper); }
+.speclog-row { display: grid; grid-template-columns: 140px 1.4fr 1.2fr 1fr 130px; gap: var(--sp-4); align-items: center; padding: var(--sp-4) var(--sp-6); border-bottom: 1px solid var(--c-hairline); font-family: var(--f-mono); font-size: var(--t-sm); }
+.speclog-row.hd { background: var(--c-data); font-size: var(--t-xxs); text-transform: uppercase; letter-spacing: var(--tr-wider); color: var(--c-n-500); font-weight: var(--w-sb); }
+.speclog-row:last-child { border-bottom: none; }
+.speclog-row:not(.hd):hover { background: var(--c-data); }
+.spec-id { color: var(--c-n-500); }
+.spec-name { font-family: var(--f-body); color: var(--c-p-800); font-weight: var(--w-sb); letter-spacing: var(--tr-wide); }
+.spec-name .sub { display: block; font-family: var(--f-mono); font-size: var(--t-xxs); color: var(--c-n-500); font-weight: var(--w-r); margin-top: 2px; letter-spacing: var(--tr-wide); }
+.spec-pain { color: var(--c-n-700); font-family: var(--f-body); font-size: var(--t-sm); line-height: 1.4; }
+.spec-pain em { color: var(--c-p-700); font-style: italic; }
+.tag { display: inline-flex; align-items: center; gap: 5px; font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wider); text-transform: uppercase; font-weight: var(--w-sb); padding: 4px 9px; border-radius: var(--r-sm); border: 1px solid; white-space: nowrap; }
+.tag-hi { background: rgba(254,242,242,0.85); color: var(--s-bad); border-color: rgba(216,80,85,0.4); }
+.tag-mid { background: rgba(254,245,224,0.7); color: var(--s-warn); border-color: rgba(200,145,70,0.4); }
+.tag-lo { background: var(--c-n-50); color: var(--c-n-500); border-color: var(--c-n-200); }
+.tag-ready { background: rgba(235,247,241,0.85); color: var(--s-good); border-color: rgba(95,165,133,0.4); }
+.tag-block { background: rgba(254,245,224,0.7); color: var(--s-warn); border-color: rgba(200,145,70,0.4); }
+.tag-plan { background: var(--c-p-50); color: var(--c-p-600); border-color: var(--c-p-200); }
+
+/* COHORT */
+.cohort-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--sp-5); }
+.donut-svg { width: 140px; height: 140px; display: block; }
+
+/* TLDR NARRATIVE — bullet story above kv-grid */
+.tldr { background: var(--c-paper); border: 1px solid var(--c-hairline); border-radius: var(--r-xl); box-shadow: var(--sh-card); padding: var(--sp-8) var(--sp-10); margin-bottom: var(--sp-5); }
+.tldr-lead { font-family: var(--f-display); font-size: var(--t-lg); color: var(--c-p-800); line-height: 1.35; letter-spacing: var(--tr-tight); margin-bottom: var(--sp-6); padding-bottom: var(--sp-5); border-bottom: 1px solid var(--c-hairline); }
+.tldr-list { display: flex; flex-direction: column; gap: var(--sp-3); }
+.tldr-item { display: grid; grid-template-columns: 130px 1fr; gap: var(--sp-5); align-items: baseline; font-size: var(--t-sm); line-height: 1.55; color: var(--c-graphite); }
+.tldr-item .k { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-a-700); font-weight: var(--w-sb); }
+.tldr-item .v b { color: var(--c-p-800); font-weight: var(--w-sb); }
+.tldr-item.is-ask .k { color: var(--s-bad); }
+
+/* PERSONA COMPARISON — horizontal speclog with persona as rows */
+.persona-log { background: var(--c-paper); }
+.persona-log-row { display: grid; grid-template-columns: 220px 1fr 1.2fr 1fr 1.2fr; gap: var(--sp-5); align-items: stretch; padding: var(--sp-5) var(--sp-6); border-bottom: 1px solid var(--c-hairline); }
+.persona-log-row.hd { background: var(--c-data); font-family: var(--f-mono); font-size: var(--t-xxs); text-transform: uppercase; letter-spacing: var(--tr-wider); color: var(--c-n-500); font-weight: var(--w-sb); padding: var(--sp-4) var(--sp-6); align-items: center; }
+.persona-log-row:last-child { border-bottom: none; }
+.persona-cell { display: flex; flex-direction: column; gap: var(--sp-2); font-size: var(--t-sm); color: var(--c-graphite); line-height: 1.5; }
+.persona-cell .k { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wider); text-transform: uppercase; color: var(--c-n-400); font-weight: var(--w-sb); display: none; }
+.persona-id { display: flex; flex-direction: column; gap: var(--sp-2); }
+.persona-id .code { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-400); font-weight: var(--w-sb); }
+.persona-id .name { font-family: var(--f-display); font-size: var(--t-lg); color: var(--c-p-800); line-height: 1.1; letter-spacing: var(--tr-tight); }
+.persona-id .share { display: flex; align-items: baseline; gap: var(--sp-2); margin-top: var(--sp-2); }
+.persona-id .share .pct { font-family: var(--f-display); font-size: var(--t-2xl); color: var(--c-p-700); line-height: 1; }
+.persona-id .share .n { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wide); color: var(--c-n-500); }
+.persona-id .share-bar { height: 4px; background: var(--c-n-100); border-radius: 2px; overflow: hidden; margin-top: var(--sp-2); }
+.persona-id .share-bar .fl { height: 100%; background: var(--c-p-600); border-radius: 2px; }
+.persona-id.p-2 .pct { color: var(--c-a-600); } .persona-id.p-2 .share-bar .fl { background: var(--c-a-500); }
+.persona-id.p-3 .pct { color: var(--c-p-500); } .persona-id.p-3 .share-bar .fl { background: var(--c-p-400); }
+.persona-cell b { color: var(--c-p-800); font-weight: var(--w-sb); }
+.persona-cell .veto { color: var(--s-bad); font-weight: var(--w-sb); }
+
+/* INSIGHT NOTES */
+.notes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-5); }
+.notes-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.notes-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.note { background: var(--c-paper); border: 1px solid var(--c-hairline); border-radius: var(--r-lg); padding: var(--sp-6); box-shadow: var(--sh-card); display: flex; flex-direction: column; gap: var(--sp-3); position: relative; overflow: hidden; }
+.note::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: currentColor; }
+.note.n-win { color: var(--s-good); } .note.n-watch { color: var(--s-warn); } .note.n-tip { color: var(--c-a-600); } .note.n-data { color: var(--c-p-600); } .note.n-blocker { color: var(--s-bad); }
+.note-prefix { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-widest); text-transform: uppercase; font-weight: var(--w-sb); color: currentColor; }
+.note-title { font-family: var(--f-display); font-size: var(--t-md); color: var(--c-p-800); line-height: 1.3; letter-spacing: var(--tr-tight); }
+.note-body { font-size: var(--t-sm); color: var(--c-graphite); line-height: 1.55; }
+.note-body b { color: var(--c-p-800); }
+.note-meta { font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-wide); color: var(--c-n-500); padding-top: var(--sp-2); border-top: 1px dashed var(--c-hairline); }
+
+/* FOOT */
+.foot { margin-top: var(--sp-20); padding-top: var(--sp-6); border-top: 1px solid var(--c-hairline); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-4); font-family: var(--f-mono); font-size: var(--t-xxs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-500); }
+.sources { margin-top: var(--sp-10); }
+.sources h3 { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: var(--tr-widest); text-transform: uppercase; color: var(--c-n-700); font-weight: var(--w-sb); margin-bottom: var(--sp-3); }
+.sources ul { list-style: none; margin-bottom: var(--sp-6); }
+.sources li { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--c-n-600); padding: 3px 0; line-height: 1.5; }
+.sources li::before { content: '— '; color: var(--c-n-400); }
+.sources a { color: var(--c-p-700); text-decoration: none; }
+.sources a:hover { color: var(--c-a-700); }
+
+@media (max-width: 1100px) {
+  .split { grid-template-columns: 1fr; }
+  .split-readout { border-right: none; border-bottom: 1px solid var(--c-hairline); }
+  .split-grid { grid-template-columns: 1fr; }
+  .sec-head { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .sec-num { font-size: var(--t-5xl); }
+  .funnel-stage { grid-template-columns: 140px 1fr 80px 100px; gap: var(--sp-2); }
+  .cohort-grid { grid-template-columns: 1fr; }
+  .notes-grid, .notes-grid.cols-2, .notes-grid.cols-3 { grid-template-columns: 1fr 1fr; }
+  .speclog-row { grid-template-columns: 1fr; gap: var(--sp-1); }
+  .speclog-row.hd { display: none; }
+  .proto-step { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .kv-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- META STRIP -->
+  <div class="meta-strip">
+    <div>
+      <div class="meta-brand">
+        Vivica · Project Intake Report
+        <span class="model">IR-01 · 2026-05-11</span>
+      </div>
+      <div class="meta-period" style="margin-top: 4px;">Discovery phase deliverable · prepared for Petr (Sally) · US Clinical LIMS</div>
+    </div>
+    <div class="meta-leds">
+      <span><span class="led" style="color: var(--led-green);"></span>Discovery complete</span>
+      <span><span class="led led-pulse" style="color: var(--led-amber);"></span>Decisions pending</span>
+      <span><span class="led" style="color: var(--led-blue);"></span>T-11W to ADLM</span>
+    </div>
+  </div>
+
+  <!-- SECTION 01 — TL;DR -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Executive Summary · TL;DR</div>
+        <h2 class="sec-title">Что приняли,<br>что сделали, что просим</h2>
+        <p class="sec-desc">Vivica.us — cloud-LIMS для клинических лабораторий США. Discovery-фаза закрыта: построены ICP, конкурентная карта, plan-набор и стартовая воронка контактов. Активная фаза ждёт решений Sally.</p>
+      </div>
+    </div>
+
+    <div class="tldr">
+      <div class="tldr-lead">
+        Vivica.us — cloud-LIMS для клинических лабораторий США. Discovery-фаза закрыта: построены ICP, конкурентная карта, набор кампаний и стартовая воронка контактов. Активная фаза ждёт трёх решений Sally на этой неделе.
+      </div>
+      <div class="tldr-list">
+        <div class="tldr-item">
+          <span class="k">Клиент</span>
+          <span class="v">Vivica — один сильный якорь (<b>Acure Reference Lab, NJ, $100M+</b>, полный AP-стек, KOL-публикация), слабая количественная история. Hospital-сегмент не их — POL, PSC, Reference.</span>
+        </div>
+        <div class="tldr-item">
+          <span class="k">Рынок</span>
+          <span class="v">US LIMS <b>$735M → $1.30B к 2030 (CAGR ~10%)</b>. Из ~300K CLIA-лабораторий реальный SOM — <b>15-20K</b>: 72% POL работают по waiver, hospital вне scope.</span>
+        </div>
+        <div class="tldr-item">
+          <span class="k">Собрали</span>
+          <span class="v"><b>3 ICP-персоны · 8 конкурентов · 24 battle cards · 4 outreach-плана.</b> Архитектурное решение: первичный источник — CMS POS file, не Apollo (полное покрытие рынка vs Apollo gap 30-60% для малых лабов).</span>
+        </div>
+        <div class="tldr-item">
+          <span class="k">Воронка</span>
+          <span class="v">Из <b>1,849 reference-лабораторий → 344 верифицированных контакта</b> на 270 компаниях. Готовы к загрузке в SmartLead. Apollo «verified» дополнительно прошёл SMTP double-verify (отсеяно 14.4% bounce).</span>
+        </div>
+        <div class="tldr-item is-ask">
+          <span class="k">От Sally</span>
+          <span class="v">Три решения на этой неделе: <b>(1)</b> источник для 738 dark labs (LinkedIn Sales Nav vs Clay), <b>(2)</b> синхронизация с Chris по open questions Acure-кейса, <b>(3)</b> утверждение пилотной последовательности.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="kv-grid">
+      <div class="kv">
+        <div class="k">US LIMS Market 2030</div>
+        <div class="v">$1.30<span class="u">B</span></div>
+        <div class="sub">CAGR ~10% · cloud growth premium</div>
+      </div>
+      <div class="kv">
+        <div class="k">CLIA Universe Identified</div>
+        <div class="v">9,193</div>
+        <div class="sub">Compliance + Accreditation labs (TAM)</div>
+      </div>
+      <div class="kv">
+        <div class="k">Reference Segment Targeted</div>
+        <div class="v">1,849</div>
+        <div class="sub">Priority bucket · highest contract value</div>
+      </div>
+      <div class="kv">
+        <div class="k">Verified Contacts Ready</div>
+        <div class="v">344</div>
+        <div class="sub">270 companies · готовы к SmartLead</div>
+      </div>
+      <div class="kv">
+        <div class="k">Battle Cards Built</div>
+        <div class="v">24</div>
+        <div class="sub">8 competitors × 3 ICP personas</div>
+      </div>
+      <div class="kv">
+        <div class="k">Outreach Plans Drafted</div>
+        <div class="v">4</div>
+        <div class="sub">CLIA Fresh · Russian NJ · LabWare · ADLM</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02 — CLIENT -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Client · Vivica.us</div>
+        <h2 class="sec-title">Cloud-LIMS<br>с одним сильным якорем</h2>
+        <p class="sec-desc">Vivica — комбинированная LIS + LIMS платформа для клинических лабораторий США. Закрывает POL, PSC и Reference-сегменты. Hospital-лабы не их рынок (Epic/Cerner lock-in). Один действующий клиент уровня enterprise.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ttl">Положение на старте проекта</div>
+        <div class="sub">CL-01 · 2026-05-11</div>
+      </div>
+      <div class="prose">
+        <p class="lead">Acure Reference Lab (NJ, выручка $100M+) — единственный действующий клиент. Vivica работает у них на полном стеке, включая anatomic pathology, есть совместная публикация с KOL.</p>
+        <p><b>Что это даёт outreach.</b> Слабая история по количеству, сильнейшая по качеству. Tone — не «лидер рынка», а партнёр-инсайдер с эксклюзивной экспертизой по reference-сегменту. Сильные стороны для писем: цена входа, скорость деплоя, кастомизация под клиента, полный AP-стек. Слабая сторона: отсутствие brand recognition — первый контакт всегда холодный по полной.</p>
+        <p><b>Целевые сегменты лабораторий:</b> POL (physician office labs) · PSC (patient service centers / сети забора крови) · Reference Labs (принимают сложные тесты от других лабораторий). Hospital-лаборатории — out of scope.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — MARKET -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Market · US LIMS</div>
+        <h2 class="sec-title">$735M рынок,<br>SOM 15-20K лабов</h2>
+        <p class="sec-desc">CAGR 10% — в 3× быстрее общей лабораторной информатики. Из 300K CLIA-лабораторий реальный адресуемый рынок на порядок меньше: 72% POL-лабов работают по waiver и LIMS им не нужен.</p>
+      </div>
+    </div>
+
+    <div class="funnel-panel" style="margin-bottom: var(--sp-6);">
+      <div class="funnel-panel-head">
+        <div class="ttl">TAM → SAM → SOM funnel</div>
+        <div class="sub">MK-01 · CMS CLIA Q1 2026 + Grand View / GlobeNewswire</div>
+      </div>
+      <div class="funnel-bars">
+        <div class="funnel-stage">
+          <div class="fs-label">L1 · CLIA Universe</div>
+          <div class="fs-track"><div class="fs-fill f-1" style="width: 100%;"></div></div>
+          <div class="fs-count">~300,000</div>
+          <div class="fs-conv muted">baseline · CMS registry</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L2 · TAM · Compliance + Accreditation</div>
+          <div class="fs-track"><div class="fs-fill f-2" style="width: 3.1%;"></div></div>
+          <div class="fs-count">9,193</div>
+          <div class="fs-conv warn">3.1%</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L3 · SAM · POL+PSC+Reference</div>
+          <div class="fs-track"><div class="fs-fill f-3" style="width: 8.3%;"></div></div>
+          <div class="fs-count">~25,000</div>
+          <div class="fs-conv good">remove waiver-only, hospital</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L4 · SOM · 5-year addressable</div>
+          <div class="fs-track"><div class="fs-fill f-4" style="width: 6.6%;"></div></div>
+          <div class="fs-count">15-20K</div>
+          <div class="fs-conv good">1-3% achievable share</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L5 · Reference priority bucket</div>
+          <div class="fs-track"><div class="fs-fill f-5" style="width: 0.6%;"></div></div>
+          <div class="fs-count">1,849</div>
+          <div class="fs-conv good">our wave 1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-grid">
+      <div class="split">
+        <div class="split-readout">
+          <div class="lbl"><span class="led" style="color: var(--c-a-500);"></span>Market Size · MK-02</div>
+          <div class="val">$735<span class="u">M</span></div>
+          <div class="bench">2024 → $1.30B by 2030 · CAGR ~10%</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>Comparable segments CAGR</span><span class="code-id">MK-02-bd</span></div>
+          <div class="row is-good">
+            <span class="name">US LIMS (наш)</span>
+            <span class="bar-mini"><span class="fl" style="width: 100%;"></span></span>
+            <span class="v">10.0%</span>
+          </div>
+          <div class="row">
+            <span class="name">Global Cloud LIMS</span>
+            <span class="bar-mini"><span class="fl" style="width: 81%;"></span></span>
+            <span class="v">8.1%</span>
+          </div>
+          <div class="row is-warn">
+            <span class="name">US Lab Informatics (вся)</span>
+            <span class="bar-mini"><span class="fl" style="width: 36%;"></span></span>
+            <span class="v">3.6%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="split-readout">
+          <div class="lbl"><span class="led" style="color: var(--s-warn);"></span>Lab Tech Vacancies · MK-03</div>
+          <div class="val">24<span class="u">K/yr</span></div>
+          <div class="bench">BLS · vacancy rate 7-11% · до 25% регионально</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>Structural tailwinds</span><span class="code-id">MK-03-bd</span></div>
+          <div class="row is-good">
+            <span class="name">Clinisys M&A boli (5 brands)</span>
+            <span class="bar-mini"><span class="fl" style="width: 90%;"></span></span>
+            <span class="v">24%</span>
+          </div>
+          <div class="row is-good">
+            <span class="name">Кадровый кризис</span>
+            <span class="bar-mini"><span class="fl" style="width: 78%;"></span></span>
+            <span class="v">11%</span>
+          </div>
+          <div class="row">
+            <span class="name">FDA LDT остаток (2024 invest)</span>
+            <span class="bar-mini"><span class="fl" style="width: 55%;"></span></span>
+            <span class="v">res</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes-grid cols-3" style="margin-top: var(--sp-6);">
+      <div class="note n-win">
+        <div class="note-prefix">[FACTOR 1]</div>
+        <div class="note-title">Clinisys/Sunquest уязвим</div>
+        <div class="note-body">~24% мирового рынка, собран слиянием 5 компаний. G2: <i>"very basic, unfriendly interface, required the most training of all LIS solutions."</i> Активно ищущая выход аудитория.</div>
+        <div class="note-meta">источник: Digital Health · G2</div>
+      </div>
+      <div class="note n-tip">
+        <div class="note-prefix">[FACTOR 2]</div>
+        <div class="note-title">Кадровый кризис как угол продаж</div>
+        <div class="note-body">24K вакансий/год. LIMS, убирающий ручные шаги, покупают как «способ работать тем же штатом» — из бюджета HR/operations, не IT. Другой бюджетный карман.</div>
+        <div class="note-meta">источник: BLS · Siemens/Harris Poll</div>
+      </div>
+      <div class="note n-data">
+        <div class="note-prefix">[FACTOR 3]</div>
+        <div class="note-title">FDA LDT shock leftover</div>
+        <div class="note-body">Правило отменено судом март 2025, закрыто сентябрь 2025. Но лабы весь 2024 вкладывались в audit-trail / quality-system апгрейды. Эти инвестиции ищут окупаемости.</div>
+        <div class="note-meta">источник: AHA · Morgan Lewis</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — COMPETITORS -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Competitive Landscape · CL</div>
+        <h2 class="sec-title">Восемь вендоров,<br>три приоритета conquest</h2>
+        <p class="sec-desc">Карта собрана из публичных отзывов G2/Capterra, M&A-движений и pricing-сигналов. 24 battle cards (8 × 3 персоны) готовы к встраиванию в email-последовательности.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ttl">Competitor matrix</div>
+        <div class="sub">CL-01 · 8 vendors · 24 battle cards</div>
+      </div>
+      <div class="speclog">
+        <div class="speclog-row hd">
+          <span>Vendor</span>
+          <span>Segment · Model</span>
+          <span>Vulnerability</span>
+          <span>Our angle</span>
+          <span>Priority</span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">VND-01</span>
+          <span class="spec-name">Clinisys / Sunquest<span class="sub">~24% global share</span></span>
+          <span class="spec-pain">UX, training cost, intergration debt после слияния 5 компаний</span>
+          <span class="spec-pain"><em>"Cloud + миграция без боли"</em></span>
+          <span><span class="tag tag-hi">HIGH</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">VND-02</span>
+          <span class="spec-name">LabWare<span class="sub">Enterprise · on-prem</span></span>
+          <span class="spec-pain">TCO ($50K+/$200K), длительность внедрения, миграционная боль</span>
+          <span class="spec-pain">Conquest-план готов · pain quotes из Capterra</span>
+          <span><span class="tag tag-hi">HIGH</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">VND-03</span>
+          <span class="spec-name">LigoLab<span class="sub">Reference labs · cloud</span></span>
+          <span class="spec-pain">Прямой конкурент за наш приоритетный сегмент</span>
+          <span class="spec-pain">AP-стек + Acure-positioning</span>
+          <span><span class="tag tag-hi">HIGH</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">VND-04</span>
+          <span class="spec-name">LabVantage<span class="sub">Mid-market · hybrid</span></span>
+          <span class="spec-pain">Сложность имплементации, корпоративный UX</span>
+          <span class="spec-pain">Speed to value</span>
+          <span><span class="tag tag-mid">MID</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">VND-05</span>
+          <span class="spec-name">CloudLIMS<span class="sub">SMB · cloud</span></span>
+          <span class="spec-pain">Поверхностный feature set ($171/user/mo)</span>
+          <span class="spec-pain">AP + reference depth</span>
+          <span><span class="tag tag-mid">MID</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">VND-06</span>
+          <span class="spec-name">QBench<span class="sub">SMB · cloud</span></span>
+          <span class="spec-pain">Современный UI ($375/user/mo), узкий feature set</span>
+          <span class="spec-pain">Clinical depth vs research focus</span>
+          <span><span class="tag tag-lo">LOW</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">VND-07</span>
+          <span class="spec-name">Creliohealth<span class="sub">Mid-market · cloud</span></span>
+          <span class="spec-pain">Индийское происхождение, ранняя US expansion</span>
+          <span class="spec-pain">US-резидентность данных + Acure</span>
+          <span><span class="tag tag-lo">LOW</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">VND-08</span>
+          <span class="spec-name">LIMS-net (JTO)<span class="sub">SMB · cloud · FR origin</span></span>
+          <span class="spec-pain">Слабое US-присутствие, евроцентричность</span>
+          <span class="spec-pain">US-native compliance, NJ russian segment</span>
+          <span><span class="tag tag-lo">LOW</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes-grid cols-2" style="margin-top: var(--sp-6);">
+      <div class="note n-win">
+        <div class="note-prefix">[KEY ANGLE]</div>
+        <div class="note-title">Migration без rip-and-replace</div>
+        <div class="note-body">Самый сильный угол — не «лучший cloud-LIMS вообще», а <b>Clinisys/LabWare migration без рип-энд-реплейс</b>. Узкая позиция, уязвимый конкурент, измеримая боль из публичных отзывов.</div>
+        <div class="note-meta">SP-01 · battle-cards × LabWare/Clinisys</div>
+      </div>
+      <div class="note n-watch">
+        <div class="note-prefix">[WATCH]</div>
+        <div class="note-title">LigoLab — прямой конкурент</div>
+        <div class="note-body">Единственный конкурент, идущий ровно за тем же reference-сегментом. Не conquest-target (их клиенты счастливы), а ориентир для позиционирования и pricing.</div>
+        <div class="note-meta">SP-02 · vendor watch</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — ICP -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">ICP Personas · IC</div>
+        <h2 class="sec-title">Три персоны,<br>три языка, разные каналы</h2>
+        <p class="sec-desc">Зафиксировано на kickoff-колле, мирорится с Vivica ICP Google Sheet. Каждая персона проработана: цели, боли, возражения, язык. Распределение по сегментам определяет multi-touch стратегию.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ttl">Three personas · comparison</div>
+        <div class="sub">IC-01 · captured from Vivica ICP Sheet · n=1,097 contacts found</div>
+      </div>
+      <div class="persona-log">
+        <div class="persona-log-row hd">
+          <span>Persona</span>
+          <span>Role &amp; authority</span>
+          <span>Background</span>
+          <span>Channel</span>
+          <span>What they buy</span>
+        </div>
+
+        <div class="persona-log-row">
+          <div class="persona-id">
+            <div class="code">IC-01</div>
+            <div class="name">CEO / Owner</div>
+            <div class="share"><span class="pct">49%</span><span class="n">n=535 / 1,097</span></div>
+            <div class="share-bar"><div class="fl" style="width: 49%;"></div></div>
+          </div>
+          <div class="persona-cell">
+            <b>Primary buyer.</b> Контролирует бюджет, подписывает контракт. POL/PSC: 1–50 сотрудников. Reference: 50–500.
+          </div>
+          <div class="persona-cell">
+            Часто не из лабораторного background — entrepreneur, MD-владелец практики или executive multi-site операции. 5+ лет в лабе.
+          </div>
+          <div class="persona-cell">
+            LinkedIn DM, cold email, occasional industry conferences.
+          </div>
+          <div class="persona-cell">
+            <b>Рост, операционная свобода, защита маржи.</b> LIMS — инструмент, не категория софта.
+          </div>
+        </div>
+
+        <div class="persona-log-row">
+          <div class="persona-id p-2">
+            <div class="code">IC-02</div>
+            <div class="name">Lab Director</div>
+            <div class="share"><span class="pct">27%</span><span class="n">n=292 / 1,097</span></div>
+            <div class="share-bar"><div class="fl" style="width: 27%;"></div></div>
+          </div>
+          <div class="persona-cell">
+            <b>Operational head.</b> Day-to-day owner всего технологического стека. Подчиняется CEO или Medical Director.
+          </div>
+          <div class="persona-cell">
+            MLS / MT (Medical Lab Scientist / Technologist), 10–20 лет на bench, выросший внутри. Технически грамотный.
+          </div>
+          <div class="persona-cell">
+            Slack/Teams команды, lab huddle, user-conferences LIMS-вендоров, peer-комьюнити.
+          </div>
+          <div class="persona-cell">
+            <b>Убирание ручной работы,</b> снижение ошибок, удобство команде. <span class="veto">Скептик к change management.</span>
+          </div>
+        </div>
+
+        <div class="persona-log-row">
+          <div class="persona-id p-3">
+            <div class="code">IC-03</div>
+            <div class="name">Medical Director</div>
+            <div class="share"><span class="pct">25%</span><span class="n">n=270 / 1,097</span></div>
+            <div class="share-bar"><div class="fl" style="width: 25%;"></div></div>
+          </div>
+          <div class="persona-cell">
+            Клинический руководитель. <span class="veto">Legal responsible person для CMS/state.</span> Veto-holder на всё клинически значимое.
+          </div>
+          <div class="persona-cell">
+            MD/DO, board-certified Clinical / Anatomic Pathology. 10+ лет, иногда консультирует несколько лабораторий.
+          </div>
+          <div class="persona-cell">
+            EHR, microscopy slides, pathology committee meetings, ASCP/CAP events.
+          </div>
+          <div class="persona-cell">
+            <b>Compliance, audit-readiness, клиническая точность.</b> Меньше в software selection, но имеет veto.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top: var(--sp-6);">
+      <div class="panel-head">
+        <div class="ttl">Persona priority by segment</div>
+        <div class="sub">IC-04 · roles per segment</div>
+      </div>
+      <div class="speclog">
+        <div class="speclog-row hd">
+          <span>Segment</span>
+          <span>Primary buyer</span>
+          <span>Secondary</span>
+          <span>Veto holder</span>
+          <span>Strategy</span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">SEG-A</span>
+          <span class="spec-name">POL / SMB<span class="sub">1-50 employees</span></span>
+          <span class="spec-pain">CEO / Owner</span>
+          <span class="spec-pain">Lab Director</span>
+          <span class="spec-pain">—</span>
+          <span><span class="tag tag-plan">SOLO TOUCH</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">SEG-B</span>
+          <span class="spec-name">PSC<span class="sub">sample collection chains</span></span>
+          <span class="spec-pain">CEO / Owner</span>
+          <span class="spec-pain">Lab Director</span>
+          <span class="spec-pain">—</span>
+          <span><span class="tag tag-plan">SOLO TOUCH</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">SEG-C</span>
+          <span class="spec-name">Reference Labs<span class="sub">50-500 · $30-150K чек</span></span>
+          <span class="spec-pain">CEO / Owner</span>
+          <span class="spec-pain">Lab Director</span>
+          <span class="spec-pain">Medical Director</span>
+          <span><span class="tag tag-ready">MULTI TOUCH</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 06 — CAMPAIGNS -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Segmentation · SG</div>
+        <h2 class="sec-title">Четыре кампании,<br>последовательный запуск</h2>
+        <p class="sec-desc">Подготовлено 4 outreach-плана с обоснованием, audience, sequencing, KPI. Reference-сегмент идёт первым — высокий чек, узкая аудитория, у нас есть Acure-якорь.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="ttl">Campaign sequencing</div>
+        <div class="sub">SG-01 · 4 plans · ADLM as календарный якорь</div>
+      </div>
+      <div class="proto">
+
+        <div class="proto-step peak">
+          <div class="proto-mark">01</div>
+          <div class="proto-body">
+            <div class="ttl-row">
+              <span class="ttl">Reference Labs · CLIA Fresh</span>
+              <span class="cond">priority bucket · plan ready</span>
+            </div>
+            <div class="desc">1,849 reference-лаб из CLIA Q1 2026. Самый высокий чек, у нас Acure-кейс, multi-touch strategy с 3 персонами. <b>Запуск — сразу после утверждения пилотной последовательности.</b></div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Universe</span><span class="v">1,849</span></div>
+            <div class="cell"><span class="l">Ready</span><span class="v">344</span></div>
+            <div class="cell"><span class="l">Status</span><span class="v" style="color: var(--s-good);">GO</span></div>
+          </div>
+        </div>
+
+        <div class="proto-step">
+          <div class="proto-mark">02</div>
+          <div class="proto-body">
+            <div class="ttl-row">
+              <span class="ttl">Russian-Speaking · NJ/NY/PA</span>
+              <span class="cond">native-language · Andrew leads</span>
+            </div>
+            <div class="desc">190 русскоговорящих кандидатов с доменами, отфильтрованных через clia-source skill. Параллельный поток, отдельная execution через Andrew. Не сливается с CLIA-fresh.</div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Universe</span><span class="v">190</span></div>
+            <div class="cell"><span class="l">With domains</span><span class="v">190</span></div>
+            <div class="cell"><span class="l">Status</span><span class="v" style="color: var(--s-good);">GO</span></div>
+          </div>
+        </div>
+
+        <div class="proto-step">
+          <div class="proto-mark">03</div>
+          <div class="proto-body">
+            <div class="ttl-row">
+              <span class="ttl">LabWare Conquest</span>
+              <span class="cond">competitor-specific · pain quotes</span>
+            </div>
+            <div class="desc">Точечная conquest-кампания с pain-цитатами из Capterra-отзывов LabWare. Аналог CRM-проекта Sally: «определили вендора → собрали competitor-specific сообщения». Нужен прогон lims-detector.</div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Universe</span><span class="v">TBD</span></div>
+            <div class="cell"><span class="l">Detector</span><span class="v" style="color: var(--s-warn);">PEND</span></div>
+            <div class="cell"><span class="l">Status</span><span class="v" style="color: var(--s-warn);">WAIT</span></div>
+          </div>
+        </div>
+
+        <div class="proto-step">
+          <div class="proto-mark">04</div>
+          <div class="proto-body">
+            <div class="ttl-row">
+              <span class="ttl">ADLM 2026 · Pre-conference</span>
+              <span class="cond">time-bound · activates mid-June</span>
+            </div>
+            <div class="desc">Pre/during/post-conference workflow, ~T-6 недель до 26 июля. ADLM = главный календарный якорь проекта, ~15K участников, 850+ экспонентов. Нужен confirmed-attendee list.</div>
+          </div>
+          <div class="proto-stats">
+            <div class="cell"><span class="l">Window</span><span class="v">11 wks</span></div>
+            <div class="cell"><span class="l">Attendees</span><span class="v" style="color: var(--s-warn);">TBD</span></div>
+            <div class="cell"><span class="l">Status</span><span class="v" style="color: var(--s-warn);">WAIT</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 07 — LEAD FUNNEL -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">07</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Lead Funnel · FN</div>
+        <h2 class="sec-title">От CMS до SmartLead<br>в шесть стадий</h2>
+        <p class="sec-desc">Архитектурное решение: источник — не Apollo, а CMS POS file. Apollo обогащает людьми, не служит точкой входа. Это даёт полный охват рынка vs Apollo gap в 30-60% для малых лабов.</p>
+      </div>
+    </div>
+
+    <div class="funnel-panel">
+      <div class="funnel-panel-head">
+        <div class="ttl">Reference-1849 enrichment run</div>
+        <div class="sub">FN-01 · 2026-05-11 · CMS → Clay/Exa → Apollo → FindyMail → SmartLead-ready</div>
+      </div>
+      <div class="funnel-bars">
+        <div class="funnel-stage">
+          <div class="fs-label">L1 · CLIA Reference</div>
+          <div class="fs-track"><div class="fs-fill f-1" style="width: 100%;"></div></div>
+          <div class="fs-count">1,849</div>
+          <div class="fs-conv muted">baseline</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L2 · Domain enrichment</div>
+          <div class="fs-track"><div class="fs-fill f-2" style="width: 97.8%;"></div></div>
+          <div class="fs-count">1,809</div>
+          <div class="fs-conv good">97.8%</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L3 · Apollo people match</div>
+          <div class="fs-track"><div class="fs-fill f-3" style="width: 52.0%;"></div></div>
+          <div class="fs-count">966</div>
+          <div class="fs-conv warn">52.0%</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L4 · Email hydrated (Reveal)</div>
+          <div class="fs-track"><div class="fs-fill f-4" style="width: 55.8%;"></div></div>
+          <div class="fs-count">1,033</div>
+          <div class="fs-conv good">82.5% of 1252</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L5 · SMTP double-verify</div>
+          <div class="fs-track"><div class="fs-fill f-5" style="width: 47.5%;"></div></div>
+          <div class="fs-count">878</div>
+          <div class="fs-conv warn">85% pass · 14.4% bounce filtered</div>
+        </div>
+        <div class="funnel-stage">
+          <div class="fs-label">L6 · Dedup → SmartLead</div>
+          <div class="fs-track"><div class="fs-fill f-4" style="width: 18.6%;"></div></div>
+          <div class="fs-count">344</div>
+          <div class="fs-conv good">270 unique companies</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes-grid cols-3" style="margin-top: var(--sp-6);">
+      <div class="note n-data">
+        <div class="note-prefix">[LEARN 1]</div>
+        <div class="note-title">CMS-first архитектура</div>
+        <div class="note-body">Apollo пропускает 30-60% малых лабораторий — нет LinkedIn-присутствия. <b>CMS даёт полный список рынка.</b> Уникальное преимущество vs стандартного outbound-агентства.</div>
+        <div class="note-meta">design decision · CMS POS Q1 2026</div>
+      </div>
+      <div class="note n-watch">
+        <div class="note-prefix">[LEARN 2]</div>
+        <div class="note-title">Apollo "verified" — не доверять</div>
+        <div class="note-body">При SMTP-double-check через FindyMail <b>14.4%</b> Apollo-«verified» оказались bounce. Принято: всегда верифицируем дважды до SmartLead. Сохраняет sender reputation.</div>
+        <div class="note-meta">decisions-log · 2026-05-11</div>
+      </div>
+      <div class="note n-tip">
+        <div class="note-prefix">[LEARN 3]</div>
+        <div class="note-title">Reveal by id, never name fallback</div>
+        <div class="note-body">FindyMail name-search на Apollo-промахах = <b>0.5% hit rate</b>. Apollo Reveal by id даёт 82.5%. Pattern зафиксирован: people search всегда сохраняет id, fallback на name отключён.</div>
+        <div class="note-meta">decisions-log · 2026-05-11</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 08 — STRATEGIC METRICS -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">08</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Strategic Metrics · SM</div>
+        <h2 class="sec-title">Числа, влияющие<br>на стратегию запуска</h2>
+        <p class="sec-desc">Не операционные KPI кампаний (это в weekly), а структурные показатели рынка и воронки. Каждая цифра ведёт к конкретному решению — источник, sequence design, scope.</p>
+      </div>
+    </div>
+
+    <div class="cohort-grid">
+      <div class="split" style="grid-template-columns: 200px 1fr;">
+        <div class="split-readout" style="padding: var(--sp-5);">
+          <div class="lbl">Reachability</div>
+          <svg class="donut-svg" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-n-100)" stroke-width="16"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-a-500)" stroke-width="16"
+              stroke-dasharray="51.4 351.86" transform="rotate(-90 70 70)"/>
+          </svg>
+          <div class="bench">14.6% reference-сегмента<br>270 / 1849 enriched</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>Coverage breakdown</span><span class="code-id">SM-01</span></div>
+          <div class="row is-good"><span class="name">С доменами</span><span class="bar-mini"><span class="fl" style="width: 98%;"></span></span><span class="v">97.8%</span></div>
+          <div class="row is-warn"><span class="name">С контактами (Apollo)</span><span class="bar-mini"><span class="fl" style="width: 15%;"></span></span><span class="v">14.6%</span></div>
+          <div class="row is-bad"><span class="name">Dark labs (40% сегмента)</span><span class="bar-mini"><span class="fl" style="width: 40%;"></span></span><span class="v">738</span></div>
+        </div>
+      </div>
+
+      <div class="split" style="grid-template-columns: 200px 1fr;">
+        <div class="split-readout" style="padding: var(--sp-5);">
+          <div class="lbl">Multi-persona Coverage</div>
+          <svg class="donut-svg" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-n-100)" stroke-width="16"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-700)" stroke-width="16"
+              stroke-dasharray="267.4 351.86" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-a-500)" stroke-width="16"
+              stroke-dasharray="73.9 351.86" stroke-dashoffset="-267.4" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-400)" stroke-width="16"
+              stroke-dasharray="11.6 351.86" stroke-dashoffset="-341.3" transform="rotate(-90 70 70)"/>
+          </svg>
+          <div class="bench">только 3.3% — full set<br>270 enriched companies</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>Contacts per company</span><span class="code-id">SM-02</span></div>
+          <div class="row is-warn"><span class="name">1 контакт</span><span class="bar-mini"><span class="fl" style="width: 76%;"></span></span><span class="v">76%</span></div>
+          <div class="row"><span class="name">2 контакта</span><span class="bar-mini"><span class="fl" style="width: 21%;"></span></span><span class="v">21%</span></div>
+          <div class="row is-good"><span class="name">3 персоны (full)</span><span class="bar-mini"><span class="fl" style="width: 3.3%; background: var(--c-p-600);"></span></span><span class="v">3.3%</span></div>
+        </div>
+      </div>
+
+      <div class="split" style="grid-template-columns: 200px 1fr;">
+        <div class="split-readout" style="padding: var(--sp-5);">
+          <div class="lbl">Persona distribution</div>
+          <svg class="donut-svg" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-n-100)" stroke-width="16"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-700)" stroke-width="16"
+              stroke-dasharray="172.4 351.86" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-a-600)" stroke-width="16"
+              stroke-dasharray="94.9 351.86" stroke-dashoffset="-172.4" transform="rotate(-90 70 70)"/>
+            <circle cx="70" cy="70" r="56" fill="none" stroke="var(--c-p-400)" stroke-width="16"
+              stroke-dasharray="86.7 351.86" stroke-dashoffset="-267.3" transform="rotate(-90 70 70)"/>
+          </svg>
+          <div class="bench">CEO dominates<br>n=1,097 found</div>
+        </div>
+        <div class="split-breakdown">
+          <div class="head"><span>Roles found</span><span class="code-id">SM-03</span></div>
+          <div class="row is-good"><span class="name">CEO / Owner</span><span class="bar-mini"><span class="fl" style="width: 49%;"></span></span><span class="v">535</span></div>
+          <div class="row"><span class="name">Lab Director</span><span class="bar-mini"><span class="fl" style="width: 27%; background: var(--c-a-500);"></span></span><span class="v">292</span></div>
+          <div class="row is-warn"><span class="name">Medical Director</span><span class="bar-mini"><span class="fl" style="width: 25%; background: var(--c-p-400);"></span></span><span class="v">270</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes-grid cols-3" style="margin-top: var(--sp-6);">
+      <div class="note n-data">
+        <div class="note-prefix">[IMPLICATION 1]</div>
+        <div class="note-title">Нужен второй источник</div>
+        <div class="note-body">14.6% покрытие через Apollo = работаем только с верхним «слоем» рынка. Чтобы покрыть остальные 738 dark labs — LinkedIn Sales Nav или Clay waterfall. <b>Это решение Sally на этой неделе.</b></div>
+        <div class="note-meta">drives decision · DEC-01</div>
+      </div>
+      <div class="note n-data">
+        <div class="note-prefix">[IMPLICATION 2]</div>
+        <div class="note-title">Multi-touch только для 3%</div>
+        <div class="note-body">Sequence на 3 ICP реалистична для ~3% reference-компаний. Для остальных — 1-2-touch с CEO/Owner как primary. <b>Дизайн sequence: адаптивные ветки по contact count.</b></div>
+        <div class="note-meta">drives sequence design</div>
+      </div>
+      <div class="note n-data">
+        <div class="note-prefix">[IMPLICATION 3]</div>
+        <div class="note-title">CEO — основной канал</div>
+        <div class="note-body">CEO/Owner — 49% всех найденных контактов, наиболее достижимая роль через Apollo. Lab Director и Medical Director недопредставлены — для них нужен LinkedIn-канал или упоминание в письме CEO.</div>
+        <div class="note-meta">drives channel mix</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 09 — READY + DECISIONS -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">09</div>
+      <div class="sec-meta">
+        <div class="sec-kicker">Decisions · DEC</div>
+        <h2 class="sec-title">Что готово, что блокирует,<br>что нужно от Sally</h2>
+        <p class="sec-desc">Discovery закрыто. Активная фаза ждёт трёх решений Sally на этой неделе и трёх — на следующие 2 недели. Vivica-side blockers — на Sally Account.</p>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-bottom: var(--sp-6);">
+      <div class="panel-head">
+        <div class="ttl">Ready right now · готово к запуску</div>
+        <div class="sub">RDY-01 · checked 2026-05-11</div>
+      </div>
+      <div class="speclog">
+        <div class="speclog-row hd">
+          <span>Asset</span>
+          <span>What</span>
+          <span>Where</span>
+          <span>Volume</span>
+          <span>Status</span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">ASSET-01</span>
+          <span class="spec-name">Knowledge base<span class="sub">Obsidian wiki</span></span>
+          <span class="spec-pain">ICP × competitor × playbook</span>
+          <span class="spec-pain">47 файлов · 24 battle cards</span>
+          <span><span class="tag tag-ready">READY</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">ASSET-02</span>
+          <span class="spec-name">Verified contacts<span class="sub">Reference segment</span></span>
+          <span class="spec-pain">final_contacts_verified.csv</span>
+          <span class="spec-pain">344 contacts · 270 companies</span>
+          <span><span class="tag tag-ready">READY</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">ASSET-03</span>
+          <span class="spec-name">Russian segment<span class="sub">NJ/NY/PA candidates</span></span>
+          <span class="spec-pain">russian_candidates_nj.csv</span>
+          <span class="spec-pain">190 companies with domains</span>
+          <span><span class="tag tag-ready">READY</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">ASSET-04</span>
+          <span class="spec-name">Pipeline infra<span class="sub">gtm-mcp + MCPs</span></span>
+          <span class="spec-pain">Apollo · FindyMail · Clay · Exa · SmartLead</span>
+          <span class="spec-pain">all connected</span>
+          <span><span class="tag tag-ready">READY</span></span>
+        </div>
+        <div class="speclog-row">
+          <span class="spec-id">ASSET-05</span>
+          <span class="spec-name">Outreach plans<span class="sub">4 campaigns drafted</span></span>
+          <span class="spec-pain">CLIA Fresh, Russian NJ ready; LabWare/ADLM pending inputs</span>
+          <span class="spec-pain">2 of 4 unblocked</span>
+          <span><span class="tag tag-block">2/4 BLOCKED</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes-grid">
+      <div class="note n-blocker">
+        <div class="note-prefix">[DEC-01 · THIS WEEK]</div>
+        <div class="note-title">Источник для второй очереди</div>
+        <div class="note-body"><b>738 dark labs</b> без контактов через Apollo. Варианты: <b>LinkedIn Sales Navigator</b> vs <b>Clay waterfall</b> с company_linkedin_url. Решение влияет на охват и сроки LabWare-плана.</div>
+        <div class="note-meta">owner: Petr · trigger: SM-01</div>
+      </div>
+      <div class="note n-blocker">
+        <div class="note-prefix">[DEC-02 · THIS WEEK]</div>
+        <div class="note-title">Open questions к Chris (Vivica)</div>
+        <div class="note-body">До запуска нужны: go-live дата Acure, KOL-публикация, quantitative outcomes (TAT/audit prep), approved quote, SOC 2 status. Без этого ослабляем social proof в первых сериях.</div>
+        <div class="note-meta">owner: Sally Account · on Chris Hilinsky</div>
+      </div>
+      <div class="note n-blocker">
+        <div class="note-prefix">[DEC-03 · THIS WEEK]</div>
+        <div class="note-title">Pilot sequence scope</div>
+        <div class="note-body">Что запускаем первым: <b>full Reference (344 контакта)</b> или <b>narrow pilot</b> (5-10 лабов $30-150M revenue, AP+CP) с самым близким к Acure positioning?</div>
+        <div class="note-meta">owner: Petr + Chris</div>
+      </div>
+      <div class="note n-watch">
+        <div class="note-prefix">[DEC-04 · 2 WEEKS]</div>
+        <div class="note-title">Sunquest Conquest scope</div>
+        <div class="note-body">Запускаем ли 5-й сегмент — <i>outreach-plan-vivica-sunquest-conquest</i>? Сегмент крупнее LabWare, конкурент более уязвим. Зеркало LabWare-плана.</div>
+        <div class="note-meta">owner: Petr · driver: VND-01 priority</div>
+      </div>
+      <div class="note n-watch">
+        <div class="note-prefix">[DEC-05 · 2 WEEKS]</div>
+        <div class="note-title">lims-detector run</div>
+        <div class="note-body">Прогон lims-detector skill для идентификации LabWare-юзеров в базе. Нужен сигнал на старт кампании 3 (LabWare Conquest).</div>
+        <div class="note-meta">owner: Sales Engineer · feeds VND-02</div>
+      </div>
+      <div class="note n-watch">
+        <div class="note-prefix">[DEC-06 · 2 WEEKS]</div>
+        <div class="note-title">ADLM attendee list</div>
+        <div class="note-body">Acquisition path для confirmed-attendee списка ADLM 2026. Без него кампания 4 не активируется (старт mid-June, T-6 недель).</div>
+        <div class="note-meta">owner: Sally + Chris · T-11W to ADLM</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <h3>Источники цифр в отчёте</h3>
+    <ul>
+      <li><b>Market sizing</b> — <a href="https://www.globenewswire.com/news-release/2025/06/25/3105064/0/en/U-S-Laboratory-Information-Management-System-LIMS-Market-Report-2025-2030-A-Projected-USD-1-30-Billion-Market-by-2030-Rising-Popularity-of-SaaS-based-LIMS.html">GlobeNewswire US LIMS Market 2025-2030</a> · <a href="https://www.grandviewresearch.com/industry-analysis/us-laboratory-informatics-market">Grand View Research</a> · <a href="https://www.metastatinsight.com/report/cloud-based-lims-laboratory-information-management-system-market">Metastat Insight</a></li>
+      <li><b>CLIA / regulatory</b> — <a href="https://www.laboratoryeconomics.com/product/clia-database/">Laboratory Economics CLIA DB</a> · <a href="https://www.aha.org/news/headline/2025-09-18-fda-vacates-final-rule-regulating-lab-developed-tests-medical-devices">AHA · FDA vacates LDT</a> · <a href="https://www.morganlewis.com/pubs/2025/04/federal-court-blocks-fdas-final-rule-on-ldts-key-considerations-for-clinical-labs">Morgan Lewis</a></li>
+      <li><b>Competitor pains</b> — <a href="https://www.g2.com/products/clinisys/reviews">G2 Clinisys</a> · <a href="https://www.capterra.com/p/131230/LabWare-LIMS/reviews/">Capterra LabWare</a> · <a href="https://www.itqlick.com/labware-lims/pricing">ITQlick pricing</a></li>
+      <li><b>Lab tech shortage</b> — BLS · Siemens/Harris Poll 2024</li>
+      <li><b>Operational funnel (1849 → 344)</b> — <code>tracking/data-log.md</code> · <code>tracking/decisions-log.md</code> 2026-05-11 · CMS CLIA POS Q1 2026</li>
+      <li><b>ICP personas</b> — Vivica ICP Google Sheet · kick-off call</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <span>Vivica Outreach · IR-01</span>
+    <span>Intake delivery · 2026-05-11</span>
+    <span>Audience: Petr Nikolaev (Sally)</span>
+    <span>Confidential · Internal</span>
+  </div>
+
+</div>
+
+</body>
+</html>

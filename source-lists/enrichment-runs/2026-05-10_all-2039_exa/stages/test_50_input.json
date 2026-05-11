@@ -1,0 +1,402 @@
+[
+  {
+    "src": "RU",
+    "name": "REGIONAL CANCER CARE ASSOCIATES",
+    "city": "MONTCLAIR",
+    "state": "NJ",
+    "zip": "07042",
+    "clia": "31D0104198"
+  },
+  {
+    "src": "RU",
+    "name": "REPRODUCTIVE MEDICINE ASSOCIATES",
+    "city": "FREEHOLD",
+    "state": "NJ",
+    "zip": "07728",
+    "clia": "31D2114553"
+  },
+  {
+    "src": "RU",
+    "name": "PEDIATRIC ASSOCIATES OF PLAINVIEW LLP",
+    "city": "HICKSVILLE",
+    "state": "NY",
+    "zip": "11801",
+    "clia": "33D0963261"
+  },
+  {
+    "src": "RU",
+    "name": "PREMIER MEDICAL GROUP OF THE HUDSON VALLEY PC",
+    "city": "POUGHKEEPSIE",
+    "state": "NY",
+    "zip": "12601",
+    "clia": "33D2113820"
+  },
+  {
+    "src": "RU",
+    "name": "JRR MEDICAL, PC",
+    "city": "NEW YORK",
+    "state": "NY",
+    "zip": "10010",
+    "clia": "33D2327152"
+  },
+  {
+    "src": "REF",
+    "name": "KEVIN GIADROSICH, M D, PC",
+    "city": "HOOVER",
+    "state": "AL",
+    "zip": "35216",
+    "clia": "01D0301540"
+  },
+  {
+    "src": "REF",
+    "name": "CELLNETIX PATHOLOGY ALASKA REGIONAL HOSPITAL",
+    "city": "ANCHORAGE",
+    "state": "AK",
+    "zip": "99508",
+    "clia": "02D2201100"
+  },
+  {
+    "src": "REF",
+    "name": "PHYSICIANS LABORATORIES OF AMERICA LLC",
+    "city": "LITTLE ROCK",
+    "state": "AR",
+    "zip": "72205",
+    "clia": "04D2042678"
+  },
+  {
+    "src": "REF",
+    "name": "TULARE COUNTY HEALTH DEPT LABORATORY",
+    "city": "TULARE",
+    "state": "CA",
+    "zip": "93274",
+    "clia": "05D0667647"
+  },
+  {
+    "src": "REF",
+    "name": "PATHCARE DIAGNOSTICS, INC",
+    "city": "CORONA",
+    "state": "CA",
+    "zip": "92881",
+    "clia": "05D1037342"
+  },
+  {
+    "src": "REF",
+    "name": "HELIX MOBILE WELLNESS",
+    "city": "SAN FRANCISCO",
+    "state": "CA",
+    "zip": "94102",
+    "clia": "05D2103632"
+  },
+  {
+    "src": "REF",
+    "name": "WESTERN PATHOLOGY, INC",
+    "city": "IRVINE",
+    "state": "CA",
+    "zip": "92618",
+    "clia": "05D2227171"
+  },
+  {
+    "src": "REF",
+    "name": "STATLAB DIAGNOSTICS, LLC",
+    "city": "DENVER",
+    "state": "CO",
+    "zip": "80211",
+    "clia": "06D2200475"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORY CORPORATION OF AMERICA HOLDINGS",
+    "city": "GREENWICH",
+    "state": "CT",
+    "zip": "06831",
+    "clia": "07D2169459"
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA INC",
+    "city": "PENSACOLA",
+    "state": "FL",
+    "zip": "32503",
+    "clia": "10D0862924"
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA INC-TAMPA",
+    "city": "TAMPA",
+    "state": "FL",
+    "zip": "33619",
+    "clia": "10D2072032"
+  },
+  {
+    "src": "REF",
+    "name": "ONSPOT -FL, LLC",
+    "city": "FORT MYERS",
+    "state": "FL",
+    "zip": "33912",
+    "clia": "10D2224637"
+  },
+  {
+    "src": "REF",
+    "name": "GASTROENTEROLOGY SPECIALISTS OF GWINNETT, PC",
+    "city": "LAWRENCEVILLE",
+    "state": "GA",
+    "zip": "30046",
+    "clia": "11D0955022"
+  },
+  {
+    "src": "REF",
+    "name": "KAISER PERMANENTE LAHAINA MHV#2 LABORATORY",
+    "city": "LAHAINA",
+    "state": "HI",
+    "zip": "96761",
+    "clia": "12D2299285"
+  },
+  {
+    "src": "REF",
+    "name": "BIOLIFE PLASMA SERVICES",
+    "city": "BOLINGBROOK",
+    "state": "IL",
+    "zip": "60440",
+    "clia": "14D2143383"
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA, INC",
+    "city": "HOBART",
+    "state": "IN",
+    "zip": "46342",
+    "clia": "15D2144183"
+  },
+  {
+    "src": "REF",
+    "name": "HEARTLAND PATHOLOGY DIAGNOSTICS, LLC",
+    "city": "WICHITA",
+    "state": "KS",
+    "zip": "67226",
+    "clia": "17D2093824"
+  },
+  {
+    "src": "REF",
+    "name": "DELTA PATHOLOGY GROUP, LLC NLMC",
+    "city": "RUSTON",
+    "state": "LA",
+    "zip": "71270",
+    "clia": "19D2255229"
+  },
+  {
+    "src": "REF",
+    "name": "ALLETESS MEDICAL LABORATORY",
+    "city": "ROCKLAND",
+    "state": "MA",
+    "zip": "02370",
+    "clia": "22D0080258"
+  },
+  {
+    "src": "REF",
+    "name": "BIOLIFE PLASMA SERVICES L P",
+    "city": "GRAND RAPIDS",
+    "state": "MI",
+    "zip": "49546",
+    "clia": "23D0689983"
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA, INC",
+    "city": "DULUTH",
+    "state": "MN",
+    "zip": "55802",
+    "clia": "24D0862922"
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA, INC",
+    "city": "SAINT LOUIS",
+    "state": "MO",
+    "zip": "63136",
+    "clia": "26D2065836"
+  },
+  {
+    "src": "REF",
+    "name": "GREAT BASIN PATHOLOGY",
+    "city": "ELKO",
+    "state": "NV",
+    "zip": "89801",
+    "clia": "29D0966835"
+  },
+  {
+    "src": "REF",
+    "name": "COLFAX GENERAL LABORATORY",
+    "city": "SPRINGER",
+    "state": "NM",
+    "zip": "87747",
+    "clia": "32D0536885"
+  },
+  {
+    "src": "REF",
+    "name": "PATHOLOGISTS DIAGNOSTIC LABORATORY, PA",
+    "city": "WINSTON-SALEM",
+    "state": "NC",
+    "zip": "27103",
+    "clia": "34D1059373"
+  },
+  {
+    "src": "REF",
+    "name": "PUBLIC HEALTH-DAYTON & MONTGOMERY COUNTY (PHDMC)",
+    "city": "DAYTON",
+    "state": "OH",
+    "zip": "45422",
+    "clia": "36D0685582"
+  },
+  {
+    "src": "REF",
+    "name": "SAINT FRANCIS LAB-SAND SPRINGS URGENT CARE",
+    "city": "SAND SPRINGS",
+    "state": "OK",
+    "zip": "74063",
+    "clia": "37D2144421"
+  },
+  {
+    "src": "REF",
+    "name": "LANCASTER SKIN CENTER PC",
+    "city": "LANCASTER",
+    "state": "PA",
+    "zip": "17601",
+    "clia": "39D0931167"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO DR CAJIGAS",
+    "city": "BAYAMON",
+    "state": "PR",
+    "zip": "00960",
+    "clia": "40D0658017"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO IRIZARRY GUASCH",
+    "city": "JUANA DIAZ",
+    "state": "PR",
+    "zip": "00795",
+    "clia": "40D0658119"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO HATO REY INC",
+    "city": "SAN JUAN",
+    "state": "PR",
+    "zip": "00918",
+    "clia": "40D0658276"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO BORINQUEN - VILLA BLANCA",
+    "city": "CAGUAS",
+    "state": "PR",
+    "zip": "00725",
+    "clia": "40D0667748"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO MANATI",
+    "city": "MANATI",
+    "state": "PR",
+    "zip": "00674",
+    "clia": "40D0676839"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO Y BACTERIOLOGICO",
+    "city": "CIDRA",
+    "state": "PR",
+    "zip": "00739",
+    "clia": "40D0708759"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO AQUARIUM",
+    "city": "TOA ALTA",
+    "state": "PR",
+    "zip": "00954",
+    "clia": "40D0933356"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO SHALOM",
+    "city": "QUEBRADILLAS",
+    "state": "PR",
+    "zip": "00678",
+    "clia": "40D1020316"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO LORIMAR",
+    "city": "AGUADA",
+    "state": "PR",
+    "zip": "00602",
+    "clia": "40D1096293"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO MED-LAB",
+    "city": "SAN SEBASTIAN",
+    "state": "PR",
+    "zip": "00685",
+    "clia": "40D2053249"
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO BIRRIEL",
+    "city": "FAJARDO",
+    "state": "PR",
+    "zip": "00738",
+    "clia": "40D2242391"
+  },
+  {
+    "src": "REF",
+    "name": "PRISMA HEALTH AMBULANCE SVC-MIDLANDS",
+    "city": "COLUMBIA",
+    "state": "SC",
+    "zip": "29203",
+    "clia": "42D2310272"
+  },
+  {
+    "src": "REF",
+    "name": "ASSOCIATED PATHOLOGISTS, LLC DBA PATHGROUP (KIP)",
+    "city": "NASHVILLE",
+    "state": "TN",
+    "zip": "37211",
+    "clia": "44D2309613"
+  },
+  {
+    "src": "REF",
+    "name": "CREATIVE TESTING SOLUTIONS",
+    "city": "SAN MARCOS",
+    "state": "TX",
+    "zip": "78666",
+    "clia": "45D2025792"
+  },
+  {
+    "src": "REF",
+    "name": "SAGIS, PLLC",
+    "city": "FLOWER MOUND",
+    "state": "TX",
+    "zip": "75028",
+    "clia": "45D2286014"
+  },
+  {
+    "src": "REF",
+    "name": "CALCULI REFERENCE LABORATORY INC",
+    "city": "MECHANICSVILLE",
+    "state": "VA",
+    "zip": "23116",
+    "clia": "49D0933730"
+  },
+  {
+    "src": "REF",
+    "name": "BIOLIFE PLASMA SERVICES LP",
+    "city": "APPLETON",
+    "state": "WI",
+    "zip": "54915",
+    "clia": "52D0676908"
+  }
+]

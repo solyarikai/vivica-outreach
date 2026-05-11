@@ -1,0 +1,802 @@
+[
+  {
+    "src": "RU",
+    "name": "REGIONAL CANCER CARE ASSOCIATES",
+    "city": "MONTCLAIR",
+    "state": "NJ",
+    "zip": "07042",
+    "clia": "31D0104198",
+    "domain": "regionalcancercare.org",
+    "exa_urls": [
+      "https://www.regionalcancercare.org/locations/montclair-nj/",
+      "https://regionalcancercare.org/",
+      "http://www.rcca.com/",
+      "https://www.regionalcancercare.org/locations/",
+      "https://www.regionalcancercare.org/doctors/"
+    ]
+  },
+  {
+    "src": "RU",
+    "name": "REPRODUCTIVE MEDICINE ASSOCIATES",
+    "city": "FREEHOLD",
+    "state": "NJ",
+    "zip": "07728",
+    "clia": "31D2114553",
+    "domain": "rmanetwork.com",
+    "exa_urls": [
+      "https://rmanetwork.com/our-locations/rma-new-jersey/freehold-nj/",
+      "https://rmanetwork.com/",
+      "https://doctor.webmd.com/practice/reproductive-medicine-associates-of-new-jersey-b5c2b8c8-4703-e211-a42b-001f29e3eb44",
+      "https://rmanetwork.com/our-locations/rma-new-jersey/",
+      "http://www.ivfnj.com/"
+    ]
+  },
+  {
+    "src": "RU",
+    "name": "PEDIATRIC ASSOCIATES OF PLAINVIEW LLP",
+    "city": "HICKSVILLE",
+    "state": "NY",
+    "zip": "11801",
+    "clia": "33D0963261",
+    "domain": "pedsofplainview.com",
+    "exa_urls": [
+      "https://pedsofplainview.com/",
+      "https://pedsofplainview.com/contact/",
+      "https://pedsofplainview.com/about-us/",
+      "https://pedsofplainview.com/services-we-provide/",
+      "https://pedsofplainview.com/long-island-pediatrics/"
+    ]
+  },
+  {
+    "src": "RU",
+    "name": "PREMIER MEDICAL GROUP OF THE HUDSON VALLEY PC",
+    "city": "POUGHKEEPSIE",
+    "state": "NY",
+    "zip": "12601",
+    "clia": "33D2113820",
+    "domain": "premiermedicalhv.com",
+    "exa_urls": [
+      "https://premiermedicalhv.com/",
+      "https://www.premiermedicalhv.com/locations/",
+      "https://www.premiermedicalhv.com/contact-us/",
+      "https://www.premiermedicalhv.com/about-us/",
+      "https://www.premiermedicalhv.com/physicians/"
+    ]
+  },
+  {
+    "src": "RU",
+    "name": "JRR MEDICAL, PC",
+    "city": "NEW YORK",
+    "state": "NY",
+    "zip": "10010",
+    "clia": "33D2327152",
+    "domain": "",
+    "exa_urls": [
+      "https://npidb.org/organizations/allopathic_osteopathic_physicians/gastroenterology_207rg0100x/1891345666.aspx",
+      "https://www.company-detail.com/company-jrr-medical-p-c-5593484",
+      "https://www.company-detail.com/company-jrr-property-solutions-llc-5551308",
+      "https://www.mapquest.com/us/new-york/j-r-medical-420925757",
+      "https://www.facebook.com/pages/J-R-Medical-Practice/160244633996572"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "KEVIN GIADROSICH, M D, PC",
+    "city": "HOOVER",
+    "state": "AL",
+    "zip": "35216",
+    "clia": "01D0301540",
+    "domain": "",
+    "exa_urls": [
+      "https://health.usnews.com/doctors/kevin-giadrosich-358328",
+      "https://npidb.org/organizations/allopathic_osteopathic_physicians/anatomic-pathology-clinical-pathology_207zp0102x/1326837998.aspx",
+      "https://www.doximity.com/pub/kevin-giadrosich-md",
+      "https://local.yahoo.com/info-161387646-giadrosich-kevin-s-md-kevin-giadrosich-md-pc-hoover/",
+      "https://www.docspot.com/d/al/hoover/pathologists"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "CELLNETIX PATHOLOGY ALASKA REGIONAL HOSPITAL",
+    "city": "ANCHORAGE",
+    "state": "AK",
+    "zip": "99508",
+    "clia": "02D2201100",
+    "domain": "cellnetix.com",
+    "exa_urls": [
+      "https://cellnetix.com/divisions/alaska/",
+      "https://cellnetix.com/",
+      "https://cellnetix.com/divisions/",
+      "https://cellnetix.com/blog/2020/12/alaska-regional-hospital-and-cellnetix-pathology-laboratories-announce-partnership-to-provide-pathology-services/",
+      "https://cellnetix.com/healthcare-professionals/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "PHYSICIANS LABORATORIES OF AMERICA LLC",
+    "city": "LITTLE ROCK",
+    "state": "AR",
+    "zip": "72205",
+    "clia": "04D2042678",
+    "domain": "plallc.com",
+    "exa_urls": [
+      "https://plallc.com/",
+      "http://plallc.com/about",
+      "http://plallc.com/providers",
+      "https://www.mapquest.com/us/arkansas/physicians-laboratories-of-america-379925590",
+      "http://plallc.com/billing"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "TULARE COUNTY HEALTH DEPT LABORATORY",
+    "city": "TULARE",
+    "state": "CA",
+    "zip": "93274",
+    "clia": "05D0667647",
+    "domain": "tchhsa.org",
+    "exa_urls": [
+      "https://tchhsa.org/eng/public-health/public-health-laboratory/",
+      "https://tchhsa.org/public-health/public-health-laboratory",
+      "https://tchhsa.org/",
+      "https://tchhsa.org/eng/public-health",
+      "https://tularecounty.ca.gov/health-human-services-agency-hhsa"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "PATHCARE DIAGNOSTICS, INC",
+    "city": "CORONA",
+    "state": "CA",
+    "zip": "92881",
+    "clia": "05D1037342",
+    "domain": "pathcarefna.com",
+    "exa_urls": [
+      "https://pathcarefna.com/",
+      "https://www.pathcarefna.com/aboutus",
+      "https://www.pathcarefna.com/contact",
+      "https://www.pathcarefna.com/patients",
+      "https://www.pathcarefna.com/services"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "HELIX MOBILE WELLNESS",
+    "city": "SAN FRANCISCO",
+    "state": "CA",
+    "zip": "94102",
+    "clia": "05D2103632",
+    "domain": "helixmwr.com",
+    "exa_urls": [
+      "https://helixmwr.com/",
+      "https://helixmwr.com/about/",
+      "https://helixmwr.com/locations/",
+      "https://helixmwr.com/contact/",
+      "https://helixmwr.com/services/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "WESTERN PATHOLOGY, INC",
+    "city": "IRVINE",
+    "state": "CA",
+    "zip": "92618",
+    "clia": "05D2227171",
+    "domain": "westernpathologyinc.com",
+    "exa_urls": [
+      "https://westernpathologyinc.com/",
+      "https://www.westernpathology.com/",
+      "https://westernpathologyinc.com/wpi-company/",
+      "https://www.westernpathology.com/about-us/",
+      "https://westernpathologyinc.com/wpi-pathology-services/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "STATLAB DIAGNOSTICS, LLC",
+    "city": "DENVER",
+    "state": "CO",
+    "zip": "80211",
+    "clia": "06D2200475",
+    "domain": "statlabdiagnostics.com",
+    "exa_urls": [
+      "https://statlabdiagnostics.com/about-statlab-diagnostics/blogs/page/4/",
+      "https://statlabdiagnostics.com/careers/",
+      "https://statlabdiagnostics.com/statlab-diagnostics-and-afc-urgent-care-denver-have-teamed-up-to-send-much-needed-medical-supplies-to-the-citizens-of-ukraine/",
+      "https://statlab.com/",
+      "https://statlab.com/Clinical-Lab"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORY CORPORATION OF AMERICA HOLDINGS",
+    "city": "GREENWICH",
+    "state": "CT",
+    "zip": "06831",
+    "clia": "07D2169459",
+    "domain": "locations.labcorp.com",
+    "exa_urls": [
+      "https://locations.labcorp.com/ct/greenwich/",
+      "https://locations.labcorp.com/ct/greenwich/52010/",
+      "https://labcorp.com/",
+      "https://locations.labcorp.com/ct/",
+      "https://ir.labcorp.com/static-files/40d41100-f44f-4cf9-8760-77d51274eb38"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA INC",
+    "city": "PENSACOLA",
+    "state": "FL",
+    "zip": "32503",
+    "clia": "10D0862924",
+    "domain": "cslplasma.com",
+    "exa_urls": [
+      "https://www.cslplasma.com/center/623",
+      "https://www.cslplasma.com/es/center/623",
+      "https://www.cslplasma.com/contact-us",
+      "https://www.cslplasma.com/about-us",
+      "https://www.cslplasma.com/appointments"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA INC-TAMPA",
+    "city": "TAMPA",
+    "state": "FL",
+    "zip": "33619",
+    "clia": "10D2072032",
+    "domain": "cslplasma.com",
+    "exa_urls": [
+      "https://www.cslplasma.com/",
+      "https://www.cslplasma.com/center/109",
+      "https://www.cslplasma.com/center/556",
+      "https://www.cslplasma.com/contact-us",
+      "https://www.cslplasma.com/find-a-donation-center"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "ONSPOT -FL, LLC",
+    "city": "FORT MYERS",
+    "state": "FL",
+    "zip": "33912",
+    "clia": "10D2224637",
+    "domain": "onspotdermatology.com",
+    "exa_urls": [
+      "https://onspotdermatology.com/fort-myers-office/",
+      "https://onspotdermatology.com/",
+      "https://onspotdermatology.com/locations/onspot-fort-myers-office-plantation-road/",
+      "https://onspotdermatology.com/book-an-appointment/",
+      "https://onspotdermatology.com/dermatology-in-fort-myers/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "GASTROENTEROLOGY SPECIALISTS OF GWINNETT, PC",
+    "city": "LAWRENCEVILLE",
+    "state": "GA",
+    "zip": "30046",
+    "clia": "11D0955022",
+    "domain": "gastrogwinnett.com",
+    "exa_urls": [
+      "https://gastrogwinnett.com/",
+      "https://www.gwinnettgastro.com/",
+      "https://gastrogwinnett.com/lawrenceville-digestive-care.php",
+      "https://www.gastrogwinnett.com/gwinnett-gastroenterology-offices.php",
+      "https://www.gastrogwinnett.com/contact.php"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "KAISER PERMANENTE LAHAINA MHV#2 LABORATORY",
+    "city": "LAHAINA",
+    "state": "HI",
+    "zip": "96761",
+    "clia": "12D2299285",
+    "domain": "healthy.kaiserpermanente.org",
+    "exa_urls": [
+      "https://healthy.kaiserpermanente.org/hawaii/facilities/Kaiser-Permanente-Lahaina-Clinic-100437/departments/laboratory-dlp-104170",
+      "https://www.kpinhawaii.org/laboratory-hours",
+      "https://healthy.kaiserpermanente.org/hawaii/facilities/kaiser-permanente-lahaina-clinic-100437",
+      "https://www.kpinhawaii.org/",
+      "https://www.kaiserpermanente.org/hawaii/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "BIOLIFE PLASMA SERVICES",
+    "city": "BOLINGBROOK",
+    "state": "IL",
+    "zip": "60440",
+    "clia": "14D2143383",
+    "domain": "biolifeplasma.com",
+    "exa_urls": [
+      "https://www.biolifeplasma.com/locations/illinois/bolingbrook",
+      "https://biolifeplasma.com/",
+      "https://www.biolifeplasma.com/locations",
+      "https://www.biolifeplasma.com/locations/illinois",
+      "https://www.biolifeplasma.com/es/locations/illinois/bolingbrook"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA, INC",
+    "city": "HOBART",
+    "state": "IN",
+    "zip": "46342",
+    "clia": "15D2144183",
+    "domain": "cslplasma.com",
+    "exa_urls": [
+      "https://www.cslplasma.com/center/218",
+      "https://www.cslplasma.com/es/center/218",
+      "https://www.cslplasma.com/contact-us",
+      "https://www.cslplasma.com/about-us",
+      "https://www.cslplasma.com/find-a-donation-center"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "HEARTLAND PATHOLOGY DIAGNOSTICS, LLC",
+    "city": "WICHITA",
+    "state": "KS",
+    "zip": "67226",
+    "clia": "17D2093824",
+    "domain": "heartlandpathology.com",
+    "exa_urls": [
+      "https://www.heartlandpathology.com/",
+      "https://www.heartlandpathology.com/contact-us/",
+      "https://www.heartlandpathology.com/our-location/",
+      "https://www.heartlandpathology.com/about-heartland-pathology/",
+      "https://www.heartlandpathology.com/capabilities/about-our-clinical-services/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "DELTA PATHOLOGY GROUP, LLC NLMC",
+    "city": "RUSTON",
+    "state": "LA",
+    "zip": "71270",
+    "clia": "19D2255229",
+    "domain": "deltapathology.com",
+    "exa_urls": [
+      "https://deltapathology.com/",
+      "https://deltapathology.com/about-us/",
+      "https://northernlouisianamedicalcenter.com/",
+      "https://www.deltapathology.com/contact",
+      "https://northernlouisianamedicalcenter.com/about-us/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "ALLETESS MEDICAL LABORATORY",
+    "city": "ROCKLAND",
+    "state": "MA",
+    "zip": "02370",
+    "clia": "22D0080258",
+    "domain": "alletess.co",
+    "exa_urls": [
+      "https://foodallergy.com/",
+      "http://alletess.co/",
+      "https://foodallergy.com/contact-us/",
+      "https://alletess.co/about/",
+      "https://alletess.co/contact-us/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "BIOLIFE PLASMA SERVICES L P",
+    "city": "GRAND RAPIDS",
+    "state": "MI",
+    "zip": "49546",
+    "clia": "23D0689983",
+    "domain": "biolifeplasma.com",
+    "exa_urls": [
+      "https://www.biolifeplasma.com/locations/michigan",
+      "https://biolifeplasma.com/",
+      "http://www.biolifeplasma.com/index.html",
+      "https://www.biolifeplasma.com/locations",
+      "https://www.biolifeplasma.com/about-biolife/contact-us"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA, INC",
+    "city": "DULUTH",
+    "state": "MN",
+    "zip": "55802",
+    "clia": "24D0862922",
+    "domain": "cslplasma.com",
+    "exa_urls": [
+      "https://www.cslplasma.com/center/mn/613-duluth",
+      "https://www.cslplasma.com/center/613",
+      "https://www.cslplasma.com/contact-us",
+      "https://cslplasma.com/",
+      "https://www.cslplasma.com/about-us"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "CSL PLASMA, INC",
+    "city": "SAINT LOUIS",
+    "state": "MO",
+    "zip": "63136",
+    "clia": "26D2065836",
+    "domain": "cslplasma.com",
+    "exa_urls": [
+      "https://www.cslplasma.com/center/132",
+      "https://www.cslplasma.com/about-us",
+      "https://www.cslplasma.com/contact-us",
+      "https://www.cslplasma.com/find-a-donation-center",
+      "https://www.cslplasma.com/center/107"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "GREAT BASIN PATHOLOGY",
+    "city": "ELKO",
+    "state": "NV",
+    "zip": "89801",
+    "clia": "29D0966835",
+    "domain": "",
+    "exa_urls": [
+      "https://linkedin.com/company/great-basin-pathology",
+      "https://www.mapquest.com/us/nevada/great-basin-pathology-375237554",
+      "https://www.healthgrades.com/group-directory/nv-nevada/elko/great-basin-pathology-xb4dkp",
+      "https://local.yahoo.com/info-161238575-mardini-george-great-basin-pathology-elko/",
+      "https://www.yelp.com/biz/great-basin-pathology-elko"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "COLFAX GENERAL LABORATORY",
+    "city": "SPRINGER",
+    "state": "NM",
+    "zip": "87747",
+    "clia": "32D0536885",
+    "domain": "colfaxhealth.org",
+    "exa_urls": [
+      "https://www.colfaxhealth.org/long-term-lab",
+      "https://www.colfaxhealth.org/",
+      "https://www.colfaxhealth.org/contact",
+      "https://solvhealth.com/south-central-colfax-county-springer-nm-gNvnZg",
+      "https://www.colfaxhealth.org/about"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "PATHOLOGISTS DIAGNOSTIC LABORATORY, PA",
+    "city": "WINSTON-SALEM",
+    "state": "NC",
+    "zip": "27103",
+    "clia": "34D1059373",
+    "domain": "pdlpath.com",
+    "exa_urls": [
+      "https://pdlpath.com/",
+      "https://www.pdlpath.com/contact-us",
+      "https://www.pdlpath.com/pdl",
+      "https://www.pdlpath.com/home-1",
+      "https://www.linkedin.com/company/pathologist-diagnostic-laboratory"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "PUBLIC HEALTH-DAYTON & MONTGOMERY COUNTY (PHDMC)",
+    "city": "DAYTON",
+    "state": "OH",
+    "zip": "45422",
+    "clia": "36D0685582",
+    "domain": "phdmc.org",
+    "exa_urls": [
+      "https://phdmc.org/",
+      "https://www.phdmc.org/agency",
+      "https://www.phdmc.org/about/about-public-health",
+      "https://www.phdmc.org/landing/phdmc",
+      "https://www.phdmc.org/programs-a-to-z"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "SAINT FRANCIS LAB-SAND SPRINGS URGENT CARE",
+    "city": "SAND SPRINGS",
+    "state": "OK",
+    "zip": "74063",
+    "clia": "37D2144421",
+    "domain": "saintfrancis.com",
+    "exa_urls": [
+      "https://www.saintfrancis.com/location/warren-clinic-urgent-care-sand-springs",
+      "https://www.saintfrancis.com/location/warren-clinic-sand-springs",
+      "https://www.saintfrancis.com/",
+      "https://www.saintfrancis.com/services/urgent-care",
+      "https://www.facebook.com/WarrenClinicUrgentCareSandSprings/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LANCASTER SKIN CENTER PC",
+    "city": "LANCASTER",
+    "state": "PA",
+    "zip": "17601",
+    "clia": "39D0931167",
+    "domain": "lancasterskincenter.com",
+    "exa_urls": [
+      "https://www.lancasterskincenter.com/",
+      "https://www.pennmedicine.org/practices/lancaster-skin-center-pc",
+      "https://www.lancasterskincenter.com/services",
+      "https://www.lancasterskincenter.com/new-patients",
+      "https://www.lancasterskincenter.com/text-page"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO DR CAJIGAS",
+    "city": "BAYAMON",
+    "state": "PR",
+    "zip": "00960",
+    "clia": "40D0658017",
+    "domain": "cajigas.com",
+    "exa_urls": [
+      "http://cajigas.com/",
+      "https://www.facebook.com/LaboratorioClinicoDr.Cajigas/",
+      "https://misresultados.com/directorio/listing_3/lab-clinico-dr-cajigas-2",
+      "https://laboratorios.cercadetienpr.com/bayamon/bayamon/",
+      "https://labcajigas.wixsite.com/laboratorio"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO IRIZARRY GUASCH",
+    "city": "JUANA DIAZ",
+    "state": "PR",
+    "zip": "00795",
+    "clia": "40D0658119",
+    "domain": "milaboratoriopr.com",
+    "exa_urls": [
+      "https://milaboratoriopr.com/",
+      "https://www.milaboratoriopr.com/laboratorios/",
+      "https://en.infopaginas.com/b/juana-diaz/laboratorio-clinico-irizarry-guasch-juana-diaz",
+      "https://www.milaboratoriopr.com/servicios-2/",
+      "https://planmenonita.org/directorio-proveedores-2-2/lab-clinico-irizarry-guasch-juana-diaz-2/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO HATO REY INC",
+    "city": "SAN JUAN",
+    "state": "PR",
+    "zip": "00918",
+    "clia": "40D0658276",
+    "domain": "labhatorey.com",
+    "exa_urls": [
+      "https://labhatorey.com/",
+      "https://labhatorey.com/gracias/",
+      "https://www.facebook.com/laboratorioclinicohatorey/about/",
+      "https://www.mapquest.com/us/puerto-rico/laboratorio-clinico-hato-rey-409314334",
+      "https://www.puertoricoindex.com/company/59704/Laboratorio_Cl%C3%ADnico_Hato_Rey_Inc"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO BORINQUEN - VILLA BLANCA",
+    "city": "CAGUAS",
+    "state": "PR",
+    "zip": "00725",
+    "clia": "40D0667748",
+    "domain": "laboratoriosborinquen.com",
+    "exa_urls": [
+      "https://laboratoriosborinquen.com/",
+      "https://laboratoriosborinquen.com/en/home/",
+      "https://laboratoriosborinquen.com/en/contact-us/",
+      "https://laboratoriosborinquen.com/zona/caguas/",
+      "https://misresultados.com/directorio/listing_3/quest-diagnostic-caguas-1"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO MANATI",
+    "city": "MANATI",
+    "state": "PR",
+    "zip": "00674",
+    "clia": "40D0676839",
+    "domain": "",
+    "exa_urls": [
+      "https://www.facebook.com/labmanati2/",
+      "https://linkedin.com/company/laboratorio-clinico-manati",
+      "https://www.medicospr.com/doctores-puerto-rico/laboratorios-clinicos-independiente/32650.html",
+      "https://npiscan.com/clinical-medical-laboratory/pr/manati",
+      "https://www.facebook.com/p/Laboratorio-Clinico-Manati-100054385126157/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO Y BACTERIOLOGICO",
+    "city": "CIDRA",
+    "state": "PR",
+    "zip": "00739",
+    "clia": "40D0708759",
+    "domain": "labgenesispr.com",
+    "exa_urls": [
+      "https://en.infopaginas.com/b/cidra/cidra-medical-lab-inc",
+      "https://labgenesispr.com/",
+      "https://laboratoriorodriguez.com/",
+      "https://pr.eldirectorio.co/empresas/cidra/productos-o-servicios/cidra-medical-lab-inc-87865",
+      "https://npiindex.com/npi/1346250156"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO AQUARIUM",
+    "city": "TOA ALTA",
+    "state": "PR",
+    "zip": "00954",
+    "clia": "40D0933356",
+    "domain": "",
+    "exa_urls": [
+      "https://www.facebook.com/laboratorioaquarium/",
+      "https://www.hipaaspace.com/medical.coding.library/npi.registry/pr/toa%20alta/clinical%20medical%20laboratory/",
+      "https://npidb.org/organizations/laboratories/clinical-medical-laboratory_291u00000x/1922094473.aspx",
+      "https://en.infopaginas.com/b/toa-alta/laboratorio-clinico-aquarium",
+      "https://medicaidspending.org/provider/1922094473"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO SHALOM",
+    "city": "QUEBRADILLAS",
+    "state": "PR",
+    "zip": "00678",
+    "clia": "40D1020316",
+    "domain": "policlinicafamiliarshalom.com",
+    "exa_urls": [
+      "https://policlinicafamiliarshalom.com/laboratorio/",
+      "https://www.medicospr.com/doctores-puerto-rico/laboratorios/6484.html",
+      "https://pr.eldirectorio.co/empresas/quebradillas/productos-o-servicios/laboratorio-clinico-shalom-398",
+      "https://infopaginas.com/b/quebradillas/laboratorio-clinico-shalom",
+      "https://www.vitadox.com/practice/quebradillas-pr-00678/laboratorio-clinico-shalom-corporation/EwMKZfemLZoNihCgRYNpgb"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO LORIMAR",
+    "city": "AGUADA",
+    "state": "PR",
+    "zip": "00602",
+    "clia": "40D1096293",
+    "domain": "",
+    "exa_urls": [
+      "https://www.instagram.com/p/CCywvinj4Ez/",
+      "https://www.facebook.com/LaboratorioClinicoLorimarAguadilla/",
+      "https://aguadillamallpr.com/portfolio/laboratorio-lorimar/",
+      "https://www.instagram.com/laboratorioslorimar/",
+      "https://laboratorios.cercadetienpr.com/aguada/aguada/laboratorio-laboratorio-clinico-lorimar-aguada-en-aguada-una-de-las-mejores-opciones-para-tu-salud/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO MED-LAB",
+    "city": "SAN SEBASTIAN",
+    "state": "PR",
+    "zip": "00685",
+    "clia": "40D2053249",
+    "domain": "laboratorioclinico-medlab.com",
+    "exa_urls": [
+      "https://laboratorioclinico-medlab.com/",
+      "https://www.facebook.com/p/Laboratorio-Cl%C3%ADnico-MedLab-100057265188919/",
+      "https://puertoricocercademi.com/laboratorios/mayaguez/san-sebastian/",
+      "https://www.saludmedica.com/laboratorio/laboratorio-clinico-medlab-laboratorio-san-sebastian-puerto-rico",
+      "https://reviews.birdeye.com/laboratorio-clinico-medlab-168285954377041"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "LABORATORIO CLINICO BIRRIEL",
+    "city": "FAJARDO",
+    "state": "PR",
+    "zip": "00738",
+    "clia": "40D2242391",
+    "domain": "laboratoriofajardo.com",
+    "exa_urls": [
+      "https://laboratoriofajardo.com/",
+      "https://www.vitadox.com/practice/fajardo-pr-00738/laboratorio-clinico-birriel-llc/yb6tEiP96HQxyhzKAqs5fM",
+      "https://misresultados.com/directorio/listing_3/laboratorio-clinico-fajardo",
+      "https://npiprofile.com/npi/1073288965",
+      "https://providerwire.com/clinical-medical-laboratory/puerto-rico/fajardo/laboratorio-clinico-birriel-llc-1073288965"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "PRISMA HEALTH AMBULANCE SVC-MIDLANDS",
+    "city": "COLUMBIA",
+    "state": "SC",
+    "zip": "29203",
+    "clia": "42D2310272",
+    "domain": "prismahealth.org",
+    "exa_urls": [
+      "https://prismahealth.org/prisma-health-ambulance-service-program",
+      "https://prismahealth.org/",
+      "https://careers.prismahealth.org/us/en/job/R1126775/Emergency-Medical-Tech-Adv-MC-Ambulance-Services-Midlands-Full-time-Variable",
+      "https://careers.prismahealth.org/us/en/job/R1135617/Emergency-Medical-Technician-Ambulance-Services-Midlands-FT-Variable",
+      "https://prismahealth.org/services/emergency-services"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "ASSOCIATED PATHOLOGISTS, LLC DBA PATHGROUP (KIP)",
+    "city": "NASHVILLE",
+    "state": "TN",
+    "zip": "37211",
+    "clia": "44D2309613",
+    "domain": "pathgroup.com",
+    "exa_urls": [
+      "https://pathgroup.com/",
+      "https://www.pathgroup.com/about/",
+      "https://www.pathgroup.com/nondiscrimination-policy/",
+      "https://www.pathgroup.com/home/",
+      "https://www.pathgroup.com/services/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "CREATIVE TESTING SOLUTIONS",
+    "city": "SAN MARCOS",
+    "state": "TX",
+    "zip": "78666",
+    "clia": "45D2025792",
+    "domain": "mycts.org",
+    "exa_urls": [
+      "https://www.mycts.org/Home/AspxAutoDetectCookieSupport/1",
+      "https://mycts.org/",
+      "https://www.mapquest.com/us/texas/creative-testing-solutions-373572228",
+      "https://mycts.org/News/Articles/ArticleID/129/Creative-Testing-Solutions-and-Grifols-Forge-New-Testing-Partnership",
+      "https://at.linkedin.com/company/creative-testing-solutions"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "SAGIS, PLLC",
+    "city": "FLOWER MOUND",
+    "state": "TX",
+    "zip": "75028",
+    "clia": "45D2286014",
+    "domain": "sagisdx.com",
+    "exa_urls": [
+      "https://www.sagisdx.com/",
+      "https://www.sagisdx.com/contact/",
+      "https://www.sagisdx.com/who-we-are/",
+      "https://www.sagisdx.com/lab-compliance/",
+      "https://www.sagisdx.com/our-diagnostic-experts/"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "CALCULI REFERENCE LABORATORY INC",
+    "city": "MECHANICSVILLE",
+    "state": "VA",
+    "zip": "23116",
+    "clia": "49D0933730",
+    "domain": "calculilab.com",
+    "exa_urls": [
+      "https://www.calculilab.com/",
+      "https://www.calculilab.com/request-mailers",
+      "https://www.calculilab.com/research-and-development",
+      "https://www.calculilab.com/print-requisitions",
+      "https://www.zoominfo.com/c/calculi-reference-laboratory/528635535"
+    ]
+  },
+  {
+    "src": "REF",
+    "name": "BIOLIFE PLASMA SERVICES LP",
+    "city": "APPLETON",
+    "state": "WI",
+    "zip": "54915",
+    "clia": "52D0676908",
+    "domain": "biolifeplasma.com",
+    "exa_urls": [
+      "https://www.biolifeplasma.com/locations/Wisconsin/Appleton",
+      "https://www.biolifeplasma.com/locations/wisconsin/appleton",
+      "https://biolifeplasma.com/",
+      "https://www.biolifeplasma.com/locations/wisconsin/appleton-eisen",
+      "http://www.biolifeplasma.com/index.html"
+    ]
+  }
+]

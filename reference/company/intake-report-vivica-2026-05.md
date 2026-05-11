@@ -317,4 +317,36 @@ CMS CLIA Q1 2026 (все лаборатории)              ~300,000
 
 ---
 
-*Отчёт подготовлен: 2026-05-11. Полная история решений — `tracking/decisions-log.md`. Операционные апдейты — `tracking/log.md`. Технический дамп по воронке и метрикам качества — backup-версия отчёта `brief-sally-petr-2026-05_v1.md`.*
+*Отчёт подготовлен: 2026-05-11. Полная история решений — [[decisions-log]]. Операционные апдейты — [[tracking/log|tracking log]]. Технический дамп по воронке и метрикам качества — backup-версия отчёта `brief-sally-petr-2026-05_v1.md`.*
+
+---
+
+## Смежные документы
+
+**Компания и рынок**
+- [[vivica-intel]] — позиционирование, дифференциаторы Vivica
+- [[market-analysis-us-clinical-labs-2026]] — глубокий market analysis (размер, тренды, боли)
+- [[acure-reference-lab-nj]] — кейс-якорь Acure (open questions внутри)
+
+**ICP персоны**
+- [[persona-ceo-owner]] · [[persona-lab-director]] · [[persona-medical-director]]
+
+**Конкуренты**
+- [[clinisys]] · [[labware]] · [[labvantage]] · [[cloudlims]] · [[creliohealth]] · [[ligolab]] · [[qbench]] · [[lims-net]]
+
+**Battle cards** (конкурент × персона) — см. секцию в [[index]]
+
+**Outreach-планы**
+- [[outreach-plan-vivica-clia-fresh]]
+- [[outreach-plan-vivica-russian-nj]]
+- [[outreach-plan-vivica-using-labware]]
+- [[outreach-plan-vivica-adlm-2026]]
+
+**Плейбуки**
+- [[russian-segment]] · [[three-phase-migration]] · [[adlm-conference]]
+
+**Tracking**
+- [[decisions-log]] · [[tracking/log]] · [[data-log]]
+
+**Навигация**
+- [[index]] · [[AGENTS]] · [[glossary]] · [[glossary.ru]]

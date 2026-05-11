@@ -261,3 +261,33 @@ Oracle закрыла сделку с Cerner и **планирует sunset CoPa
 - [Siemens Healthineers / Harris Poll — Burnout in Clinical Labs](https://www.siemens-healthineers.com/en-us/press-room/press-releases/harris-poll-clinical-labs)
 - [ASCLS — Addressing the Clinical Laboratory Workforce Shortage](https://ascls.org/addressing-the-clinical-laboratory-workforce-shortage/)
 - [CrelioHealth blog — Workforce shortage existential threat](https://blog.creliohealth.com/clinical-laboratory-workforce-shortage-an-existential-threat-to-hospital-profitability/)
+
+---
+
+## Смежные документы
+
+**Компания и кейс**
+- [[vivica-intel]] — позиционирование, дифференциаторы Vivica
+- [[intake-report-vivica-2026-05]] — intake-отчёт Sally (май 2026): discovery, ICP, воронка, статус
+- [[acure-reference-lab-nj]] — кейс Acure Reference Lab
+
+**ICP персоны**
+- [[persona-ceo-owner]] · [[persona-lab-director]] · [[persona-medical-director]]
+
+**Конкуренты (профили)**
+- [[clinisys]] · [[labware]] · [[labvantage]] · [[cloudlims]] · [[creliohealth]] · [[ligolab]] · [[qbench]] · [[lims-net]]
+
+**Outreach-планы**
+- [[outreach-plan-vivica-clia-fresh]]
+- [[outreach-plan-vivica-russian-nj]]
+- [[outreach-plan-vivica-using-labware]]
+- [[outreach-plan-vivica-adlm-2026]]
+
+**Плейбуки**
+- [[russian-segment]] · [[three-phase-migration]] · [[adlm-conference]]
+
+**Tracking**
+- [[decisions-log]] · [[tracking/log]] · [[data-log]]
+
+**Навигация**
+- [[index]] · [[AGENTS]] · [[glossary]] · [[glossary.ru]]

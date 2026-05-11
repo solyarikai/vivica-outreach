@@ -274,7 +274,7 @@ CMS CLIA Q1 2026 (все лаборатории)              ~300,000
 - 8 конкурентных профилей с публичными pain quotes
 - 24 battle cards (конкурент × персона)
 - 3 проработанные ICP-персоны с возражениями и языком
-- 3 плейбука (Russian segment, three-phase migration, ADLM)
+- 3 плейбука ([[russian-segment]], [[three-phase-migration]], [[adlm-conference|ADLM]])
 - Glossary EN + RU (для двуязычной команды Sally)
 
 ### Lead data

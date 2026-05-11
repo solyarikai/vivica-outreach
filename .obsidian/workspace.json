@@ -1,0 +1,222 @@
+{
+  "main": {
+    "id": "6f7103546d02cafe",
+    "type": "split",
+    "children": [
+      {
+        "id": "d5bd256e233ec73e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dd3f7f0a5bdce61a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "reference/company/market-analysis-us-clinical-labs-2026.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "market-analysis-us-clinical-labs-2026"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "023153dbc7f793e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "7a7b58afbc462164",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2914e23a07552db4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "0aa06b11fc01ebc9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "701094d130c62637",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "38d37f19ee038441",
+    "type": "split",
+    "children": [
+      {
+        "id": "e679a1db31592970",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b5ca662115beac9a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки"
+            }
+          },
+          {
+            "id": "b53aeaeb7cc1fcd0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки"
+            }
+          },
+          {
+            "id": "9573b791a679ef66",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "8844dda8738f05c3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "c8b0ef693b5f65d0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
+    }
+  },
+  "active": "dd3f7f0a5bdce61a",
+  "lastOpenFiles": [
+    "reference/company/intake-report-vivica-2026-05.html",
+    "plans/outreach-plan-vivica-clia-fresh.md",
+    "reference/playbooks/three-phase-migration.md",
+    "reference/icp/persona-lab-director.md",
+    "reference/icp/persona-ceo-owner.md",
+    "reference/company/brief-vivica-team-2026-05.md",
+    "magnum-opus/infra/node_modules/socks/README.md",
+    "reference/company/intake-report-vivica-2026-05.md",
+    "tracking/hypotheses.csv",
+    "reference/playbooks/russian-segment.md",
+    "reference/playbooks/adlm-conference.md",
+    "reference/playbooks",
+    "reference/icp/persona-medical-director.md",
+    "reference/icp",
+    "reference/competitors/qbench.md",
+    "reference/competitors/lims-net.md",
+    "reference/competitors/ligolab.md",
+    "reference/competitors/labware.md",
+    "reference/competitors/labvantage.md",
+    "reference/competitors/creliohealth.md",
+    "reference/competitors/cloudlims.md",
+    "reference/competitors/clinisys.md",
+    "reference/competitors",
+    "reference/company/vivica-intel.md",
+    "reference/company",
+    "reference/battle-cards/lims-net_x_medical-director.md",
+    "reference/battle-cards/lims-net_x_lab-director.md",
+    "reference/battle-cards/lims-net_x_ceo-owner.md",
+    "reference/battle-cards/labware_x_medical-director.md",
+    "reference/battle-cards/labware_x_lab-director.md",
+    "reference/battle-cards/labware_x_ceo-owner.md",
+    "input-data",
+    "extensions",
+    "clia-icp-companies-Q1-2026/clia_Q1_2026_segmented/russian_candidates_nj.csv",
+    "clia-icp-companies-Q1-2026/clia_Q1_2026_segmented/bucket_REFERENCE.csv",
+    "clia-icp-companies-Q1-2026/clia_Q1_2026_segmented/bucket_PSC.csv"
+  ]
+}

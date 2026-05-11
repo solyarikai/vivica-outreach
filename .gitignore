@@ -44,6 +44,4 @@ input-data/conference_*_raw.csv
 !tracking/.gitkeep
 
 # --- Local editor/IDE state ---
-.obsidian/
-.claude/
 .ruff_cache/

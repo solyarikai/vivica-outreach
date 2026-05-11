@@ -116,7 +116,7 @@ status: intake delivery
 **Канал:** LinkedIn DM, email.
 **Что покупает:** рост, операционную свободу, защиту маржи. LIMS — это инструмент, а не категория.
 
-### Persona 2 — Lab Director / Manager
+### Persona 2 — [[persona-lab-director|Lab Director / Manager]]
 
 **Кто:** операционный руководитель лаборатории. Часто MLS/MT (Medical Lab Scientist) с 10-20 годами опыта, выросший внутри.
 **Канал:** профессиональные комьюнити, user-conferences.

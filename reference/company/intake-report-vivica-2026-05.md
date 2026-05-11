@@ -122,7 +122,7 @@ status: intake delivery
 **Канал:** профессиональные комьюнити, user-conferences.
 **Что покупает:** убирание ручной работы, снижение ошибок, удобство для команды. Очень технически грамотный, скептичный к change management.
 
-### Persona 3 — Medical Director
+### Persona 3 — [[persona-medical-director|Medical Director]]
 
 **Кто:** клинический руководитель. Почти всегда MD/DO с pathology или clinical pathology training. Legal responsible person для CMS/state.
 **Канал:** EHR, pathology committee meetings, ASCP/CAP events.

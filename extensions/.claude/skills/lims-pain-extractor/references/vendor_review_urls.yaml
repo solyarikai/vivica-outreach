@@ -1,0 +1,112 @@
+# Public review URLs per competitor LIMS vendor.
+#
+# Update this file when adding a new competitor. The extract_pains.py script
+# iterates each vendor and each URL, dedupes by reviewer hash across sites.
+#
+# The `slug` is what shows up in filenames (corpus, per-vendor markdown, etc.)
+# and MUST be lowercase ASCII with no spaces — lims-pain-extractor uses it
+# verbatim in path construction.
+
+vendors:
+
+  - slug: labware
+    display_name: LabWare LIMS
+    sites:
+      g2: https://www.g2.com/products/labware-lims/reviews
+      capterra: https://www.capterra.com/p/131230/LabWare-LIMS/reviews/
+      sourceforge: https://sourceforge.net/software/product/LabWare-LIMS/
+      itqlick: https://www.itqlick.com/labware-lims
+      trustradius: https://www.trustradius.com/products/labware-lims/reviews
+    notes: |
+      Global market leader, 3000+ customers (NIH, GSK, Pfizer). G2 score 4.5/5
+      across 100+ reviews. Strongest in pharma/biotech. Pain themes typically
+      cluster around integration complexity and customization burden.
+
+  - slug: labvantage
+    display_name: LabVantage
+    sites:
+      g2: https://www.g2.com/products/labvantage/reviews
+      capterra: https://www.capterra.com/p/123166/LabVantage/reviews/
+      sourceforge: https://sourceforge.net/software/product/LabVantage/
+      itqlick: https://www.itqlick.com/labvantage
+      trustradius: https://www.trustradius.com/products/labvantage/reviews
+    notes: |
+      Owned by The Chatterjee Group. ~33% pharma reviews. G2 3.8/5 (smaller
+      sample). Reporting customization is a recurring complaint per Q1 2026
+      G2 sweep — BO/Crystal report difficulty.
+
+  - slug: qbench
+    display_name: QBench
+    sites:
+      g2: https://www.g2.com/products/qbench/reviews
+      capterra: https://www.capterra.com/p/167459/QBench/reviews/
+      sourceforge: https://sourceforge.net/software/product/QBench/
+      itqlick: https://www.itqlick.com/qbench
+      trustradius: https://www.trustradius.com/products/qbench/reviews
+    notes: |
+      Modern cloud-native LIMS, 130+ G2 reviews at 4.5/5. Broad multi-vertical
+      including clinical/molecular. Strongest "modern UX" competitor — pains
+      usually around scaling for high-volume clinical workflows.
+
+  - slug: creliohealth
+    display_name: CrelioHealth
+    sites:
+      g2: https://www.g2.com/products/creliohealth/reviews
+      capterra: https://www.capterra.com/p/175534/CrelioHealth/reviews/
+      sourceforge: https://sourceforge.net/software/product/CrelioHealth-LIMS/
+      itqlick: https://www.itqlick.com/creliohealth
+    notes: |
+      Clinical-focused SaaS LIS+LIMS with transparent tiered pricing
+      (starter→enterprise). Strong in mid-market diagnostic labs. India HQ —
+      US-deployment pains are common in reviews.
+
+  - slug: ligolab
+    display_name: LigoLab
+    sites:
+      g2: https://www.g2.com/products/ligolab/reviews
+      capterra: https://www.capterra.com/p/144555/LigoLab/reviews/
+      sourceforge: https://sourceforge.net/software/product/LigoLab/
+      itqlick: https://www.itqlick.com/ligolab
+    notes: |
+      Combined LIS+LIMS+RCM purpose-built for clinical, anatomic pathology,
+      and outreach labs. Competes on end-to-end workflow + billing. Pains
+      tend to be implementation timeline and on-prem deployment complexity.
+
+  - slug: clinisys
+    display_name: Clinisys
+    sites:
+      g2: https://www.g2.com/products/clinisys/reviews
+      capterra: https://www.capterra.com/p/256743/Clinisys/reviews/
+      sourceforge: https://sourceforge.net/software/product/Clinisys/
+      itqlick: https://www.itqlick.com/clinisys
+    notes: |
+      Incumbent with the broadest clinical/pathology portfolio (formerly
+      Sunquest/Horizon family). Pushing cloud modernization. The "safe
+      enterprise" choice. Pains typically: legacy UX, slow modernization,
+      vendor lock-in.
+
+  - slug: cloudlims
+    display_name: CloudLIMS
+    sites:
+      g2: https://www.g2.com/products/cloudlims/reviews
+      capterra: https://www.capterra.com/p/152555/CloudLIMS/reviews/
+      sourceforge: https://sourceforge.net/software/product/CloudLIMS/
+      itqlick: https://www.itqlick.com/cloudlims
+    notes: |
+      Pure-SaaS cloud LIMS with published transparent pricing. Direct head-on
+      competitor to Vivica on the "low IT burden, low upfront cost" angle.
+      Pains: limited customization, narrow feature set vs enterprise needs.
+
+  - slug: lims_net
+    display_name: lims.net (Locasoft / LiMSEO)
+    aliases: [JTO, limsnet]
+    sites:
+      g2: https://www.g2.com/products/lims-net/reviews
+      capterra: https://www.capterra.com/p/97128/Lims-net/reviews/
+      sourceforge: https://sourceforge.net/software/product/Lims.net/
+      itqlick: https://www.itqlick.com/lims-net
+      goodfirms: https://www.goodfirms.co/software/lims-net
+    notes: |
+      Internal team also calls this "JTO" (Petr's chat reference, image #2).
+      French-origin LIMS, ITQlick rank 49/60. Limited US adoption — mostly
+      EU labs. Useful as defensive entry vs European-tech-heavy labs in NJ.

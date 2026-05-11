@@ -89,14 +89,14 @@ status: intake delivery
 
 | Вендор                  | Сегмент        | Модель          | Уязвимости                                       | Приоритет conquest                |
 | ----------------------- | -------------- | --------------- | ------------------------------------------------ | --------------------------------- |
-| **Clinisys / Sunquest** | Enterprise     | On-prem, гибрид | UX, training cost, интеграция после M&A          | 🔴 Высокий                        |
-| **LabWare**             | Enterprise     | On-prem         | TCO, длительность внедрения, миграционная боль   | 🔴 Высокий (готов отдельный план) |
-| **LabVantage**          | Mid-market     | Hybrid          | Сложность имплементации                          | 🟡 Средний                        |
-| **CloudLIMS**           | SMB            | Cloud           | Поверхностная функциональность                   | 🟡 Средний                        |
-| **Creliohealth**        | Mid-market     | Cloud           | Индийское происхождение, US expansion стадия     | 🟢 Низкий                         |
-| **LigoLab**             | Reference labs | Cloud           | Конкурирует напрямую за наш приоритетный сегмент | 🔴 Высокий (наблюдение)           |
-| **QBench**              | SMB            | Cloud           | Современный UI, но узкий feature set             | 🟢 Низкий                         |
-| **LIMS-net (JTO)**      | SMB            | Cloud           | Французское происхождение, слабое US-присутствие | 🟢 Низкий                         |
+| **[[clinisys|Clinisys / Sunquest]]** | Enterprise     | On-prem, гибрид | UX, training cost, интеграция после M&A          | 🔴 Высокий                        |
+| **[[labware|LabWare]]**             | Enterprise     | On-prem         | TCO, длительность внедрения, миграционная боль   | 🔴 Высокий (готов отдельный план) |
+| **[[labvantage|LabVantage]]**          | Mid-market     | Hybrid          | Сложность имплементации                          | 🟡 Средний                        |
+| **[[cloudlims|CloudLIMS]]**           | SMB            | Cloud           | Поверхностная функциональность                   | 🟡 Средний                        |
+| **[[creliohealth|Creliohealth]]**        | Mid-market     | Cloud           | Индийское происхождение, US expansion стадия     | 🟢 Низкий                         |
+| **[[ligolab|LigoLab]]**             | Reference labs | Cloud           | Конкурирует напрямую за наш приоритетный сегмент | 🔴 Высокий (наблюдение)           |
+| **[[qbench|QBench]]**              | SMB            | Cloud           | Современный UI, но узкий feature set             | 🟢 Низкий                         |
+| **[[lims-net|LIMS-net (JTO)]]**      | SMB            | Cloud           | Французское происхождение, слабое US-присутствие | 🟢 Низкий                         |
 
 
 **Battle cards: 24 штуки** (8 конкурентов × 3 ICP-персоны) — готовые ответы на возражения для каждой пары «вендор × роль покупателя». Используются в email-последовательностях.

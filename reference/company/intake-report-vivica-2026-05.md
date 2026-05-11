@@ -149,10 +149,10 @@ status: intake delivery
 
 | #   | Кампания             | Аудитория                                       | Размер                     | Угол                                         | Статус                 |
 | --- | -------------------- | ----------------------------------------------- | -------------------------- | -------------------------------------------- | ---------------------- |
-| 1   | **CLIA Fresh**       | Недавно сертифицированные CLIA-лабы             | широкая воронка            | Greenfield: новые лабы выбирают первый LIMS  | Готов к запуску        |
-| 2   | **Russian NJ**       | Русскоговорящие владельцы лабораторий, NJ/NY/PA | 190 компаний с доменами    | Native-язык + Andrew как русскоязычный лид   | Готов к запуску        |
-| 3   | **LabWare Conquest** | Лабы, использующие LabWare                      | TBD после lims-detector    | Migration с pain-quotes из публичных отзывов | Готов к запуску        |
-| 4   | **ADLM 2026**        | Подтверждённые посетители ADLM                  | TBD после получения списка | Pre/during/post-conference workflow          | Активируется ~mid-June |
+| 1   | **[[outreach-plan-vivica-clia-fresh|CLIA Fresh]]**       | Недавно сертифицированные CLIA-лабы             | широкая воронка            | Greenfield: новые лабы выбирают первый LIMS  | Готов к запуску        |
+| 2   | **[[outreach-plan-vivica-russian-nj|Russian NJ]]**       | Русскоговорящие владельцы лабораторий, NJ/NY/PA | 190 компаний с доменами    | Native-язык + Andrew как русскоязычный лид   | Готов к запуску        |
+| 3   | **[[outreach-plan-vivica-using-labware|LabWare Conquest]]** | Лабы, использующие LabWare                      | TBD после lims-detector    | Migration с pain-quotes из публичных отзывов | Готов к запуску        |
+| 4   | **[[outreach-plan-vivica-adlm-2026|ADLM 2026]]**        | Подтверждённые посетители ADLM                  | TBD после получения списка | Pre/during/post-conference workflow          | Активируется ~mid-June |
 
 
 ### Почему первым идёт Reference Labs

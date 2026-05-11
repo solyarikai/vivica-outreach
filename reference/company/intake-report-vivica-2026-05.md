@@ -109,7 +109,7 @@ status: intake delivery
 
 Источник: Vivica ICP Google Sheet (зафиксирован на kickoff-колле). Каждая персона проработана: профиль, цели, боли, возражения, язык.
 
-### Persona 1 — CEO / Owner
+### Persona 1 — [[persona-ceo-owner|CEO / Owner]]
 
 **Кто:** основатель / владелец лаборатории. POL/PSC: 1-50 сотрудников. Reference: 50-500. Часто не из лабораторного background — предприниматель, врач-владелец практики, executive multi-site операции.
 **Контролирует:** бюджет, подпись контракта.

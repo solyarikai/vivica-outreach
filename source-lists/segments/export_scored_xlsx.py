@@ -96,13 +96,39 @@ def add_readme(ws):
             None,
         ),
         ("", None),
-        ("Buckets", h2),
-        ("HOT (>=75) — 188 contacts (54.7%) — Wave 1 in SmartLead", None),
-        ("WARM (50-74) — 97 contacts (28.2%) — main pool", None),
-        ("COOL (25-49) — 26 contacts (7.6%) — top-up wave", None),
+        ("Bucket thresholds — why these cutoffs", h2),
         (
-            "COLD (<25) — 33 contacts (9.6%) — SKIP. Mostly ambulances / mobile_labs / ASCs / blood_banks (not actual labs).",
-            None,
+            "Thresholds are anchored to the 'reference contact' baseline. A typical "
+            "independent lab + single site + LinkedIn already nets 45 points before "
+            "persona or volume — so any meaningful prospect lands at 50+. The cutoffs "
+            "express WHAT is missing, not just a number.",
+            wrap,
+        ),
+        ("", None),
+        (
+            "HOT (>=75)  — 188 contacts (54.7%)  — Independent lab + decision-maker + reasonable volume. Fundamentally a good fit. Wave 1 in SmartLead.",
+            wrap,
+        ),
+        (
+            "WARM (50-74) —  97 contacts (28.2%) — Independent lab but one signal is off: non-CEO persona, or 0 volume data, or large enterprise. Still worth the touch. Main pool.",
+            wrap,
+        ),
+        (
+            "COOL (25-49) —  26 contacts (7.6%)  — Multiple weak signals: small chain (2-5 sites) OR public-health lab OR low-seniority persona. Top-up wave if quota is open.",
+            wrap,
+        ),
+        (
+            "COLD (<25)   —  33 contacts (9.6%)  — Facility type is wrong: ambulance / mobile_lab / ASC / blood_bank / hospice / tissue_bank. These are NOT lab ICP for Vivica — they slipped into REFERENCE bucket by CMS misclassification. SKIP.",
+            wrap,
+        ),
+        ("", None),
+        (
+            "Typical score arithmetic for a HOT contact: independent (+30) + sweet-spot volume 1k-50k (+25) + single site (+10) + CEO/Owner (+20) + LinkedIn (+5) = 90. Add Petr's S/S+ tier and you're at 110-120.",
+            wrap,
+        ),
+        (
+            "Typical COLD: non-lab facility (-30) + no volume (-10) + 2 sites (0) + persona (+10..20) + LinkedIn (+5) = -5 to -15.",
+            wrap,
         ),
         ("", None),
         ("Columns on the Contacts sheet", h2),

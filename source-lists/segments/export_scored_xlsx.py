@@ -374,18 +374,20 @@ def add_report(ws):
     def add(text, style=None, fill=None):
         nonlocal line_no
         line_no += 1
-        c = ws.cell(row=line_no, column=1, value=text)
+        wrapped = hardwrap(text, 180) if text else text
+        c = ws.cell(row=line_no, column=1, value=wrapped)
         c.alignment = Alignment(wrap_text=True, vertical="top")
         if style:
             c.font = style
         if fill:
             c.fill = fill
         # Merge across all 6 columns so text uses full sheet width
-        if text:
+        if wrapped:
             ws.merge_cells(
                 start_row=line_no, start_column=1, end_row=line_no, end_column=6
             )
-            ws.row_dimensions[line_no].height = calc_height(text, TOTAL_WIDTH)
+            lines = wrapped.count("\n") + 1
+            ws.row_dimensions[line_no].height = max(18, lines * 16)
         return c
 
     def add_table(headers, data_rows, bucket_for_color=None):
@@ -403,17 +405,20 @@ def add_report(ws):
                 if bucket_for_color is not None
                 else None
             )
-            row_height = 16
+            max_lines = 1
             for j, val in enumerate(row_data, start=1):
                 if isinstance(val, str) and val.startswith("="):
                     continue
-                c = ws.cell(row=line_no, column=j, value=val)
+                col_width = COL_WIDTHS[j - 1] if j - 1 < len(COL_WIDTHS) else 20
+                wrap_at = max(10, int(col_width * 0.9))
+                val_text = hardwrap(str(val), wrap_at) if val else val
+                c = ws.cell(row=line_no, column=j, value=val_text)
                 c.alignment = Alignment(wrap_text=True, vertical="top")
                 if row_fill:
                     c.fill = row_fill
-                col_width = COL_WIDTHS[j - 1] if j - 1 < len(COL_WIDTHS) else 20
-                row_height = max(row_height, calc_height(str(val), col_width))
-            ws.row_dimensions[line_no].height = row_height
+                if val_text:
+                    max_lines = max(max_lines, str(val_text).count("\n") + 1)
+            ws.row_dimensions[line_no].height = max(18, max_lines * 16)
 
     add("Vivica Outreach — Lead Selection Report", h1)
     add("")

@@ -85,6 +85,18 @@ def add_readme(ws):
             None,
         ),
         (
+            "    What is 'independent lab'? CMS CLIA facility code 15 — a stand-alone commercial laboratory operating as its own business, NOT a hospital lab, physician office lab (POL), or public agency. Examples: LabCorp, Quest, Cascade Pathology, Regeneron Clinical Genomics. Sells testing as a service.",
+            wrap,
+        ),
+        (
+            "    Why independent labs are Vivica's primary ICP: (1) they buy LIMS themselves — no hospital IT forcing Epic Beaker, (2) LIMS pain hits their P&L directly (revenue engine, not cost center), (3) short sales cycle — CEO/owner can decide, (4) cloud multi-tenant SaaS fits their operating model.",
+            wrap,
+        ),
+        (
+            "    'public_health_lab' (+15) = state/county/CDC labs. ICP-adjacent but slower procurement. 'non-lab' (-30) = ambulance, mobile_lab, ASC, blood_bank, hospice, tissue_bank — wrongly classified as REFERENCE in CMS data, won't buy a LIMS.",
+            wrap,
+        ),
+        (
             "Test volume | test_volume | 1k-50k +25 / 50k-500k +15 / 1-999 +10 / 500k+ 0 / 0 -10",
             None,
         ),

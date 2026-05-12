@@ -76,10 +76,10 @@
 ## Source Lists
 
 - `source-lists/clia-q1-2026/` — CMS CLIA Q1 2026 raw + segmented buckets (POL, REFERENCE, PSC, OTHER) + russian candidates NJ
-- `source-lists/lab-universe-petr-2026-05/` — US Lab Universe от Петра: 8,256 labs, 11 tabs, scored + tiered (xlsx). Документация: [[lab-universe-2026-05]]
+- `source-lists/lab-universe-petr-2026-05/` — US Lab Universe от Петра: 8,256 labs, 11 tabs, scored + tiered (xlsx + `hot_194.csv`). Документация: [[lab-universe-2026-05]]
 - `source-lists/lab-license-snapshot-2026-05/` — лабы, получившие лицензию за последние 6 мес (≈ без LIMS). 13 источников, фильтр ICP. [[lab-license-snapshot-2026-05]]
 - `source-lists/enrichment-runs/` — one folder per enrichment run with input/output/manifest (see [[AGENTS]] § Enrichment Run Convention)
-- `source-lists/segments/` — final merged artifacts ready for downstream pipeline
+- `source-lists/segments/` — final merged artifacts: domains, verified contacts, tiered lists. Tier distribution: [[tier_summary]]
 
 ---
 

@@ -253,11 +253,13 @@ def add_readme(ws):
         ("Scoring run-id: segments-internal-scoring (2026-05-12)", None),
     ]
 
-    col_width = 140
+    col_width = 100
     ws.column_dimensions["A"].width = col_width
+    WRAP_AT = 95
 
     for i, (text, style) in enumerate(rows, start=1):
-        cell = ws.cell(row=i, column=1, value=text)
+        wrapped = hardwrap(text, WRAP_AT) if text else text
+        cell = ws.cell(row=i, column=1, value=wrapped)
         cell.alignment = Alignment(wrap_text=True, vertical="top")
         if style:
             if style is bold:
@@ -268,11 +270,9 @@ def add_readme(ws):
                 cell.font = h2
                 cell.fill = header_fill
 
-        # Compute row height from wrapped text length (≈ chars per line × 15pt)
-        if text:
-            chars_per_line = int(col_width * 1.0)
-            lines = max(1, -(-len(text) // chars_per_line))
-            ws.row_dimensions[i].height = max(16, lines * 16)
+        if wrapped:
+            lines = wrapped.count("\n") + 1
+            ws.row_dimensions[i].height = max(18, lines * 16)
 
 
 def add_contacts(ws):

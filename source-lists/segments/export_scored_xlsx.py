@@ -331,17 +331,6 @@ def add_report(ws):
     header_fill = PatternFill("solid", fgColor="F0F0F0")
 
     line_no = 0
-    # Will be set at the end; need them here for height math
-    COL_WIDTHS = [14, 38, 18, 36, 32, 80]
-    TOTAL_WIDTH = sum(COL_WIDTHS)
-
-    def calc_height(text: str, width: int) -> float:
-        if not text:
-            return 16
-        lines = 0
-        for paragraph in text.split("\n"):
-            lines += max(1, -(-len(paragraph) // max(1, int(width * 0.95))))
-        return max(16, lines * 15)
 
     def add(text, style=None, fill=None):
         nonlocal line_no

@@ -251,8 +251,19 @@ When checked, run `/launch outreach-plan-vivica-russian-nj.md` from the repo wit
 
 ---
 
+## Pre-verified pool (2026-05-12 update)
+
+Помимо 190 noisy candidates есть **pre-verified file**: `../source-lists/segments/russian_confirmed.csv` — **21 confirmed labs** (NPI double-signal verified). Andrew стартует с этого pool, а не с 190 «маркетинговых».
+
+Распределение:
+- Brooklyn NY: 10 labs (исходный pool из 190)
+- NJ/PA/NY вне Brooklyn: 4 (Vitaly Fishbein, Vitaly Terushkin, Oleg Volchonok, Gregory Shifrin)
+- California: 5 (Alan Semion, Boris Zaks, Alexanian Med Labs, Reyzelman ×2 Folsom, Reyter Sherman Oaks, Kuznetsova Emeryville, Kaganskaya LA)
+- Florida: 1 (на FL date-фильтр режет большинство устоявшихся практик)
+
 ## Cross-references
 
+- Pre-verified candidates: `../source-lists/segments/russian_confirmed.csv`
 - Russian segment playbook (the rules): `../reference/playbooks/russian-segment.md`
 - Main CLIA-fresh plan (the parallel/larger flow): `outreach-plan-vivica-clia-fresh.md`
 - lims.net competitor profile (frequent overlap): `../reference/competitors/lims-net.md`

@@ -76,6 +76,7 @@
 ## Source Lists
 
 - `source-lists/clia-q1-2026/` — CMS CLIA Q1 2026 raw + segmented buckets (POL, REFERENCE, PSC, OTHER) + russian candidates NJ
+- `source-lists/lab-universe-petr-2026-05/` — US Lab Universe от Петра: 8,256 labs, 11 tabs, scored + tiered (xlsx). Документация: [[lab-universe-2026-05]]
 - `source-lists/enrichment-runs/` — one folder per enrichment run with input/output/manifest (see [[AGENTS]] § Enrichment Run Convention)
 - `source-lists/segments/` — final merged artifacts ready for downstream pipeline
 

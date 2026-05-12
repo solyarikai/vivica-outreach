@@ -285,6 +285,7 @@ def add_contacts(ws):
         "primary_reason": 40,
         "vivica_score": 10,
         "vivica_bucket": 11,
+        "vivica_rationale": 90,
         "facility_type_raw": 16,
         "test_volume_raw": 12,
         "site_count_raw": 10,

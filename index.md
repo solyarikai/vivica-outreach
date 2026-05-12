@@ -68,7 +68,6 @@
 - [[vivica-intel]] — what Vivica is, positioning, differentiators
 - [[call-kickoff-2026-05-08]] — kick-off call transcript (Chris, Andrew, Renat, Peter, Yana; 2026-05-08)
 - [[market-analysis-us-clinical-labs-2026]] — US LIMS market sizing, competitor moves, audience pain (HTML version next to the .md)
-- [[lab-universe-2026-05]] — US Lab Universe dataset: 8,256 labs, tier logic, cohorts, column reference (built 2026-05-12)
 - [[acure-reference-lab-nj]] — NJ reference lab (open questions inside)
 - [[intake-report-vivica-2026-05]] — project intake report: discovery findings, market, ICP, segments, funnel, what's ready (May 2026)
 

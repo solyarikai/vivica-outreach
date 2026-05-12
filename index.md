@@ -85,7 +85,7 @@
 - `source-lists/clia-q1-2026/` — CMS CLIA Q1 2026 raw + segmented buckets (POL, REFERENCE, PSC, OTHER) + russian candidates NJ
 - `source-lists/lab-license-snapshot-2026-05/` — лабы с лицензией ≤6 мес (≈ без LIMS). 13 источников, фильтр ICP. [[lab-license-snapshot-2026-05]]
 - `source-lists/enrichment-runs/` — one folder per enrichment run (см. [[AGENTS]] § Enrichment Run Convention)
-- `source-lists/segments/` — final merged artifacts: domains, verified contacts, tier-аннотированные списки. Tier distribution: [[tier_summary]]
+- `source-lists/segments/` — final merged artifacts: domains, verified contacts, tier-аннотированные списки. README: [[segments/README]]. Distributions: [[tier_summary]], [[scoring_summary]]
 
 ---
 

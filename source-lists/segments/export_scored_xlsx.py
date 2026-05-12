@@ -333,17 +333,33 @@ def add_report(ws):
     header_fill = PatternFill("solid", fgColor="F0F0F0")
 
     line_no = 0
+    # Will be set at the end; need them here for height math
+    COL_WIDTHS = [14, 38, 18, 36, 32, 80]
+    TOTAL_WIDTH = sum(COL_WIDTHS)
+
+    def calc_height(text: str, width: int) -> float:
+        if not text:
+            return 16
+        lines = 0
+        for paragraph in text.split("\n"):
+            lines += max(1, -(-len(paragraph) // max(1, int(width * 0.95))))
+        return max(16, lines * 15)
 
     def add(text, style=None, fill=None):
         nonlocal line_no
         line_no += 1
         c = ws.cell(row=line_no, column=1, value=text)
+        c.alignment = Alignment(wrap_text=True, vertical="top")
         if style:
             c.font = style
         if fill:
             c.fill = fill
-        if style in (None, bold):
-            c.alignment = wrap
+        # Merge across all 6 columns so text uses full sheet width
+        if text:
+            ws.merge_cells(
+                start_row=line_no, start_column=1, end_row=line_no, end_column=6
+            )
+            ws.row_dimensions[line_no].height = calc_height(text, TOTAL_WIDTH)
         return c
 
     def add_table(headers, data_rows, bucket_for_color=None):
@@ -353,6 +369,7 @@ def add_report(ws):
             c = ws.cell(row=line_no, column=j, value=h)
             c.font = bold
             c.fill = PatternFill("solid", fgColor="DDDDDD")
+            c.alignment = Alignment(wrap_text=True, vertical="top")
         for row_data in data_rows:
             line_no += 1
             row_fill = (
@@ -360,6 +377,7 @@ def add_report(ws):
                 if bucket_for_color is not None
                 else None
             )
+            row_height = 16
             for j, val in enumerate(row_data, start=1):
                 if isinstance(val, str) and val.startswith("="):
                     continue
@@ -367,6 +385,9 @@ def add_report(ws):
                 c.alignment = Alignment(wrap_text=True, vertical="top")
                 if row_fill:
                     c.fill = row_fill
+                col_width = COL_WIDTHS[j - 1] if j - 1 < len(COL_WIDTHS) else 20
+                row_height = max(row_height, calc_height(str(val), col_width))
+            ws.row_dimensions[line_no].height = row_height
 
     add("Vivica Outreach — Lead Selection Report", h1)
     add("")

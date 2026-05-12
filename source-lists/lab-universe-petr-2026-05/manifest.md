@@ -39,4 +39,4 @@ Actionable (S+/S/A/B): **1,869 labs**. HOT (S+/S): **204 labs**.
 
 ## Documentation
 
-Full column reference and tier logic: [[lab-universe-2026-05]] (reference/company/)
+Full column reference and tier logic: [[lab-universe-2026-05]] (source-lists/lab-universe-petr-2026-05/)

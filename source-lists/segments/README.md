@@ -31,7 +31,9 @@
 | `russian_candidates_nj_domains.csv` | 190 | NJ-домены, кандидаты на русскоязычные (для исключения) |
 | `russian_confirmed.csv` | 19 | Подтверждённые русскоязычные → blocklist |
 | `tier_summary.md` | — | Распределение тиров по всем трём сегментам |
-| `apply_tiers.py` | — | Скрипт, который прикручивает тиры из универса Петра к нашим выходам |
+| `apply_tiers.py` | — | Скрипт: тиры Петра → наши выходы |
+| `score_contacts.py` | — | Скрипт: собственный Vivica-fit скоринг (6 сигналов из CLIA bucket + persona + tier) |
+| `scoring_summary.md` | — | Распределение по bucket'ам, топ-20, bottom-10, breakdown по facility_type |
 
 ---
 

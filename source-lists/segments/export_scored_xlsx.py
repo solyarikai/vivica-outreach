@@ -303,16 +303,17 @@ def add_contacts(ws):
                     val = int(val)
                 except ValueError:
                     pass
+            elif j - 1 == rationale_idx:
+                val = hardwrap(str(val), 85)
             c = ws.cell(row=i, column=j, value=val)
             c.alignment = Alignment(wrap_text=True, vertical="top")
             if fill and (j - 1) in (bucket_idx, score_idx):
                 c.fill = fill
                 c.font = Font(bold=True)
-        # Row height driven mainly by rationale column (width 90)
         if rationale_idx >= 0:
-            rationale_text = row[rationale_idx]
-            lines = max(1, -(-len(rationale_text) // 85))
-            ws.row_dimensions[i].height = max(16, lines * 15)
+            wrapped = hardwrap(row[rationale_idx], 85)
+            lines = wrapped.count("\n") + 1
+            ws.row_dimensions[i].height = max(18, lines * 16)
 
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = f"A1:{get_column_letter(len(headers))}{len(rows) + 1}"

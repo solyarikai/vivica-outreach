@@ -346,20 +346,13 @@ def add_report(ws):
     def add(text, style=None, fill=None):
         nonlocal line_no
         line_no += 1
-        wrapped = hardwrap(text, 180) if text else text
-        c = ws.cell(row=line_no, column=1, value=wrapped)
-        c.alignment = Alignment(wrap_text=True, vertical="top")
+        c = ws.cell(row=line_no, column=1, value=text)
         if style:
             c.font = style
         if fill:
             c.fill = fill
-        # Merge across all 6 columns so text uses full sheet width
-        if wrapped:
-            ws.merge_cells(
-                start_row=line_no, start_column=1, end_row=line_no, end_column=6
-            )
-            lines = wrapped.count("\n") + 1
-            ws.row_dimensions[line_no].height = max(18, lines * 16)
+        if style in (None, bold):
+            c.alignment = wrap
         return c
 
     def add_table(headers, data_rows, bucket_for_color=None):
@@ -369,7 +362,6 @@ def add_report(ws):
             c = ws.cell(row=line_no, column=j, value=h)
             c.font = bold
             c.fill = PatternFill("solid", fgColor="DDDDDD")
-            c.alignment = Alignment(wrap_text=True, vertical="top")
         for row_data in data_rows:
             line_no += 1
             row_fill = (
@@ -377,20 +369,13 @@ def add_report(ws):
                 if bucket_for_color is not None
                 else None
             )
-            max_lines = 1
             for j, val in enumerate(row_data, start=1):
                 if isinstance(val, str) and val.startswith("="):
                     continue
-                col_width = COL_WIDTHS[j - 1] if j - 1 < len(COL_WIDTHS) else 20
-                wrap_at = max(10, int(col_width * 0.9))
-                val_text = hardwrap(str(val), wrap_at) if val else val
-                c = ws.cell(row=line_no, column=j, value=val_text)
+                c = ws.cell(row=line_no, column=j, value=val)
                 c.alignment = Alignment(wrap_text=True, vertical="top")
                 if row_fill:
                     c.fill = row_fill
-                if val_text:
-                    max_lines = max(max_lines, str(val_text).count("\n") + 1)
-            ws.row_dimensions[line_no].height = max(18, max_lines * 16)
 
     add("Vivica Outreach — Lead Selection Report", h1)
     add("")

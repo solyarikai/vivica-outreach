@@ -8,9 +8,26 @@ Two sheets:
 
 import csv
 import sys
+import textwrap
 from pathlib import Path
 
 sys.path.insert(0, "/tmp/pylibs")
+
+
+def hardwrap(text: str, width: int = 100) -> str:
+    """Insert explicit newlines so Excel reliably shows multi-line content."""
+    if not text:
+        return text
+    out = []
+    for paragraph in text.split("\n"):
+        if len(paragraph) <= width:
+            out.append(paragraph)
+        else:
+            out.extend(
+                textwrap.wrap(paragraph, width=width, break_long_words=False) or [""]
+            )
+    return "\n".join(out)
+
 
 from openpyxl import Workbook  # noqa: E402
 from openpyxl.styles import Alignment, Font, PatternFill  # noqa: E402

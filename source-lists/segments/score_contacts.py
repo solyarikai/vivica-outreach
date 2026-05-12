@@ -223,8 +223,10 @@ def main():
         if not clia_data:
             missing_clia += 1
         score, bd = score_row(contact, clia_data)
+        bucket = bucket_of(score)
         contact["vivica_score"] = score
-        contact["vivica_bucket"] = bucket_of(score)
+        contact["vivica_bucket"] = bucket
+        contact["vivica_rationale"] = rationale(bd, clia_data, contact, score, bucket)
         contact["s_facility_type"] = bd["facility_type"]
         contact["s_test_volume"] = bd["test_volume"]
         contact["s_site_count"] = bd["site_count"]

@@ -58,3 +58,15 @@ Format:
 - status: done — feeds SmartLead via `final_contacts_verified.csv`
 - manifest: `source-lists/enrichment-runs/2026-05-11_reference-1849_findymail-email/manifest.md`
 - analytics: `source-lists/enrichment-runs/2026-05-11_reference-1849_findymail-email/analytics.md`
+
+## [2026-05-12] segments-internal-scoring — Vivica-fit scoring for 344 reference contacts
+
+- tool: `source-lists/segments/score_contacts.py` (internal, no external API)
+- input: `final_contacts_tiered.csv` (344) × `bucket_REFERENCE.csv` (1849) join on `clia_number`
+- output: `final_contacts_scored.csv` (344 rows, sorted desc by score) + `scoring_summary.md`
+- model: 6 signals, max ~120 — facility_type (cms_facility_type_name), test_volume, site_count, persona, has_linkedin, petr_tier. CLIA age and cert type dropped (no variance on Q1 2026 cohort).
+- buckets: HOT 188 (54.7%) / WARM 97 (28.2%) / COOL 26 (7.6%) / COLD 33 (9.6%)
+- key finding: 33 COLD contacts are ambulances/mobile_labs/ASCs/blood_banks — non-lab facilities mis-classified into REFERENCE bucket; filter them out before SmartLead. Only 11 of 344 contacts have Petr-tier (all 10 HOT-tier are in HOT bucket — model consistent).
+- credits: $0 (purely derivative)
+- status: done — feeds prioritized SmartLead waves
+- summary: `source-lists/segments/scoring_summary.md`

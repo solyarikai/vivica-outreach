@@ -38,48 +38,48 @@ def add_readme(ws):
     rows = [
         ("Vivica Outreach — Scored Contacts", h1),
         ("", None),
-        ("Что это за документ", h2),
+        ("What this document is", h2),
         (
-            "Финальный приоритизированный список из 344 верифицированных контактов "
-            "по US reference-лабораториям. Каждый контакт оценён по 6 сигналам и "
-            "распределён в bucket HOT / WARM / COOL / COLD. Лист 'Contacts' — данные, "
-            "отсортированные по убыванию vivica_score.",
+            "Final prioritized list of 344 verified contacts at US reference labs. "
+            "Each contact is scored on 6 signals and assigned to a HOT / WARM / "
+            "COOL / COLD bucket. The 'Contacts' sheet holds the data, sorted by "
+            "vivica_score descending.",
             wrap,
         ),
         ("", None),
         ("Pool", bold),
         (
-            "🟧 Наша CMS-enrichment воронка (НЕ путать с 🟦 HOT-универсом Петра). "
-            "Источник: CMS CLIA Q1 2026 (1849 reference-лаб) → Apollo people search → "
-            "Apollo Reveal по ID → FindyMail SMTP double-verify. "
-            "344 уникальных контакта на 270 компаниях.",
+            "Our CMS-enrichment funnel (NOT to be confused with Petr's HOT universe). "
+            "Source: CMS CLIA Q1 2026 (1,849 reference labs) -> Apollo people search "
+            "-> Apollo Reveal by ID -> FindyMail SMTP double-verify. "
+            "344 unique contacts across 270 companies.",
             wrap,
         ),
         ("", None),
-        ("Как собрано — воронка", h2),
-        ("1. CMS CLIA Q1 2026 → 1849 reference-лаб", None),
-        ("2. Domain enrichment (Clay + Exa) → 1019 уникальных доменов", None),
+        ("How it was assembled — funnel", h2),
+        ("1. CMS CLIA Q1 2026 -> 1,849 reference labs", None),
+        ("2. Domain enrichment (Clay + Exa) -> 1,019 unique domains", None),
         (
-            "3. Apollo people search → 1252 контакта на 383 доменах (37% domain hit)",
+            "3. Apollo people search -> 1,252 contacts across 383 domains (37% domain hit)",
             None,
         ),
-        ("4. Apollo Reveal (email by ID) → 1033 verified", None),
-        ("5. FindyMail SMTP verify → 878 valid (14% bounce отсеяно)", None),
-        ("6. Dedup по email → 344 unique contacts", None),
+        ("4. Apollo Reveal (email by ID) -> 1,033 verified", None),
+        ("5. FindyMail SMTP verify -> 878 valid (14% bounce filtered out)", None),
+        ("6. Dedup by email -> 344 unique contacts", None),
         (
-            "Полная воронка с конверсиями: source-lists/enrichment-runs/2026-05-11_reference-1849_findymail-email/analytics.md",
+            "Full funnel with conversions: source-lists/enrichment-runs/2026-05-11_reference-1849_findymail-email/analytics.md",
             None,
         ),
         ("", None),
-        ("Скоринг — модель (max ~120 баллов)", h2),
+        ("Scoring model (max ~120 points)", h2),
         (
-            "Калиброван под реальное распределение сигналов в данных. CLIA age и "
-            "cert type исключены — на Q1 2026 cohort нет дисперсии (все ≤6 мес, "
-            "99% Compliance).",
+            "Calibrated to the actual signal distribution in the data. CLIA age "
+            "and certificate type were dropped — on the Q1 2026 cohort there is "
+            "no variance (all <=6 months old, 99% Compliance).",
             wrap,
         ),
         ("", None),
-        ("Сигнал | Источник | Веса", bold),
+        ("Signal | Source | Weights", bold),
         (
             "Facility type | cms_facility_type_name | independent +30 / public_health +15 / non-lab -30",
             None,
@@ -92,96 +92,102 @@ def add_readme(ws):
         ("Persona | persona | CEO/Owner +20 / Lab Dir +15 / Med Dir +10", None),
         ("LinkedIn | contact_linkedin not empty | +5", None),
         (
-            "Petr's tier | tier (если в его универсе) | S+ +30 / S +20 / A +10 / B +5 / D/E -50",
+            "Petr's tier | tier (only if present in his universe) | S+ +30 / S +20 / A +10 / B +5 / D/E -50",
             None,
         ),
         ("", None),
         ("Buckets", h2),
-        ("🔥 HOT (≥75) — 188 контактов (54.7%) — первая волна SmartLead", None),
-        ("🌡 WARM (50-74) — 97 контактов (28.2%) — основной пул", None),
-        ("❄️ COOL (25-49) — 26 контактов (7.6%) — добивка", None),
+        ("HOT (>=75) — 188 contacts (54.7%) — Wave 1 in SmartLead", None),
+        ("WARM (50-74) — 97 contacts (28.2%) — main pool", None),
+        ("COOL (25-49) — 26 contacts (7.6%) — top-up wave", None),
         (
-            "🧊 COLD (<25) — 33 контакта (9.6%) — SKIP. В основном ambulances/mobile_labs/ASCs/blood_banks (по факту не лабы)",
+            "COLD (<25) — 33 contacts (9.6%) — SKIP. Mostly ambulances / mobile_labs / ASCs / blood_banks (not actual labs).",
             None,
         ),
         ("", None),
-        ("Колонки на листе Contacts", h2),
-        ("Базовые (из verify-пайплайна):", bold),
-        ("src_name — имя лабораторной компании (из CMS CLIA)", None),
-        ("src_domain — основной домен", None),
-        ("src_clia — CLIA-номер (ключ для join с CMS-данными)", None),
+        ("Columns on the Contacts sheet", h2),
+        ("Base (from verify pipeline):", bold),
+        ("src_name — lab company name (from CMS CLIA)", None),
+        ("src_domain — primary domain", None),
+        ("src_clia — CLIA number (join key for CMS data)", None),
         (
-            "persona — Apollo-классификация: ceo_owner / lab_director / medical_director",
+            "persona — Apollo classification: ceo_owner / lab_director / medical_director",
             None,
         ),
         (
             "contact_first_name / contact_full_name / contact_email / contact_title / contact_linkedin",
             None,
         ),
-        ("source — обычно apollo+findymail_verified", None),
+        ("source — typically apollo+findymail_verified", None),
         ("", None),
-        ("Петров скоринг (из его универса, если CLIA там есть — у 11/344):", bold),
-        ("tier — S+/S/A/B/C/D/E или — (нет в универсе)", None),
-        ("score / cohort / sources / primary_reason — внешний скоринг", None),
+        (
+            "Petr's scoring (from his universe — only 11/344 contacts have it):",
+            bold,
+        ),
+        ("tier — S+/S/A/B/C/D/E or — (not in universe)", None),
+        ("score / cohort / sources / primary_reason — external scoring fields", None),
         ("", None),
-        ("Наш Vivica-fit скоринг:", bold),
-        ("vivica_score — суммарный балл (max ~120)", None),
+        ("Our Vivica-fit scoring:", bold),
+        ("vivica_score — total score (max ~120)", None),
         ("vivica_bucket — HOT / WARM / COOL / COLD", None),
         (
-            "s_facility_type / s_test_volume / s_site_count / s_persona / s_has_linkedin / s_petr_tier — вклад каждого сигнала",
+            "s_facility_type / s_test_volume / s_site_count / s_persona / s_has_linkedin / s_petr_tier — per-signal contribution",
             None,
         ),
         (
-            "facility_type_raw / test_volume_raw / site_count_raw — исходные значения (для прозрачности)",
+            "facility_type_raw / test_volume_raw / site_count_raw — raw values (for transparency)",
             None,
         ),
         ("", None),
-        ("Как использовать", h2),
-        ("1. Загрузить Wave 1 в SmartLead: фильтр vivica_bucket = HOT (188)", None),
-        ("2. После Wave 1 — Wave 2: vivica_bucket = WARM (97)", None),
-        ("3. COOL (26) — на добивку если квота не закрылась", None),
+        ("How to use", h2),
+        ("1. Load Wave 1 into SmartLead: filter vivica_bucket = HOT (188)", None),
+        ("2. After Wave 1 -> Wave 2: vivica_bucket = WARM (97)", None),
+        ("3. COOL (26) — top-up if quota is not filled", None),
         (
-            "4. COLD (33) НЕ грузить — это ambulances/mobile units, не ICP для Vivica LIMS",
+            "4. COLD (33) — DO NOT load. These are ambulances / mobile units, not ICP for Vivica LIMS.",
             None,
         ),
         (
-            "5. Blocklist (русскоязычные): отдельно вычесть source-lists/segments/russian_confirmed.csv (19)",
-            None,
-        ),
-        ("", None),
-        ("Ключевые предостережения", h2),
-        (
-            "• Apollo email_status=verified врёт на 14.4% — все 344 пропущены через FindyMail SMTP, можно грузить",
-            None,
-        ),
-        (
-            "• 333/344 контактов вне Петровой универсума — это не баг, это другой пул (CMS-only пайплайн)",
-            None,
-        ),
-        (
-            "• 76% компаний имеют только одну персону (full 3-persona ICP coverage редкий)",
-            None,
-        ),
-        (
-            "• Угол outreach: 'мигрируй с текущей системы' (established операторы), НЕ 'купи правильно с первого раза' (это для Петрового HOT-универса)",
+            "5. Blocklist (Russian-speaking): subtract source-lists/segments/russian_confirmed.csv (19) separately.",
             None,
         ),
         ("", None),
-        ("Связанные файлы", h2),
-        ("source-lists/segments/README.md — обзор всей папки segments", None),
+        ("Key caveats", h2),
         (
-            "source-lists/segments/scoring_summary.md — распределение, топ-20, breakdown",
+            "- Apollo email_status=verified is wrong 14.4% of the time. All 344 contacts here passed FindyMail SMTP — safe to load.",
             None,
         ),
-        ("source-lists/segments/score_contacts.py — скрипт, которым посчитано", None),
-        ("source-lists/segments/tier_summary.md — распределение Петрова tier", None),
         (
-            "source-lists/enrichment-runs/2026-05-11_reference-1849_findymail-email/manifest.md — manifest run'а",
+            "- 333/344 contacts are outside Petr's universe. This is not a bug, it's a different pool (CMS-only pipeline).",
             None,
         ),
-        ("tracking/data-log.md — лог всех data-операций", None),
+        (
+            "- 76% of companies have only one persona reached (full 3-persona ICP coverage is rare).",
+            None,
+        ),
+        (
+            "- Outreach angle: 'migrate from your current system' (established operators), NOT 'buy right the first time' (that copy is for Petr's HOT universe).",
+            None,
+        ),
         ("", None),
-        ("Run-id скоринга: segments-internal-scoring (2026-05-12)", None),
+        ("Related files", h2),
+        (
+            "source-lists/segments/README.md — overview of the whole segments folder",
+            None,
+        ),
+        (
+            "source-lists/segments/scoring_summary.md — distribution, top-20, breakdown",
+            None,
+        ),
+        ("source-lists/segments/score_contacts.py — the scoring script", None),
+        ("source-lists/segments/tier_summary.md — Petr's tier distribution", None),
+        (
+            "source-lists/enrichment-runs/2026-05-11_reference-1849_findymail-email/manifest.md — enrichment run manifest",
+            None,
+        ),
+        ("tracking/data-log.md — log of all data operations", None),
+        ("", None),
+        ("Scoring run-id: segments-internal-scoring (2026-05-12)", None),
     ]
 
     for i, (text, style) in enumerate(rows, start=1):

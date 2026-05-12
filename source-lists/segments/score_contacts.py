@@ -2,18 +2,23 @@
 """Score 344 verified contacts on Vivica-ICP fit.
 
 Joins final_contacts_tiered.csv with CLIA bucket data to compute a custom
-score for contacts that are outside Petr's universe (96.8% of our pool).
+score for contacts outside Petr's universe (96.8% of our pool).
 
-Signals used (max ~150):
-  - Lab type (independent vs chain)      ±30 / -10
-  - CLIA age (≤2y / 2-10y / 10+y)        +25 / +10 / 0
-  - CLIA cert type (Compliance/Accred)   +20 / 0 / -10
-  - Persona (CEO/Lab/Med Director)       +20 / +15 / +10
-  - Test volume size                     +15 / +10 / 0
-  - Has LinkedIn                         +5
-  - Petr's tier (if any)                 S+ +30 / S +20 / A +10 / B +5 / D/E -50
+Calibrated to actual signal distribution in the data:
+  - CLIA age and cert type dropped — no variance on CLIA Q1 2026 cohort
+  - cms_facility_type_name is the real lab-type signal (not lab_type column)
+  - test_volume is the strongest discriminator (range 0..11M, median ~10k)
+  - site_count distinguishes truly-independent from chain locations
 
-Buckets: HOT ≥80, WARM 50-79, COOL 30-49, COLD <30
+Signals (max ~120):
+  - Facility type           independent +30 / public_health +15 / other 0 / non-lab -30
+  - Test volume             1k-5k +25 / 5k-50k +25 / 1-999 +10 / 50k-500k +15 / 500k+ 0 / 0 -10
+  - Site count              0-1 +10 / 2-5 0 / 6+ -10
+  - Persona                 CEO +20 / Lab Dir +15 / Med Dir +10
+  - LinkedIn                +5
+  - Petr's tier             S+ +30 / S +20 / A +10 / B +5 / D/E -50
+
+Buckets: HOT ≥75, WARM 50-74, COOL 25-49, COLD <25
 """
 
 import csv
@@ -27,9 +32,18 @@ CLIA_BUCKET = BASE / "clia-q1-2026/clia_Q1_2026_segmented/bucket_REFERENCE.csv"
 
 TODAY = date(2026, 5, 12)
 
+NON_LAB_FACILITIES = {
+    "ambulance",
+    "mobile_lab",
+    "hmo",
+    "ambulatory_surgery_center",
+    "blood_bank",
+    "hospice",
+    "tissue_bank",
+}
 
-def load_clia_lookup() -> dict[str, dict]:
-    """Return CLIA# → {certified_at, certificate_type, site_count, test_volume, lab_type}."""
+
+def load_clia_lookup():
     lookup = {}
     with open(CLIA_BUCKET, newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -39,16 +53,6 @@ def load_clia_lookup() -> dict[str, dict]:
     return lookup
 
 
-def years_since(date_str: str) -> float | None:
-    if not date_str:
-        return None
-    try:
-        d = date.fromisoformat(date_str.strip()[:10])
-        return (TODAY - d).days / 365.25
-    except (ValueError, TypeError):
-        return None
-
-
 def safe_int(v) -> int:
     try:
         return int(float(str(v).strip() or 0))
@@ -56,46 +60,49 @@ def safe_int(v) -> int:
         return 0
 
 
-def score_row(contact: dict, clia_data: dict) -> tuple[int, dict]:
-    """Return (score, breakdown_dict)."""
+def score_row(contact: dict, clia_data: dict):
     breakdown = {}
     score = 0
 
-    # 1. Lab type
-    lab_type = (clia_data.get("lab_type") or "").strip().lower()
-    if lab_type == "independent":
+    # 1. Facility type (cms_facility_type_name — the real classifier)
+    ftype = (clia_data.get("cms_facility_type_name") or "").strip().lower()
+    if ftype == "independent":
         s = 30
-    elif lab_type == "chain":
-        s = -10
+    elif ftype == "public_health_lab":
+        s = 15
+    elif ftype in NON_LAB_FACILITIES:
+        s = -30
     else:
         s = 0
-    breakdown["lab_type"] = s
+    breakdown["facility_type"] = s
     score += s
 
-    # 2. CLIA age
-    age = years_since(clia_data.get("certified_at", ""))
-    if age is None:
-        s = 0
-    elif age <= 2:
-        s = 25
-    elif age <= 10:
+    # 2. Test volume (main discriminator)
+    volume = safe_int(clia_data.get("test_volume"))
+    if volume == 0:
+        s = -10
+    elif volume < 1000:
         s = 10
+    elif volume < 5000:
+        s = 25
+    elif volume < 50000:
+        s = 25
+    elif volume < 500000:
+        s = 15
     else:
         s = 0
-    breakdown["clia_age"] = s
+    breakdown["test_volume"] = s
     score += s
 
-    # 3. CLIA cert type
-    cert = (clia_data.get("certificate_type") or "").strip().lower()
-    if cert in ("compliance", "accreditation"):
-        s = 20
-    elif cert == "ppm":
+    # 3. Site count (chain detection)
+    sites = safe_int(clia_data.get("site_count"))
+    if sites <= 1:
+        s = 10
+    elif sites <= 5:
         s = 0
-    elif cert == "waiver":
-        s = -10
     else:
-        s = 0
-    breakdown["cert_type"] = s
+        s = -10
+    breakdown["site_count"] = s
     score += s
 
     # 4. Persona
@@ -105,25 +112,12 @@ def score_row(contact: dict, clia_data: dict) -> tuple[int, dict]:
     breakdown["persona"] = s
     score += s
 
-    # 5. Test volume (lab size proxy)
-    volume = safe_int(clia_data.get("test_volume"))
-    if 1 <= volume <= 5000:
-        s = 15  # small operator, easier sale
-    elif 5000 < volume <= 50000:
-        s = 10  # mid-size, has budget
-    elif volume > 50000:
-        s = 0  # enterprise, long cycle
-    else:
-        s = 0
-    breakdown["test_volume"] = s
-    score += s
-
-    # 6. LinkedIn presence
+    # 5. LinkedIn presence
     s = 5 if (contact.get("contact_linkedin") or "").strip() else 0
     breakdown["has_linkedin"] = s
     score += s
 
-    # 7. Petr's tier override
+    # 6. Petr's tier override
     tier = (contact.get("tier") or "—").strip()
     tier_scores = {"S+": 30, "S": 20, "A": 10, "B": 5, "C": 0, "D": -50, "E": -50}
     s = tier_scores.get(tier, 0)
@@ -134,11 +128,11 @@ def score_row(contact: dict, clia_data: dict) -> tuple[int, dict]:
 
 
 def bucket_of(score: int) -> str:
-    if score >= 80:
+    if score >= 75:
         return "HOT"
     if score >= 50:
         return "WARM"
-    if score >= 30:
+    if score >= 25:
         return "COOL"
     return "COLD"
 
@@ -158,17 +152,15 @@ def main():
     score_cols = [
         "vivica_score",
         "vivica_bucket",
-        "s_lab_type",
-        "s_clia_age",
-        "s_cert_type",
-        "s_persona",
+        "s_facility_type",
         "s_test_volume",
+        "s_site_count",
+        "s_persona",
         "s_has_linkedin",
         "s_petr_tier",
-        "lab_type_raw",
-        "clia_age_years",
-        "cert_type_raw",
+        "facility_type_raw",
         "test_volume_raw",
+        "site_count_raw",
     ]
     out_headers = in_headers + score_cols
 
@@ -180,20 +172,17 @@ def main():
         if not clia_data:
             missing_clia += 1
         score, bd = score_row(contact, clia_data)
-        age = years_since(clia_data.get("certified_at", ""))
         contact["vivica_score"] = score
         contact["vivica_bucket"] = bucket_of(score)
-        contact["s_lab_type"] = bd["lab_type"]
-        contact["s_clia_age"] = bd["clia_age"]
-        contact["s_cert_type"] = bd["cert_type"]
-        contact["s_persona"] = bd["persona"]
+        contact["s_facility_type"] = bd["facility_type"]
         contact["s_test_volume"] = bd["test_volume"]
+        contact["s_site_count"] = bd["site_count"]
+        contact["s_persona"] = bd["persona"]
         contact["s_has_linkedin"] = bd["has_linkedin"]
         contact["s_petr_tier"] = bd["petr_tier"]
-        contact["lab_type_raw"] = clia_data.get("lab_type", "")
-        contact["clia_age_years"] = f"{age:.1f}" if age is not None else ""
-        contact["cert_type_raw"] = clia_data.get("certificate_type", "")
+        contact["facility_type_raw"] = clia_data.get("cms_facility_type_name", "")
         contact["test_volume_raw"] = clia_data.get("test_volume", "")
+        contact["site_count_raw"] = clia_data.get("site_count", "")
         out.append(contact)
 
     out.sort(key=lambda r: -int(r["vivica_score"]))
@@ -215,17 +204,20 @@ def main():
         f"**Date**: {TODAY.isoformat()}",
         "**Script**: `score_contacts.py`",
         "",
-        "## Scoring model (max ~150)",
+        "## Scoring model (max ~120)",
+        "",
+        "Calibrated to actual signal distribution in the data. CLIA age and cert type",
+        "were dropped — on the Q1 2026 cohort all contacts are ≤6 months old and 99%",
+        "are Compliance certificates, so these signals don't discriminate.",
         "",
         "| Signal | Source | Weights |",
         "|--------|--------|---------|",
-        "| Lab type | `bucket_REFERENCE.lab_type` | independent +30 / chain -10 |",
-        "| CLIA age | `bucket_REFERENCE.certified_at` | ≤2y +25 / 2-10y +10 / 10+y 0 |",
-        "| Cert type | `bucket_REFERENCE.certificate_type` | Compliance/Accred +20 / PPM 0 / Waiver -10 |",
-        "| Persona | `final_contacts.persona` | CEO/Owner +20 / Lab Dir +15 / Med Dir +10 |",
-        "| Test volume | `bucket_REFERENCE.test_volume` | 1-5k +15 / 5k-50k +10 / 50k+ 0 |",
+        "| Facility type | `cms_facility_type_name` | independent +30 / public_health +15 / non-lab -30 |",
+        "| Test volume | `test_volume` | 1k-50k +25 / 50k-500k +15 / 1-999 +10 / 500k+ 0 / 0 -10 |",
+        "| Site count | `site_count` | 0-1 +10 / 2-5 0 / 6+ -10 |",
+        "| Persona | `persona` | CEO/Owner +20 / Lab Dir +15 / Med Dir +10 |",
         "| LinkedIn | `contact_linkedin` non-empty | +5 |",
-        "| Petr's tier | from `final_contacts_tiered.tier` | S+ +30 / S +20 / A +10 / B +5 / D/E -50 |",
+        "| Petr's tier | `tier` | S+ +30 / S +20 / A +10 / B +5 / D/E -50 |",
         "",
         "## Bucket distribution",
         "",
@@ -233,10 +225,10 @@ def main():
         "|--------|-----------|-------|---|--------|",
     ]
     bucket_actions = {
-        "HOT": ("≥80", "First wave in SmartLead"),
-        "WARM": ("50-79", "Main pool"),
-        "COOL": ("30-49", "Top-up wave"),
-        "COLD": ("<30", "Skip or last resort"),
+        "HOT": ("≥75", "First wave in SmartLead"),
+        "WARM": ("50-74", "Main pool"),
+        "COOL": ("25-49", "Top-up wave"),
+        "COLD": ("<25", "Skip or last resort"),
     }
     for b in ["HOT", "WARM", "COOL", "COLD"]:
         n = buckets.get(b, 0)
@@ -244,31 +236,42 @@ def main():
         pct = n / total * 100 if total else 0
         lines.append(f"| {b} | {threshold} | {n} | {pct:.1f}% | {action} |")
 
-    # Top 20 examples
     lines += ["", "## Top 20 scored contacts", ""]
     lines.append(
-        "| # | Score | Bucket | Lab | Persona | Lab type | CLIA age (y) | Cert | Tier |"
+        "| # | Score | Bucket | Lab | Persona | Facility | Vol | Sites | Tier |"
     )
     lines.append(
-        "|---|-------|--------|-----|---------|----------|--------------|------|------|"
+        "|---|-------|--------|-----|---------|----------|-----|-------|------|"
     )
     for i, r in enumerate(out[:20], 1):
         lines.append(
             f"| {i} | {r['vivica_score']} | {r['vivica_bucket']} | "
-            f"{r['src_name'][:40]} | {r['persona']} | {r['lab_type_raw']} | "
-            f"{r['clia_age_years']} | {r['cert_type_raw']} | {r.get('tier', '—')} |"
+            f"{r['src_name'][:38]} | {r['persona']} | {r['facility_type_raw']} | "
+            f"{r['test_volume_raw']} | {r['site_count_raw']} | {r.get('tier', '—')} |"
         )
 
-    # Score component averages
+    lines += ["", "## Bottom 10 (likely skip)", ""]
+    lines.append(
+        "| # | Score | Bucket | Lab | Persona | Facility | Vol | Sites | Tier |"
+    )
+    lines.append(
+        "|---|-------|--------|-----|---------|----------|-----|-------|------|"
+    )
+    for i, r in enumerate(out[-10:], 1):
+        lines.append(
+            f"| {i} | {r['vivica_score']} | {r['vivica_bucket']} | "
+            f"{r['src_name'][:38]} | {r['persona']} | {r['facility_type_raw']} | "
+            f"{r['test_volume_raw']} | {r['site_count_raw']} | {r.get('tier', '—')} |"
+        )
+
     lines += ["", "## Average contribution per signal", ""]
     lines.append("| Signal | Avg points | Max possible |")
     lines.append("|--------|------------|--------------|")
     components = [
-        ("s_lab_type", 30),
-        ("s_clia_age", 25),
-        ("s_cert_type", 20),
+        ("s_facility_type", 30),
+        ("s_test_volume", 25),
+        ("s_site_count", 10),
         ("s_persona", 20),
-        ("s_test_volume", 15),
         ("s_has_linkedin", 5),
         ("s_petr_tier", 30),
     ]
@@ -276,7 +279,6 @@ def main():
         avg = sum(int(r[col]) for r in out) / total
         lines.append(f"| {col.replace('s_', '')} | {avg:+.1f} | {max_val} |")
 
-    # Cross-tab: bucket × Petr's tier
     lines += ["", "## Cross-check: Vivica bucket × Petr's tier", ""]
     lines.append("| | S+ | S | A | B | C | D | E | — | Total |")
     lines.append("|---|----|---|----|----|----|----|----|----|-------|")
@@ -288,6 +290,16 @@ def main():
             row.append(str(tier_counts.get(t, 0)))
         row.append(str(len(bucket_rows)))
         lines.append("| " + " | ".join(row) + " |")
+
+    lines += ["", "## Facility type breakdown across pool", ""]
+    ftype_counts = Counter(r["facility_type_raw"] for r in out)
+    lines.append("| Facility type | Count | Avg score |")
+    lines.append("|---------------|-------|-----------|")
+    for ft, n in ftype_counts.most_common():
+        avg_s = (
+            sum(int(r["vivica_score"]) for r in out if r["facility_type_raw"] == ft) / n
+        )
+        lines.append(f"| {ft or '(empty)'} | {n} | {avg_s:.1f} |")
 
     summary_path = SEG / "scoring_summary.md"
     summary_path.write_text("\n".join(lines) + "\n", encoding="utf-8")

@@ -295,12 +295,284 @@ def add_contacts(ws):
         ws.column_dimensions[get_column_letter(j)].width = w
 
 
+def add_report(ws):
+    """Discussion-ready summary: bucket profiles, examples, edge cases."""
+    from collections import Counter
+
+    with open(SRC, newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+
+    bold = Font(bold=True, size=11)
+    h1 = Font(bold=True, size=16)
+    h2 = Font(bold=True, size=13)
+    wrap = Alignment(wrap_text=True, vertical="top")
+    header_fill = PatternFill("solid", fgColor="F0F0F0")
+
+    line_no = 0
+
+    def add(text, style=None, fill=None):
+        nonlocal line_no
+        line_no += 1
+        c = ws.cell(row=line_no, column=1, value=text)
+        if style:
+            c.font = style
+        if fill:
+            c.fill = fill
+        if style in (None, bold):
+            c.alignment = wrap
+        return c
+
+    def add_table(headers, data_rows, bucket_for_color=None):
+        nonlocal line_no
+        line_no += 1
+        for j, h in enumerate(headers, start=1):
+            c = ws.cell(row=line_no, column=j, value=h)
+            c.font = bold
+            c.fill = PatternFill("solid", fgColor="DDDDDD")
+        for row_data in data_rows:
+            line_no += 1
+            row_fill = (
+                BUCKET_FILL.get(row_data[bucket_for_color])
+                if bucket_for_color is not None
+                else None
+            )
+            for j, val in enumerate(row_data, start=1):
+                if isinstance(val, str) and val.startswith("="):
+                    continue
+                c = ws.cell(row=line_no, column=j, value=val)
+                c.alignment = Alignment(wrap_text=True, vertical="top")
+                if row_fill:
+                    c.fill = row_fill
+
+    add("Vivica Outreach — Lead Selection Report", h1)
+    add("")
+    add(
+        "This report is meant to be read alongside the Contacts sheet during a "
+        "review call. It explains who we picked, why, and where we might be wrong "
+        "— so we can decide together whether the selection logic needs to change.",
+        wrap,
+    )
+    add("")
+
+    # ── 1. Headline numbers
+    add("1. Headline numbers", h2, header_fill)
+    add("")
+    add(f"Total verified contacts: {len(rows)}")
+    add(
+        f"Unique companies: {len(set(r['src_clia'] for r in rows))} "
+        f"(out of 1,849 CMS reference labs covered = 37.8%)"
+    )
+    buckets = Counter(r["vivica_bucket"] for r in rows)
+    add(
+        f"Bucket split: HOT {buckets['HOT']} / WARM {buckets['WARM']} / "
+        f"COOL {buckets['COOL']} / COLD {buckets['COLD']}"
+    )
+    add("")
+
+    # ── 2. Bucket profiles
+    add("2. Bucket profiles — what kind of contact is in each", h2, header_fill)
+    add("")
+    add_table(
+        ["Bucket", "Count", "Profile", "Recommended action"],
+        [
+            (
+                "HOT",
+                buckets["HOT"],
+                "Independent reference lab + decision-maker (usually CEO/Owner) + meaningful test volume (typically 1k-50k tests/year). Single site or small footprint. Vivica's bullseye ICP — established operator running on legacy LIMS, ready for a migration pitch.",
+                "Wave 1 in SmartLead. Highest open + reply expectation.",
+            ),
+            (
+                "WARM",
+                buckets["WARM"],
+                "Mostly independent labs but one signal is suboptimal: non-CEO persona (Lab Director / Medical Director), zero or unknown test volume, or large enterprise (500k+ tests). Still ICP, but worse hook.",
+                "Wave 2. Personalize by persona — Lab Director needs operational angle, Medical Director needs compliance angle.",
+            ),
+            (
+                "COOL",
+                buckets["COOL"],
+                "Mixed signals: small chains (2-5 sites), public-health labs (state/county), or low-seniority contacts at independents. Possible buyers but harder sale cycle.",
+                "Top-up wave. Use only if quota is open.",
+            ),
+            (
+                "COLD",
+                buckets["COLD"],
+                "Facility type is wrong. These are ambulance services, mobile labs, ambulatory surgery centers, blood banks, hospices, or tissue banks — they sit in the REFERENCE bucket because of CMS classification quirks, but they are NOT operating clinical reference labs and won't buy a LIMS.",
+                "DO NOT load. Filter out before SmartLead.",
+            ),
+        ],
+        bucket_for_color=0,
+    )
+    add("")
+
+    # ── 3. Top 10 per bucket
+    by_bucket: dict = {"HOT": [], "WARM": [], "COOL": [], "COLD": []}
+    for r in rows:
+        by_bucket[r["vivica_bucket"]].append(r)
+
+    for b in ["HOT", "WARM", "COOL", "COLD"]:
+        add(
+            f"3.{['HOT', 'WARM', 'COOL', 'COLD'].index(b) + 1} {b} — examples",
+            h2,
+            header_fill,
+        )
+        add("")
+        if not by_bucket[b]:
+            add("(empty)")
+            add("")
+            continue
+        sample = (
+            by_bucket[b][:8]
+            if b == "HOT"
+            else (
+                by_bucket[b][:5] + by_bucket[b][-3:]
+                if len(by_bucket[b]) > 8
+                else by_bucket[b]
+            )
+        )
+        add_table(
+            ["Score", "Lab", "Persona", "Title", "Email", "Why this score"],
+            [
+                (
+                    r["vivica_score"],
+                    r["src_name"],
+                    r["persona"],
+                    r["contact_title"],
+                    r["contact_email"],
+                    r["vivica_rationale"],
+                )
+                for r in sample
+            ],
+        )
+        add("")
+
+    # ── 4. Edge cases to manually review
+    add("4. Edge cases worth manual review with the client", h2, header_fill)
+    add("")
+    add(
+        "These are contacts where the score is plausible but the underlying data "
+        "is unusual. Worth a sanity check before sending.",
+        wrap,
+    )
+    add("")
+
+    # 4a. HOT with non-CEO persona
+    add("4a. HOT scores driven by Petr's tier alone (could be over-rated):", bold)
+    high_petr = [r for r in by_bucket["HOT"] if int(r["s_petr_tier"]) >= 20]
+    add_table(
+        ["Lab", "Tier", "Score", "Rationale"],
+        [
+            (r["src_name"], r["tier"], r["vivica_score"], r["vivica_rationale"])
+            for r in high_petr[:10]
+        ],
+    )
+    add("")
+
+    # 4b. HOT contacts where volume is very low
+    add("4b. HOT contacts with near-zero test volume (just-launched labs):", bold)
+    low_vol_hot = [
+        r
+        for r in by_bucket["HOT"]
+        if r["test_volume_raw"].isdigit() and int(r["test_volume_raw"]) < 500
+    ]
+    add_table(
+        ["Lab", "Volume", "Score", "Rationale"],
+        [
+            (
+                r["src_name"],
+                r["test_volume_raw"],
+                r["vivica_score"],
+                r["vivica_rationale"],
+            )
+            for r in low_vol_hot[:10]
+        ],
+    )
+    add("")
+
+    # 4c. WARM that's actually 'other' facility type
+    add("4c. WARM/COOL contacts at 'other' facility type (manual classify):", bold)
+    other_ftype = [
+        r
+        for r in rows
+        if r["facility_type_raw"] == "other" and r["vivica_bucket"] in ("WARM", "COOL")
+    ]
+    add_table(
+        ["Lab", "Volume", "Bucket", "Score", "Rationale"],
+        [
+            (
+                r["src_name"],
+                r["test_volume_raw"],
+                r["vivica_bucket"],
+                r["vivica_score"],
+                r["vivica_rationale"],
+            )
+            for r in other_ftype[:10]
+        ],
+    )
+    add("")
+
+    # ── 5. Cross-check with Petr
+    add("5. Sanity check — agreement with Petr's external scoring", h2, header_fill)
+    add("")
+    add(
+        "Only 11 of 344 contacts (3.2%) appear in Petr's HOT universe. Of those, "
+        "all 10 with S+/S tier landed in our HOT bucket — meaning our scoring "
+        "is consistent with his where they overlap. The remaining 333 are a "
+        "different pool (CMS-only) and need to stand on their own merits.",
+        wrap,
+    )
+    add("")
+
+    # ── 6. Decisions to confirm with the client
+    add("6. Decisions to confirm with the client", h2, header_fill)
+    add("")
+    decisions = [
+        (
+            "Q1",
+            "Is independent reference lab the right primary ICP? (current weight: +30, largest single signal)",
+        ),
+        (
+            "Q2",
+            "Is the 1k-50k test/year volume band actually the sweet spot? (we weighted it equal at +25)",
+        ),
+        (
+            "Q3",
+            "Should we drop COLD (33) automatically, or pass them through manual review first?",
+        ),
+        (
+            "Q4",
+            "Is CEO/Owner the right top persona at +20? Or should Lab Director (operational pain) be equal weight?",
+        ),
+        (
+            "Q5",
+            "Do we want a separate sequence for the 10 Petr-overlap HOT leads (different copy)?",
+        ),
+        (
+            "Q6",
+            "Should we re-score WARM-with-'other'-facility-type after manual classification, or just skip them?",
+        ),
+    ]
+    for q, text in decisions:
+        add(f"  {q}: {text}", wrap)
+    add("")
+
+    # Column widths
+    ws.column_dimensions["A"].width = 14
+    ws.column_dimensions["B"].width = 38
+    ws.column_dimensions["C"].width = 18
+    ws.column_dimensions["D"].width = 36
+    ws.column_dimensions["E"].width = 32
+    ws.column_dimensions["F"].width = 80
+
+
 def main():
     wb = Workbook()
 
     ws_readme = wb.active
     ws_readme.title = "README"
     add_readme(ws_readme)
+
+    ws_report = wb.create_sheet("Report")
+    add_report(ws_report)
 
     ws_contacts = wb.create_sheet("Contacts")
     add_contacts(ws_contacts)

@@ -522,39 +522,6 @@ def add_report(ws):
     )
     add("")
 
-    # ── 6. Decisions to confirm with the client
-    add("6. Decisions to confirm with the client", h2, header_fill)
-    add("")
-    decisions = [
-        (
-            "Q1",
-            "Is independent reference lab the right primary ICP? (current weight: +30, largest single signal)",
-        ),
-        (
-            "Q2",
-            "Is the 1k-50k test/year volume band actually the sweet spot? (we weighted it equal at +25)",
-        ),
-        (
-            "Q3",
-            "Should we drop COLD (33) automatically, or pass them through manual review first?",
-        ),
-        (
-            "Q4",
-            "Is CEO/Owner the right top persona at +20? Or should Lab Director (operational pain) be equal weight?",
-        ),
-        (
-            "Q5",
-            "Do we want a separate sequence for the 10 Petr-overlap HOT leads (different copy)?",
-        ),
-        (
-            "Q6",
-            "Should we re-score WARM-with-'other'-facility-type after manual classification, or just skip them?",
-        ),
-    ]
-    for q, text in decisions:
-        add(f"  {q}: {text}", wrap)
-    add("")
-
     # Column widths
     ws.column_dimensions["A"].width = 14
     ws.column_dimensions["B"].width = 38

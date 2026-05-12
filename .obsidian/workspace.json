@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reference/company/market-analysis-us-clinical-labs-2026.md",
+                "file": "plans/outreach-plan-vivica-clia-fresh.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "market-analysis-us-clinical-labs-2026"
+              "title": "outreach-plan-vivica-clia-fresh"
             }
           }
         ]
@@ -182,6 +182,9 @@
   },
   "active": "dd3f7f0a5bdce61a",
   "lastOpenFiles": [
+    "source-lists/enrichment-runs/2026-05-11_reference-1849_findymail-email/funnel_recount.py",
+    "plans/outreach-plan-vivica-adlm-2026.md",
+    "reference/company/market-analysis-us-clinical-labs-2026.md",
     "reference/company/intake-report-vivica-2026-05.html",
     "plans/outreach-plan-vivica-clia-fresh.md",
     "reference/playbooks/three-phase-migration.md",
@@ -211,12 +214,9 @@
     "reference/battle-cards/lims-net_x_lab-director.md",
     "reference/battle-cards/lims-net_x_ceo-owner.md",
     "reference/battle-cards/labware_x_medical-director.md",
-    "reference/battle-cards/labware_x_lab-director.md",
-    "reference/battle-cards/labware_x_ceo-owner.md",
     "input-data",
     "extensions",
     "clia-icp-companies-Q1-2026/clia_Q1_2026_segmented/russian_candidates_nj.csv",
-    "clia-icp-companies-Q1-2026/clia_Q1_2026_segmented/bucket_REFERENCE.csv",
-    "clia-icp-companies-Q1-2026/clia_Q1_2026_segmented/bucket_PSC.csv"
+    "clia-icp-companies-Q1-2026/clia_Q1_2026_segmented/bucket_REFERENCE.csv"
   ]
 }

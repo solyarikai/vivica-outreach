@@ -1,0 +1,282 @@
+domain,name,city,state,clia_number,lab_type,test_volume,verified_contacts_count,emails,tier,score,cohort,sources,primary_reason
+sonichealthcareusa.com,CASCADE PATHOLOGY SERVICES - TACOMA,TACOMA,WA,50D2339267,REFERENCE,47675,1,brad.tuffs@propath.com,S+,110,A_fresh_le_6mo,C,"CLIA only — green field, no NPI/Medicare yet (could be very early or filing-light)"
+mountsinai.org,MOUNT SINAI DERMATOPATHOLOGY LABORATORY,NEW YORK,NY,33D2334608,REFERENCE,1,3,vincent.tammaro@mountsinai.org; darren.deoraj@mountsinai.org; charles.powell@mountsinai.org,S,105,A_fresh_le_6mo,C,"CLIA only — green field, no NPI/Medicare yet (could be very early or filing-light)"
+nightingalehealth.com,"NIGHTINGALE HEALTH UNITED STATES, INC, NY LAB",LONG ISLAND CITY,NY,33D2331591,REFERENCE,1,1,antti.kangas@nightingalehealth.com,S,100,B_6_to_12mo,C,"CLIA only — green field, no NPI/Medicare yet (could be very early or filing-light)"
+nyulangone.org,NYU LANGONE HEALTH - PENN DISTRICT LABORATORY,NEW YORK,NY,33D2334703,REFERENCE,1,2,nader.mherabi@nyulangone.org; jonah.feldman@nyulangone.org,S,105,A_fresh_le_6mo,C,"CLIA only — green field, no NPI/Medicare yet (could be very early or filing-light)"
+panomebio.com,"PANOME BIO, INC",SAINT LOUIS,MO,26D2326307,REFERENCE,100,1,edward.weinstein@panomebio.com,S,100,B_6_to_12mo,C,"CLIA only — green field, no NPI/Medicare yet (could be very early or filing-light)"
+regeneron.com,REGENERON CLINICAL GENOMICS LABORATORY,TARRYTOWN,NY,33D2332899,REFERENCE,1,2,jeffrey.reid@regeneron.com; pablo.viguera@regeneron.com,S,100,B_6_to_12mo,C,"CLIA only — green field, no NPI/Medicare yet (could be very early or filing-light)"
+southampton.stonybrookmedicine.edu,"HAMPTON PATHOLOGY, PC",SOUTHAMPTON,NY,33D2338149,REFERENCE,1,1,joel.saltz@stonybrookmedicine.edu,B,65,A_fresh_le_6mo,C,"CLIA only — green field, no NPI/Medicare yet (could be very early or filing-light)"
+locations.labcorp.com,LABCORP,YAKIMA,WA,50D2326407,REFERENCE,45000,2,imran.ali@covance.com; shakti.ramkissoon@covance.com,E,-50,B_6_to_12mo,C,Known top-20 US reference lab brand (definitely has LIMS)
+acies.consulting,"ACIES TX, LLC",BOERNE,TX,45D2277321,REFERENCE,11016,1,salonichohan@acies.holdings,—,—,—,—,—
+acupath.com,ACCUPATH DIAGNOSTIC LABORATORIES INC,CENTERVILLE,TN,44D2216543,REFERENCE,2782,1,rmcallister@acupath.com,—,—,—,—,—
+admabiocenters.com,"ADMA BIOCENTERS GEORGIA, INC",HAMMOND,LA,19D2259195,REFERENCE,53000,1,sstremming@admabio.com,—,—,—,—,—
+advancedclinical.com,ADVANCED CLINICAL SOLUTION,EATONTOWN,NJ,31D2194901,REFERENCE,400,3,jmidwinter@advancedclinical.com; rherring@advancedclinical.com; ehajek@advancedclinical.com,—,—,—,—,—
+advancedpathologyassociates.com,ADVANCED PATHOLOGY INSTITUTE,DALLAS,TX,45D2236404,REFERENCE,400,1,michael.lafriniere@ccplab.com,—,—,—,—,—
+advocatehealth.com,ACL CAC LAB,PARK RIDGE,IL,14D1103190,REFERENCE,208713,2,dandre.carpenter@advocatehealth.com; dean.karahalios@advocatehealth.com,—,—,—,—,—
+ael.com,MEMPHIS PATHOLOGY LABORATORY DBA AMERICAN ESOTERIC,GRENADA,MS,25D2098363,REFERENCE,16676,1,jgevans@ael.com,—,—,—,—,—
+aeromd.com,AEROMD,ST CROIX,VI,48D2122646,REFERENCE,30,2,aadler@aeromd.com; kkocis@aeromd.com,—,—,—,—,—
+affderm.com,RICHARD LEE AVERITTE JR PLLC DBA,SURPRISE,AZ,03D2053259,REFERENCE,410,1,jleanos@affderm.com,—,—,—,—,—
+ahf.org,AHF PUBLIC HEALTH LABORATORY,FORT LAUDERDALE,FL,10D2149550,REFERENCE,172252,2,aa@aidshealth.org; julius.kamwesiga@aidshealth.org,—,—,—,—,—
+alignable.com,LABORATORIO CLINICO ALMI,RIO PIEDRAS,PR,40D0658293,REFERENCE,9114,1,eric@alignable.com,—,—,—,—,—
+associatesofpathology.com,ASSOCIATES OF PATHOLOGY,OGDEN,UT,46D2270825,REFERENCE,83200,1,mark.orton@mountainstarhealth.com,—,—,—,—,—
+astranahealth.com,ASTERIA LABORATORY,LOS ANGELES,CA,05D2174365,REFERENCE,5000,1,brandon.sim@astranahealth.com,—,—,—,—,—
+ataraxis.ai,ATARAXIS AI INC,ORLANDO,FL,10D2321150,REFERENCE,0,1,jan.witowski@ataraxis.ai,—,—,—,—,—
+atlanticare.org,ATLANTICARE REGIONAL MEDICAL CENTER -,HAMMONTON,NJ,31D1100091,REFERENCE,103550,2,mjcharlton@atlanticare.org; szarbiv@atlanticare.org,—,—,—,—,—
+aurorahealthcare.org,A2CL-AURORA HEALTH CENTER MANITOWOC COUNTY,TWO RIVERS,WI,52D1021288,REFERENCE,177093,1,jennifer.schomburg@aah.org,—,—,—,—,—
+averodx.com,MATTISON PATHOLOGY,LUBBOCK,TX,45D1015603,REFERENCE,23000,1,wrigler@averodx.com,—,—,—,—,—
+axisclinicalsusa.com,AXIS CLINICALS LLC,DILWORTH,MN,24D2131019,REFERENCE,30000,1,j.pottier@axisclinicals.com,—,—,—,—,—
+azgastrohealth.com,"AGA PATHOLOGY LAB, TUCSON",TUCSON,AZ,03D2277352,REFERENCE,12000,1,mlott@azgastrohealth.com,—,—,—,—,—
+bachdx.com,BACH MEDICAL GROUP,IRVINE,CA,05D2101629,REFERENCE,1987423,1,lab@bachdx.com,—,—,—,—,—
+balladhealth.org,MOUNTAIN STATES HEALTH ALLIANCE,JOHNSON CITY,TN,44D1105273,REFERENCE,238404,2,eric.deaton@balladhealth.org; landon.combs@balladhealth.org,—,—,—,—,—
+baltimorecity.gov,BALTIMORE CITY HEALTH DEPT EASTERN SEXUAL HLTH CLI,BALTIMORE,MD,21D0710717,REFERENCE,1200,2,drock@lighthealth.org; yoanna.moisides@baltimorecity.gov,—,—,—,—,—
+batonrougeclinic.com,BATON ROUGE CLINIC CENTRAL LAB,MONROE,LA,19D2093805,REFERENCE,439000,1,kmeyers@batonrougeclinic.com,—,—,—,—,—
+baxterhealth.org,BAXTER HEALTH PAIN CLINIC,MOUNTAIN HOME,AR,04D2086422,REFERENCE,294000,1,namato@baxterregional.org,—,—,—,—,—
+bellin.org,BELLIN HEALTH MARINETTE LABORATORY,MARINETTE,WI,52D0394498,REFERENCE,415133,2,molly.vandervest@bellin.org; daniel.koster@bellin.org,—,—,—,—,—
+benchmarkdiagnostics.com,CAROLYN SOK DERMATOPATHOLOGY,SOLON,OH,36D2311219,REFERENCE,5000,1,ausmani@benchmarkdiagnostics.com,—,—,—,—,—
+benefis.org,BENEFIS HELENA SPECIALTY CENTER,HELENA,MT,27D2297351,REFERENCE,126600,1,caseybuckingham@benefis.org,—,—,—,—,—
+bernco.gov,BERNALILLO HEALTH CARE CORP,ALBUQUERQUE,NM,32D0689349,REFERENCE,60,1,slove@bernco.gov,—,—,—,—,—
+bgapc.com,BIRMINGHAM GASTROENTEROLOGY ASSOC PC,BIRMINGHAM,AL,01D0942786,REFERENCE,12200,1,ptheriot@bgapc.com,—,—,—,—,—
+billingsclinic.com,BILLINGS CLINIC MED FLIGHT BELGRADE,BELGRADE,MT,27D2242990,REFERENCE,520,2,rderrett@billingsclinic.org; nallen3@billingsclinic.org,—,—,—,—,—
+biolifeplasma.com,BIOLIFE PLASMA SERVICES LP,WAUSAU,WI,52D2098027,REFERENCE,79824,1,charolette.jackson@baxalta.com,—,—,—,—,—
+biospecialty.com,"BIOLOGICAL SPECIALTY COMPANY, LLC",COLMAR,PA,39D0986074,REFERENCE,871,1,awiddoss@biospecialty.com,—,—,—,—,—
+bostonmedflight.org,"NEW ENGLAND LIFEFLIGHT, INC",BEDFORD,MA,22D2273556,REFERENCE,7236,1,charliem@bostonmedflight.org,—,—,—,—,—
+bukutelepon.cybo.com,LABORATORIO CLINICO OROCOVIS,OROCOVIS,PR,40D0668960,REFERENCE,18920,1,sean@cybo.com,—,—,—,—,—
+buttecounty.ca.gov,BUTTE COUNTY HEALTH DEPT LABORATORY,CHICO,CA,05D0617090,REFERENCE,3756,1,aaron.warren2@cdcr.ca.gov,—,—,—,—,—
+cairndiagnostics.com,"ADVANCED BREATH DIAGNOSTICS, LLC",BRENTWOOD,TN,44D0940011,REFERENCE,1,2,kbush@cairndx.com; thill@cairndx.com,—,—,—,—,—
+camc.org,CHARLESTON AREA MEDICAL CENTER CANCER CENTER,CHARLESTON,WV,51D0877096,REFERENCE,506616,3,chad.hovis@camc.org; connie.crede@camc.org; eric.mantz@camc.org,—,—,—,—,—
+canopybiosciences.com,CANOPY BIOSCIENCES,HAYWARD,CA,05D1106350,REFERENCE,16,1,mdipano@nanostring.com,—,—,—,—,—
+carecredit.com,"EXPRESS MEDICAL EXPERTS, LLC",ORANGE PARK,FL,10D2219475,REFERENCE,130000,1,sbhasin@carecredit.com,—,—,—,—,—
+carislifesciences.com,"CARIS MPI, INC",SAN JUAN CAPISTRANO,CA,05D2214363,REFERENCE,7800,1,cwasson@carisls.com,—,—,—,—,—
+cdph.ca.gov,"CA DEPT OF PUBLIC HEALTH, DRINKING WATER &",RICHMOND,CA,05D2112676,REFERENCE,100,0,,—,—,—,—,—
+cellnetix.com,CELLNETIX PATHOLOGY ALASKA REGIONAL HOSPITAL,ANCHORAGE,AK,02D2201100,REFERENCE,8000,2,kkotlan-jones@cellnetix.com; jmolnar@cellnetix.com,—,—,—,—,—
+cellsciencesystems.com,CELL SCIENCE SYSTEMS CORPORATION,DEERFIELD BEACH,FL,10D0283906,REFERENCE,145955,2,rdeutsch@cellsciencesystems.com; glarranaga@cellsciencesystems.com,—,—,—,—,—
+centervilleclinics.com,CENTERVILLE CLINICS INC LAB,FREDERICKTOWN,PA,39D0657071,REFERENCE,150248,1,dholt@centervilleclinics.com,—,—,—,—,—
+cerflux.com,"CERFLUX, INC",BIRMINGHAM,AL,01D2247841,REFERENCE,50,1,ironman@cerflux.com,—,—,—,—,—
+cg-labs.com,C G LABORATORIES INC,GRANBURY,TX,45D0954953,REFERENCE,258,1,rcrum@cg-labs.com,—,—,—,—,—
+cgt.global,STEMEXPRESS DBA CGT GLOBAL,EAST NORRITON,PA,39D2243490,REFERENCE,10000,1,cspears@cgt.global,—,—,—,—,—
+chronetyx.com,CHRONETYX LLC,MEMPHIS,TN,44D2293926,REFERENCE,41250,1,thodge@chronetyx.com,—,—,—,—,—
+cityofboise.org,IP BOISE 1,BOISE,ID,13D0980387,REFERENCE,199896,1,bjeffries@cityofboise.org,—,—,—,—,—
+cleanslatecenters.com,CLEANSLATE CENTERS,HOLYOKE,MA,22D1105941,REFERENCE,6336153,3,cchew@cleanslatecenters.com; rthompson@cleanslatecenters.com; dshaikh@cleanslatecenters.com,—,—,—,—,—
+cleat.ai,"KIRSHMAN DIAGNOSTICS, INC",IRVINE,CA,05D1037151,REFERENCE,437,1,yigit@cleat.ai,—,—,—,—,—
+clinicallabs.com,CLINICAL LABS OF HAWAII-KEALAKEKUA,KEALAKEKUA,HI,12D2306255,REFERENCE,374755,2,frederick.jacobs@hawaiilabs.com; daniel.hall@hawaiilabs.com,—,—,—,—,—
+cndlifesciences.com,CND LIFE SCIENCES R&D LAB,SCOTTSDALE,AZ,03D2291165,REFERENCE,1500,1,kparker@cndlifesciences.com,—,—,—,—,—
+conehealth.com,LABCORP OF AMERICA HOLDINGS CONE HEALTH,HIGH POINT,NC,34D2287514,REFERENCE,2000,3,charles.wallington@conehealth.com; funsho.aduloju@conehealth.com; steven.bokshan@conehealth.com,—,—,—,—,—
+connecticutgi.org,CT GI LABORATORY POWERED BY,WETHERSFIELD,CT,07D2065321,REFERENCE,280000,1,jshlomo@connecticutgi.org,—,—,—,—,—
+corelabandxray.com,"CORE ANALYTICS LABORATORY, INC",VAN NUYS,CA,05D0928967,REFERENCE,5763531,1,shrutyp@corelabandxray.com,—,—,—,—,—
+costasalud.com,LABORATORIO CLINICO COSTA SALUD-MOCA,MOCA,PR,40D0676312,REFERENCE,64153,2,mcaro@costasalud.com; erodriguez@costasalud.com,—,—,—,—,—
+countyofsb.org,SANTA BARBARA COUNTY PUBLIC HEALTH LAB,SANTA BARBARA,CA,05D0683431,REFERENCE,8043,1,nparmelee@countyofsb.org,—,—,—,—,—
+cslplasma.com,"CSL PLASMA, INC",MILWAUKEE,WI,52D2235837,REFERENCE,57843,1,jose.pineda@cslplasma.com,—,—,—,—,—
+cybo.com,LABORATORIO CLINICO LA VICTORIA,SAN SEBASTIAN,PR,40D2026774,REFERENCE,4704,0,,—,—,—,—,—
+cytopath.cc,"CYTOLOGY PATH SERVICES, INC",INDIANAPOLIS,IN,15D0353522,REFERENCE,2761,1,pw@cytopath.cc,—,—,—,—,—
+dartmouth-hitchcock.org,DHART - MANCHESTER,MANCHESTER,NH,30D2308580,REFERENCE,150,2,andrea.l.leland@hitchcock.org; jonathan.b.thyng@hitchcock.org,—,—,—,—,—
+daxor.com,DAXOR CORPORATION,OAK RIDGE,TN,44D2159185,REFERENCE,973,1,lcooper@daxor.com,—,—,—,—,—
+deltapathology.com,"DELTA PATHOLOGY GROUP LLC, ASC",COVINGTON,LA,19D2313029,REFERENCE,40,1,christen.diel@deltapathology.com,—,—,—,—,—
+dental.umaryland.edu,ORAL PATHOLOGY CONSULTANTS,BALTIMORE,MD,21D0649765,REFERENCE,3000,2,rward@umaryland.edu; kstorm@umaryland.edu,—,—,—,—,—
+dermpath.com,COCKERELL DERMATOPHATOLOGY PA,HOUSTON,TX,45D2095015,REFERENCE,15020,1,ccockerell@dermpath.com,—,—,—,—,—
+dhss.delaware.gov,DELAWARE PUBLIC HEALTH LABORATORY,SMYRNA,DE,08D0662985,REFERENCE,515700,2,david.coker@delaware.gov; julie.willey@delaware.gov,—,—,—,—,—
+diagnosticsolutionslab.com,"DIAGNOSTIC SOLUTIONS LABORATORY, LLC",ALPHARETTA,GA,11D2097795,REFERENCE,251811,1,tony.hoffman@diagnosticsolutionslab.com,—,—,—,—,—
+dlslab.com,DIAGNOSTIC LABORATORY SERVICES - SAIPAN,GARAPAN,MP,66D0940277,REFERENCE,2373,2,gito@dlslab.com; wkim@dlslab.com,—,—,—,—,—
+dph.georgia.gov,DOUGHERTY COUNTY HEALTH DEPARTMENT,ALBANY,GA,11D0702558,REFERENCE,4100,1,jimmy.desantis@gdc.ga.gov,—,—,—,—,—
+dphhs.mt.gov,MONTANA PUBLIC HEALTH LABORATORY,HELENA,MT,27D0652531,REFERENCE,145706,1,rsanderson@montanaresources.com,—,—,—,—,—
+drugdevelopment.labcorp.com,"LABCORP EARLY DEVELOPMENT LABORATORIES, INC",GREENFIELD,IN,15D2225409,REFERENCE,500,0,,—,—,—,—,—
+element.com,ELEMENT MATERIALS TECHNOLOGY IOWA CITY INC,NORTH LIBERTY,IA,16D1016194,REFERENCE,35000,1,michael.dowd@element.com,—,—,—,—,—
+elliothospital.org,ELLIOT URGENT CARE POCT LAB AT LONDONDERRY,LONDONDERRY,NH,30D1059581,REFERENCE,6100,1,kelli.rafferty@elliot-hs.org,—,—,—,—,—
+emsl.com,ELECTRON MICROSCOPY LABORATORY,PISCATAWAY,NJ,31D1092394,REFERENCE,150,2,dsantaniello@emsl.com; dgehret@emsl.com,—,—,—,—,—
+epiarx.com,EPIARX CONCIERGE PLLC,WASHINGTON,DC,09D2177481,REFERENCE,220,1,nrodic@epiarx.com,—,—,—,—,—
+epigendx.com,EPIGENDX INC,HOPKINTON,MA,22D2079826,REFERENCE,117,1,ameyer@epigendx.com,—,—,—,—,—
+eurofinsus.com,"EUROFINS DONOR & PRODUCT TESTING, LLC",WINSTON-SALEM,NC,34D2174074,REFERENCE,16915,1,andrewbuschow@eurofinsus.com,—,—,—,—,—
+evetechnologies.com,EVE TECHNOLOGIES CORPORATION,nan,FN,99D2283230,REFERENCE,500,1,latham@evetechnologies.com,—,—,—,—,—
+floridahealth.gov,FL DEPT OF HEALTH BUREAU OF PUBLIC HEALTH,TAMPA,FL,10D0645546,REFERENCE,103781,0,,—,—,—,—,—
+foundationlaboratory.com,FOUNDATION LABORATORY,POMONA,CA,05D0642889,REFERENCE,11631953,1,aboyamyan@foundationlaboratory.com,—,—,—,—,—
+fulgent-therapeutics.com,FULGENT THERAPEUTICS LLC,IRVINE,CA,05D2294994,REFERENCE,6226,2,czerwas@fulgentgenetics.com; hgao@fulgentgenetics.com,—,—,—,—,—
+geisinger.org,GEISINGER DICKSON CTY CC LAB,DICKSON CITY,PA,39D2322520,REFERENCE,118774,0,,—,—,—,—,—
+genetikaplus.com,GENETIKAPLUS US INC,KEARNY,NJ,31D2303234,REFERENCE,500,1,david@neurokaire.com,—,—,—,—,—
+genomictestingcooperative.com,GENOMIC TESTING COOPERATIVE,VALLEY CENTER,CA,05D2129017,REFERENCE,200,1,jowen@genomictestingcooperative.com,—,—,—,—,—
+ghcscw.com,GHC-SCW CAPITOL CLINIC,MADISON,WI,52D0393663,REFERENCE,61444,2,mhuth@ghcscw.com; mswedlund@ghcscw.com,—,—,—,—,—
+givelegacy.com,"GIVE LEGACY - NEW JERSEY, LLC",HOBOKEN,NJ,31D2285605,REFERENCE,1500,1,cleinbach@kw.com,—,—,—,—,—
+gmgtransport.com,GMG TUNKHANNOCK,TUNKHANNOCK,PA,39D0192921,REFERENCE,130110,1,tabbott@gmgtransport.com,—,—,—,—,—
+goldenwestdiagnostics.com,GOLDEN TOXICOLOGY LLC,WEST LINN,OR,38D2095727,REFERENCE,152852,1,golie@goldenwestbio.com,—,—,—,—,—
+gravesgilbert.com,GRAVES GILBERT CLINIC PLLC,BOWLING GREEN,KY,18D0692926,REFERENCE,3309185,1,reckartc@ggclinic.com,—,—,—,—,—
+grmedcenter.com,OCULUS PATHOLOGY GUADALUPE REGIONAL,SEGUIN,TX,45D2184928,REFERENCE,2773,1,rghaynes@grmedcenter.com,—,—,—,—,—
+guardanthealth.com,GUARDANT HEALTH - LONG ISLAND CITY,LONG ISLAND CITY,NY,33D2322874,REFERENCE,1,1,atalasaz@guardanthealth.com,—,—,—,—,—
+guardianflight.com,"GUARDIAN FLIGHT, LLC",ANCHORAGE,AK,02D2028442,REFERENCE,1280,1,jason.johnson@gmr.net,—,—,—,—,—
+gw.scasd.org,GMG GRAYS WOODS,PORT MATILDA,PA,39D0657274,REFERENCE,163850,1,lmh41@scasd.org,—,—,—,—,—
+havingbabies.com,HUNTINGTON REPRODUCTIVE CENTER MEDICAL GROUP,RANCHO CUCAMONGA,CA,05D2064026,REFERENCE,1500,1,sonia.solin@havingbabies.com,—,—,—,—,—
+hca.venturacounty.gov,VENTURA COUNTY HEALTH DEPARTMENT LAB,OXNARD,CA,05D0668137,REFERENCE,81294,1,mike.pettit@ventura.org,—,—,—,—,—
+health.maryland.gov,MD DEPT OF HEALTH,BALTIMORE,MD,21D0649758,REFERENCE,9159940,2,david.davis@maryland.gov; dara.king@maryland.gov,—,—,—,—,—
+health.oklahoma.gov,OKLAHOMA STATE DEPARTMENT OF HEALTH,STILLWATER,OK,37D0656594,REFERENCE,2482000,1,thamilton@odmhsas.org,—,—,—,—,—
+healthy.kaiserpermanente.org,KAISER PERMANENTE LAHAINA MHV#2 LABORATORY,LAHAINA,HI,12D2299285,REFERENCE,996,2,yener.a.balan@kp.org; kvelaga@kaiserpermanente.org,—,—,—,—,—
+helixmwr.com,HELIX MOBILE WELLNESS,SAN FRANCISCO,CA,05D2103632,REFERENCE,13200,1,grizz@helixbayarea.com,—,—,—,—,—
+hematologics.com,"HEMATOLOGICS, INC",CLANCY,MT,27D2168274,REFERENCE,541,1,chudson@hematologics.com,—,—,—,—,—
+hmhco.com,"HMH I, LLC",OVERLAND PARK,KS,17D2278511,REFERENCE,4080,1,lauren.day@hmhco.com,—,—,—,—,—
+hoag.org,HOAG CANCER CENTER IRVINE,IRVINE,CA,05D2097962,REFERENCE,139400,1,jim.boyle@hoag.org,—,—,—,—,—
+home.mmc.edu,MEHARRY SICKLE CELL CENTER LABORATORY,NASHVILLE,TN,44D0859560,REFERENCE,4000,2,ddawes@mmc.edu; tlavender@mmc.edu,—,—,—,—,—
+homehospital.bwh.harvard.edu,MGB HOME HOSPITAL,CAMBRIDGE,MA,22D2253860,REFERENCE,29464,1,klakhani@g.harvard.edu,—,—,—,—,—
+honorbridge.org,HONORBRIDGE,CHAPEL HILL,NC,34D2292280,REFERENCE,1800,1,dbumarch@honorbridge.org,—,—,—,—,—
+hpath.com,HOSPITAL PATHOLOGY ASSOCIATES PA,MINNEAPOLIS,MN,24D1091076,REFERENCE,200,1,sarah.kerr@hpath.com,—,—,—,—,—
+hrilabs.org,HEALTH RESEARCH INSTITUTE,FAIRFIELD,IA,16D2122655,REFERENCE,1500,1,john.fagan@hrilabs.org,—,—,—,—,—
+igenex.com,IGENEX INC,MILPITAS,CA,05D0643914,REFERENCE,329504,1,sliu@igenex.com,—,—,—,—,—
+imgendx.com,"IMGEN DIAGNOSTICS, INC",NORWOOD,MA,22D1040440,REFERENCE,5257,1,bethany@imgendx.com,—,—,—,—,—
+infectiousdiseases.med.wayne.edu,WSU INFECTIOUS DISEASE LABORATORY,DETROIT,MI,23D0701648,REFERENCE,885,1,alan.amici@wayne.edu,—,—,—,—,—
+informdx.com,"INFORM DIAGNOSTICS, INC",BRECKSVILLE,OH,36D2308708,REFERENCE,6359,3,rachel.groggel@informdx.com; belinda.echartea@informdx.com; arash.radfar@informdx.com,—,—,—,—,—
+inherentbio.com,"INHERENT BIOSCIENCES, INC",SALT LAKE CITY,UT,46D2239162,REFERENCE,2000,1,kristin@inherentbio.com,—,—,—,—,—
+intermountainhealthcare.org,INTERMOUNTAIN HEALTH LIFE FLIGHT,SALT LAKE CITY,UT,46D0959710,REFERENCE,10367,2,gregg.moss@imail.org; farukh.usmani@intermountainhealthcare.org,—,—,—,—,—
+ir.labcorp.com,LABORATORY CORP OF AMERICA HOLDINGS,MARS HILL,NC,34D0705479,REFERENCE,12300,0,,—,—,—,—,—
+jocogov.org,JOHNSON COUNTY DEPT OF HEALTH & ENVIRONMENT,OLATHE,KS,17D0667024,REFERENCE,471,2,alan@jocoauto.com; jose.leon@jocogov.org,—,—,—,—,—
+kbmodiagnostics.com,KBMO DIAGNOSTICS,HOPEDALE,MA,22D2095272,REFERENCE,2210888,1,jwhite@kbmodiagnostics.com,—,—,—,—,—
+kcbariatric.com,"KC BARIATRIC, LLC",LENEXA,KS,17D2217035,REFERENCE,41600,1,egawith@kcbariatric.com,—,—,—,—,—
+kindbody.com,VIOS FERTILITY INSTITUTE-HOFFMAN ESTATES,HOFFMAN ESTATES,IL,14D2164765,REFERENCE,61800,2,shannon.lawton@kindbody.com; haley.kluegel@kindbody.com,—,—,—,—,—
+labcorp.com,LABORATORY CORPORATION OF AMERICA HOLDINGS,BLACKSBURG,VA,49D2100611,REFERENCE,396,0,,—,—,—,—,—
+labemmanuel.com,LABORATORIO CLINICO AVANZADO EMMANUEL INC,MANATI,PR,40D1090756,REFERENCE,17229,1,victor.valentin@labemmanuel.com,—,—,—,—,—
+leehealth.org,REGIONAL CANCER CENTER AT BHC,ESTERO,FL,10D2285496,REFERENCE,65846,2,foundation@leehealth.org; george.mandybur@leehealth.org,—,—,—,—,—
+lifelinebloodserv.org,WEST TENNESSEE REGIONAL BLOOD CENTER,JACKSON,TN,44D0668111,REFERENCE,2350,1,latrina.morman@lifelinebloodserv.org,—,—,—,—,—
+lifelinkiii.com,LIFELINK III,SHOREVIEW,MN,24D0724410,REFERENCE,8400,1,jschiller@lifelinkiii.com,—,—,—,—,—
+lifemedalaska.com,LIFEMED ALASKA LLC,ANCHORAGE,AK,02D1090167,REFERENCE,4568,1,bill.chaplin@lifemedalaska.com,—,—,—,—,—
+lifenethealth.org,LIFENET HEALTH,VIRGINIA BEACH,VA,49D0883917,REFERENCE,152486,1,steve_julian@lifenethealth.org,—,—,—,—,—
+linktr.ee,DONATELLO CLINICAL LAB,BOQUERON,PR,40D2285979,REFERENCE,7600,1,nick.c@linktr.ee,—,—,—,—,—
+locations.geisinger.org,GMG SCENERY PARK,STATE COLLEGE,PA,39D0185014,REFERENCE,16681,1,scollins6@geisinger.edu,—,—,—,—,—
+locations.questdiagnostics.com,QUEST DIAGNOSTICS - MILWAUKEE RRL,MILWAUKEE,WI,52D2188290,REFERENCE,357407,0,,—,—,—,—,—
+longbeach.gov,LONG BEACH DEPARTMENT OF HEALTH,LONG BEACH,CA,05D0688088,REFERENCE,2734,1,gavin@mercuryevent.com,—,—,—,—,—
+lradac.org,LEXINGTON/RICHLAND ALCOHOL & DRUG ABUSE COUNCIL,COLUMBIA,SC,42D1017083,REFERENCE,122950,1,rpalmer@lradac.org,—,—,—,—,—
+lrhc.org,LAKE REGION HEALTHCARE - ELBOW LAKE,ELBOW LAKE,MN,24D0406304,REFERENCE,74250,1,dlpelch@lrhc.org,—,—,—,—,—
+luciddx.com,LUCIDDX LABS,IRVING,TX,45D2310485,REFERENCE,1200,1,jdr@luciddx.com,—,—,—,—,—
+maderacounty.com,MADERA COUNTY PUBLIC HEALTH LABORATORY,MADERA,CA,05D0711439,REFERENCE,904,1,andrea.martinez@maderacounty.com,—,—,—,—,—
+madisoncorelabs.com,MADISON CORE LABORATORIES,HUNTSVILLE,AL,01D2116823,REFERENCE,624000,1,egooco@madisoncorelabs.com,—,—,—,—,—
+marionhealth.org,MARION COUNTY PUBLIC HEALTH STAT LABORATORIES,INDIANAPOLIS,IN,15D0684048,REFERENCE,29650,1,kholly@marionhealth.org,—,—,—,—,—
+marshallhealth.org,MARSHALL HEALTH TEAYS VALLEY,SCOTT DEPOT,WV,51D2126329,REFERENCE,185356,1,jacob.kilgore@mhnetwork.org,—,—,—,—,—
+marybird.org,QUEST DIAGNOSTICS MARY BIRD PERKINS CANCER CENTER,COVINGTON,LA,19D2226722,REFERENCE,391038,2,dmack@marybird.com; kkovtun@marybird.com,—,—,—,—,—
+mawdpathology.com,MAWD PATHOLOGY GROUP PA,PARSONS,KS,17D2147750,REFERENCE,7500,1,neal.daugherty@mawdpathology.com,—,—,—,—,—
+mayo.edu,MAYO CLINIC JACKSONVILLE ELECTRON MICROSCOPY LAB,JACKSONVILLE,FL,10D2272872,REFERENCE,540,2,griswold.heather@mayo.edu; makhni.sonya@mayo.edu,—,—,—,—,—
+mbbnet.ahc.umn.edu,"SCIENTIFIC RESEARCH CONSORTIUM, INC",SAINT PAUL,MN,24D0882688,REFERENCE,65,1,jfcho@umn.edu,—,—,—,—,—
+medassay.com,"MEDICAL ASSAY LABORATORY, INC",DARIEN,IL,14D1044662,REFERENCE,177950,1,christopher@medassay.com,—,—,—,—,—
+medicine.louisville.edu,UNIVERSITY OF LOUISVILLE INFECTIOUS DISEASES,LOUISVILLE,KY,18D0648480,REFERENCE,25443,1,patrick.ivey@louisville.edu,—,—,—,—,—
+medscanlab.com,"MEDSCAN LABORATORY, INC",WILLISTON,ND,35D0991209,REFERENCE,11031181,1,jesse.howard@medscanlab.com,—,—,—,—,—
+medstarlab.com,MEDSTAR LABORATORY INC,HILLSIDE,IL,14D0945905,REFERENCE,3545318,1,john@medstarlab.com,—,—,—,—,—
+memorialcare.org,NAVJYOT GUJRAL MD,SANTA ANA,CA,05D2072631,REFERENCE,3000,1,maguirre4@memorialcare.org,—,—,—,—,—
+mercy.net,MERCY MOBILE HEALTH - SPRINGFIELD,SPRINGFIELD,MO,26D2309664,REFERENCE,640,1,david.argueta@mercy.net,—,—,—,—,—
+mersi.com,MERSI IMMUNOPATHOLOGY LABORATORY,WALTHAM,MA,22D2017227,REFERENCE,1050,2,sfoster@mersi.com; ftadic@mersi.com,—,—,—,—,—
+metropaviaclinic.com,METRO PAVIA CLINIC - AGUADILLA,AGUADILLA,PR,40D2126577,REFERENCE,190695,1,kagosto@metropaviaclinic.com,—,—,—,—,—
+mgmc.org,MARY GREELEY MEDICAL CENTER,AMES,IA,16D0382531,REFERENCE,1040899,1,botine@mgmc.com,—,—,—,—,—
+miamidade.floridahealth.gov,FLORIDA DEPARTMENT OF HEALTH IN MIAMI DADE COUNTY,MIAMI,FL,10D0024196,REFERENCE,6515,2,hemandu.malhotra@flhealth.gov; michael.wydotis@flhealth.gov,—,—,—,—,—
+mmm-pr.com,CDT CENTRO MEDICO DIAGNOSTICO MUNOZ RIVERA,GUAYNABO,PR,40D2238080,REFERENCE,37700,1,ana.miranda-mercado@mmmhc.com,—,—,—,—,—
+mogene.com,"MOGENE, LLC",SAINT LOUIS,MO,26D2099356,REFERENCE,1000,1,asingh@mogene.com,—,—,—,—,—
+mountain.commonspirit.org,COMMONSPIRIT EMERGENCY & URGENT CARE LAKEWOOD,LAKEWOOD,CO,06D2124408,REFERENCE,15677,1,jackie.schierenberg@commonspirit.org,—,—,—,—,—
+mycts.org,CREATIVE TESTING SOLUTIONS,SAN MARCOS,TX,45D2025792,REFERENCE,40799380,2,lcrawford@mycts.org; alove@mycts.org,—,—,—,—,—
+mymedexlab.com,MY MEDEX LAB LLC,JACKSONVILLE,FL,10D2316512,REFERENCE,120000,1,joe@mymedexlab.com,—,—,—,—,—
+nagenomics.com,NEW AMSTERDAM GENOMICS CAMBRIDGE LAB,CAMBRIDGE,MA,22D2084314,REFERENCE,730,1,kfaulend@nagenomics.com,—,—,—,—,—
+neogenomics.com,"NEOGENOMICS LABORATORIES, INC",TINLEY PARK,IL,14D2269729,REFERENCE,12284,1,travis.adams@neogenomics.com,—,—,—,—,—
+network.doctor2me.com,SONIC DIAGNOSTIC LABORATORY INC,CHATSWORTH,CA,05D2275785,REFERENCE,40372,1,inga@doctor2me.com,—,—,—,—,—
+newbizbot.ai,LABORATORIO CLINICO MIGRANT SAN GERMAN,SAN GERMAN,PR,40D0856733,REFERENCE,1487,1,jarvis@newbizbot.ai,—,—,—,—,—
+newdaydiagnostics.com,"NEW DAY DIAGNOSTICS, LLC",KNOXVILLE,TN,44D2184836,REFERENCE,500,1,ericmayer@newdaydiagnostics.com,—,—,—,—,—
+nilogen.com,NILOGEN ONCOSYSTEMS LLC,TAMPA,FL,10D2102362,REFERENCE,50000,2,sigrid@nilogen.com; egon@nilogen.com,—,—,—,—,—
+nutripath.com.au,NUTRIPATH PATHOLOGY,nan,FN,99D2282774,REFERENCE,400,1,andrew@nutripath.com.au,—,—,—,—,—
+nyc.gov,PHL QUICKIE AT MORRISANIA,BRONX,NY,33D2334895,REFERENCE,1,1,sfox@schools.nyc.gov,—,—,—,—,—
+oakgov.com,OAKLAND COUNTY HEALTH DIVISION NORTH CLINIC LAB,PONTIAC,MI,23D2324138,REFERENCE,1680,1,hackertp@oakgov.com,—,—,—,—,—
+ochsnerlsuhs.org,OCHSNER LSU HEALTH SHREVEPORT REGIONAL UROLOGY PPM,SHREVEPORT,LA,19D2319048,REFERENCE,0,2,elizabeth.roos@ochsnerlsuhs.org; george.lozano@ochsnerlsuhs.org,—,—,—,—,—
+odh.ohio.gov,OHIO DEPARTMENT OF PUBLIC HEALTH LABORATORY,REYNOLDSBURG,OH,36D0655844,REFERENCE,5474708,1,jeremy.marks@ohio.gov,—,—,—,—,—
+ohm-labs.com,OHM LABS LLC,PALM CITY,FL,10D2124997,REFERENCE,174019,1,sean@ohmlabs.ai,—,—,—,—,—
+omegaquant.com,OMEGAQUANT ANALYTICS LLC,SIOUX FALLS,SD,43D1105229,REFERENCE,63708,1,jason@omegaquant.com,—,—,—,—,—
+omnipathology.com,OMNIPATHOLOGY SOLUTIONS,PASADENA,CA,05D1098267,REFERENCE,16305,1,rblum@omnipathology.com,—,—,—,—,—
+onspotdermatology.com,"ONSPOT -FL, LLC",FORT MYERS,FL,10D2224637,REFERENCE,600,2,alexander.herbst@onspotdermatology.com; don@onspotdermatology.com,—,—,—,—,—
+optimumedicine.com,OPTIMUMEDICINE,LAS VEGAS,NV,29D2157494,REFERENCE,58,1,aaron.osborne@optimumedicine.com,—,—,—,—,—
+orangecountylabs.com,ORANGE COUNTY LABS INC,HUNTINGTON BEACH,CA,05D2068755,REFERENCE,14000,1,jimmy@orangecountylabs.com,—,—,—,—,—
+oregonclinic.com,"OREGON CLINIC GI PATHOLOGY LAB, THE",PORTLAND,OR,38D0712684,REFERENCE,55000,2,pkrull@orclinic.com; kyoung@orclinic.com,—,—,—,—,—
+oxfordbiodynamics.com,OXFORD BIODYNAMICS INC,FREDERICK,MD,21D2284653,REFERENCE,1000,2,joe.abdo@oxfordbiodynamics.com; jayne.green@oxfordbiodynamics.com,—,—,—,—,—
+palmbeach.floridahealth.gov,PALM BEACH COUNTY HEALTH DEPARTMENT-LABORATORY,WEST PALM BEACH,FL,10D0683133,REFERENCE,474148,0,,—,—,—,—,—
+pathgroup.com,"ASSOCIATED PATHOLOGISTS, LLC DBA PATHGROUP (KIP)",NASHVILLE,TN,44D2309613,REFERENCE,6240,2,pchandra@pathgroup.com; kknight@pathgroup.com,—,—,—,—,—
+pathology-associates.com,PATHOLOGY ASSOCIATES OF SAN ANTONIO,SAN ANTONIO,TX,45D2319885,REFERENCE,314000,1,dcortez@pathology-associates.com,—,—,—,—,—
+pathology.med.upenn.edu,VINODH PILLAI,PENN VALLEY,PA,39D2314273,REFERENCE,400,1,gdubick@wharton.upenn.edu,—,—,—,—,—
+pathreflab.com,PATHOLOGY REFERENCE LABORATORY WEST,EL PASO,TX,45D2286097,REFERENCE,10000,1,jgray@pathreflab.com,—,—,—,—,—
+patientfirst.com,PATIENT FIRST-BATTLEFIELD,CHESAPEAKE,VA,49D0665313,REFERENCE,64748,1,byron.fisher@patientfirst.com,—,—,—,—,—
+peninsulapathologists.com,PENINSULA PATHOLOGISTS,SOUTH SAN FRANCISCO,CA,05D1029487,REFERENCE,101184,1,ejurka@peninsulapathologists.com,—,—,—,—,—
+pfizer.com,PFIZER PHARMACOGENOMICS LAB,GROTON,CT,07D1105829,REFERENCE,1000,2,lidia.fonseca@pfizer.com; amy.hanson@pfizer.com,—,—,—,—,—
+phdmc.org,PUBLIC HEALTH-DAYTON & MONTGOMERY COUNTY (PHDMC),DAYTON,OH,36D0685582,REFERENCE,3273,1,bthomas@phdmc.org,—,—,—,—,—
+phila.gov,PUBLIC HEALTH LAB CITY OF PHILADELPHIA,PHILADELPHIA,PA,39D0657854,REFERENCE,943800,1,maxwell.akuamoah-boateng@phila.gov,—,—,—,—,—
+philifesciences.com,PHI LIFE SCIENCES,COLLEGE PARK,MD,21D2158103,REFERENCE,1000,1,sawan@philifesciences.com,—,—,—,—,—
+piedmonthealthcare.com,PIEDMONT HEALTHCARE URGENT CARE,STATESVILLE,NC,34D0922674,REFERENCE,27300,3,gloria.bartelt@piedmonthealthcare.com; kayce.johnson@piedmonthealthcare.com; robert.kimball@piedmonthealthcare.com,—,—,—,—,—
+pima.gov,PIMA COUNTY HEALTH DEPARTMENT,TUCSON,AZ,03D0683066,REFERENCE,17887,1,travis.dean@pima.gov,—,—,—,—,—
+plannedparenthood.org,"PLANNED PARENTHOOD SOUTHEAST, INC",MARIETTA,GA,11D0258374,REFERENCE,2867,1,khadijah.davis@ppfa.org,—,—,—,—,—
+plslab.com,PRECISION LIFE SCIENCES LLC,OLIVE BRANCH,MS,25D2230030,REFERENCE,11303,1,awiseman@plslab.com,—,—,—,—,—
+pmspc.org,"PATHOLOGY MEDICAL SERVICES, PC",LINCOLN,NE,28D2297263,REFERENCE,208,1,buttolpht@pmspc.org,—,—,—,—,—
+portal.ct.gov,DR KATHERINE A KELLEY STATE PUBLIC HEALTH LAB,ROCKY HILL,CT,07D0644555,REFERENCE,73925,1,justin.hickey@ct.gov,—,—,—,—,—
+precipiodx.com,PRECIPIO INC,OMAHA,NE,28D2215036,REFERENCE,500,1,asabet@precipiodx.com,—,—,—,—,—
+predictabiosciences.com,PREDICTA BIOSCIENCES,CAMBRIDGE,MA,22D2314039,REFERENCE,1200,1,matt.parisi@predictabiosciences.com,—,—,—,—,—
+princegeorgescountymd.gov,PRINCE GEORGE'S CO HEALTH DEPARTMENT STD STAT LAB,CHEVERLY,MD,21D1085624,REFERENCE,0,1,rbrockenbrough@co.pg.md.us,—,—,—,—,—
+prismahealth.org,PRISMA HEALTH AMBULANCE SVC-MIDLANDS,COLUMBIA,SC,42D2310272,REFERENCE,197,1,jon.joffe@prismahealth.org,—,—,—,—,—
+prismmolecular.com,PRISM MOLECULAR,BLAKELY,PA,39D2278293,REFERENCE,56800,1,amicheletti@prismmolecular.com,—,—,—,—,—
+prolacta.com,PROLACTA BIOSCIENCE INC,DUARTE,CA,05D2307605,REFERENCE,53025,1,mlee@prolacta.com,—,—,—,—,—
+providers.upmc.com,"GATES PHYSICIAN SERVICES, LLC",ALTOONA,PA,39D2107217,REFERENCE,3462,1,paul.phrampus@upmc.com,—,—,—,—,—
+psppath.com,PARTNERS IN SPECIALTY PATHOLOGY,LANCASTER,PA,39D2037437,REFERENCE,850,1,fkbaksh@psppath.com,—,—,—,—,—
+pureviewlab.com,AMER AND SONS LAB CORPORATION DBA PUREVIEW LABS,DAYTON,OH,36D2313964,REFERENCE,0,1,mo@pureviewlab.com,—,—,—,—,—
+qps.com,"QPS, LLC",NEWARK,DE,08D0995854,REFERENCE,1100,1,gabrielle.pastore@qps.com,—,—,—,—,—
+quantumpathology.com,"QUANTUM PATHOLOGY, LLC",WALTHAM,MA,22D2081781,REFERENCE,164740,1,ediguilio@quantumpathology.com,—,—,—,—,—
+questdiagnostics.com,QUEST DIAGNOSTICS CLEAR LAKE RRL,WEBSTER,TX,45D2169021,REFERENCE,401776,1,karthikeyan.x.kuppusamy@questdiagnostics.com,—,—,—,—,—
+regional.questdiagnostics.com,QUEST DIAGNOSTICS OF PENNSYLVANIA INC,WARREN,OH,36D1067584,REFERENCE,32918,0,,—,—,—,—,—
+reviews.birdeye.com,"LABORATORIO CLINICO DOCTOR'S CENTER-2, INC",VILLA CAROLINA,PR,40D0658056,REFERENCE,12418,1,abhishek.agrawal1@birdeye.com,—,—,—,—,—
+riverstonehealth.org,RIVERSTONE HEALTH MOBILE UNIT,BILLINGS,MT,27D2322385,REFERENCE,0,1,jon.for@riverstonehealth.org,—,—,—,—,—
+rmanetwork.com,REPRODUCTIVE MEDICINE ASSOCIATES,MARLTON,NJ,31D2120264,REFERENCE,2500,2,jproctor@ivirma.com; mmaguire@rmanj.com,—,—,—,—,—
+rockymountainlabs.com,ROCKY MOUNTAIN LABORATORY,FORT COLLINS,CO,06D2150068,REFERENCE,3400000,1,jerry@rockymountainlabs.com,—,—,—,—,—
+romega.chambermaster.com,"HARBIN CLINIC, LLC - MAIN OFFICE",ROME,GA,11D0256801,REFERENCE,3227551,1,andrew@deaconinvestments.ca,—,—,—,—,—
+rtrl.us,"RISING TIDE REFERENCE LABORATORY, LLC",LONGWOOD,FL,10D2276452,REFERENCE,5000,1,jeff@rtrl.us,—,—,—,—,—
+russellcohospital.org,RCH MEDICAL ARTS LAB,RUSSELL SPRINGS,KY,18D0665671,REFERENCE,20330,1,jreader@russellcohospital.org,—,—,—,—,—
+sagisdx.com,"SAGIS, PLLC",FLOWER MOUND,TX,45D2286014,REFERENCE,50000,1,jcangelosi@sagisdx.com,—,—,—,—,—
+saintfrancis.com,SAINT FRANCIS LAB-SAND SPRINGS URGENT CARE,SAND SPRINGS,OK,37D2144421,REFERENCE,1422,1,jamie.payne@saintfrancis.com,—,—,—,—,—
+salemclinic.org,SALEM CLINIC LABORATORY,SALEM,OR,38D0679715,REFERENCE,1407922,1,ees@thesalemlawfirm.com,—,—,—,—,—
+salimetrics.com,SALIMETRICS LLC,STATE COLLEGE,PA,39D0986679,REFERENCE,36000,1,dgranger@salimetrics.com,—,—,—,—,—
+sbmf.org,SOUTH BEND MEDICAL FOUNDATION / EGH,ELKHART,IN,15D2147528,REFERENCE,500,1,kim@sbmf.org,—,—,—,—,—
+scripps.org,DAVID J BARNETTE JR MD,CARLSBAD,CA,05D0998312,REFERENCE,12000,2,shf@scrippshealth.org; nayak.keshav@scrippshealth.org,—,—,—,—,—
+sdfamilyderm.com,SAN DIEGO FAMILY DERMATOLOGY,POWAY,CA,05D2060295,REFERENCE,170,1,brs@sdfamilyderm.com,—,—,—,—,—
+sghs.org,"SEPA, PC AT SAINT MARY'S - DAN PROCTOR",SAINT MARYS,GA,11D2019192,REFERENCE,200,2,sstark@sghs.org; pamodeo@sghs.org,—,—,—,—,—
+sharp.com,SHARP REES STEALY CLINICS LABORATORY-SANTEE,SANTEE,CA,05D2200574,REFERENCE,514749,2,scott.evans@sharp.com; elisa.romero@sharp.com,—,—,—,—,—
+shl.uiowa.edu,STATE HYGIENIC LABORATORY,ANKENY,IA,16D0709302,REFERENCE,756721,2,sarah-hansen@uiowa.edu; nungs@uiowa.edu,—,—,—,—,—
+sinailabs.com,PASTEUR INC DBA SINAI LABS,VAN NUYS,CA,05D0930353,REFERENCE,547899,1,tali.regev@sinailabs.com,—,—,—,—,—
+singingriverhealthsystem.com,OCEAN SPRINGS MEDICAL PARK LABORATORY,OCEAN SPRINGS,MS,25D2093496,REFERENCE,56550,3,ricky.browning@srfcu.org; mark.deakle@mysrhs.com; ijlal.babar@mysrhs.com,—,—,—,—,—
+skinpathsolutions.com,"SKINPATH DIAGNOSTICS, LLC",MATHEWS,LA,19D2061541,REFERENCE,10,1,danand@skinpathsolutions.com,—,—,—,—,—
+skinwindermatology.com,SKIN WIN DERMATOLOGY,WILLISTON,ND,35D2213935,REFERENCE,149,1,drhoffman@skinwindermatology.com,—,—,—,—,—
+slocounty.ca.gov,COUNTY OF SAN LUIS OBISPO,SAN LUIS OBISPO,CA,05D0695770,REFERENCE,22240,0,,—,—,—,—,—
+smchealth.org,SAN MATEO COUNTY PUBLIC HEALTH LAB,SAN MATEO,CA,05D0857622,REFERENCE,64940,1,ashieu@smcgov.org,—,—,—,—,—
+smithers.com,SMITHERS PHARMACEUTICAL DEVELOPMENT  SERVICES,GAITHERSBURG,MD,21D2074024,REFERENCE,100,2,agleason@smithers.com; nyao@smithers.com,—,—,—,—,—
+sofha.net,STATE OF FRANKLIN HEALTHCARE,JOHNSON CITY,TN,44D0310629,REFERENCE,4035153,1,kevinmarsh@sofha.net,—,—,—,—,—
+solarisdx.com,SOLARIS DX,INDIANAPOLIS,IN,15D2289299,REFERENCE,1188900,2,caebersold@solarisdx.com; skoirala@solarisdx.com,—,—,—,—,—
+solvhealth.com,"XYZ MEDICAL, LLC",COALGATE,OK,37D2082356,REFERENCE,2000,1,daniele@solvhealth.com,—,—,—,—,—
+sonomacounty.gov,SONOMA COUNTY PUBLIC HEALTH LABORATORY,SANTA ROSA,CA,05D0644064,REFERENCE,1579,1,paulomi.shah@sonoma-county.org,—,—,—,—,—
+sourcemp.com,HISTOLOGY CORP,LAKE BLUFF,IL,14D2101871,REFERENCE,5008,1,walterburns@sourcemp.com,—,—,—,—,—
+southeastlabs.com,SOUTHEAST CLINICAL LABORATORIES,BIRMINGHAM,AL,01D2091573,REFERENCE,2955262,1,nhopper@southeastlabs.com,—,—,—,—,—
+southernnevadahealthdistrict.org,SOUTHERN NEVADA PUBLIC HEALTH LABORATORY,LAS VEGAS,NV,29D1027844,REFERENCE,137886,1,youngc@snhd.org,—,—,—,—,—
+spectracell.com,SPECTRACELL LABORATORIES INC,HOUSTON,TX,45D0710715,REFERENCE,61200,1,yxmachemer@spectracell.com,—,—,—,—,—
+spiriplex.com,"SPIRIPLEX, INC",LINCOLNSHIRE,IL,14D2063316,REFERENCE,465964,1,dfleisner@spiriplex.com,—,—,—,—,—
+spotitearly.com,SPOTITEARLY,nan,FN,99D2307137,REFERENCE,1200,1,ohad@spotitearly.com,—,—,—,—,—
+stlouiscountymo.gov,SAINT LOUIS COUNTY PUBLIC HEALTH - NORTH CENTRAL,SAINT LOUIS,MO,26D2182922,REFERENCE,16000,1,poldeg@stlouiscountymo.gov,—,—,—,—,—
+stlukesonline.org,ST LUKE'S HOME BASED SERVICES,MERIDIAN,ID,13D2315585,REFERENCE,5000,2,stegere@slhs.org; robisona@slhs.org,—,—,—,—,—
+sunwisederm.com,SUNWISE FAMILY DERMATOLOGY AND SURGERY,MIDDLETOWN,DE,08D2137936,REFERENCE,500,1,jennifer@sunwisederm.com,—,—,—,—,—
+sutterhealth.org,SUTTER BAY MEDICAL FOUNDATION-,SUNNYVALE,CA,05D2270378,REFERENCE,600,1,motti.edelstein@sutterhealth.org,—,—,—,—,—
+synergymedlabs.com,SYNERGY MEDICAL LABS,KEYPORT,NJ,31D2053614,REFERENCE,52000,1,agurnani@synergymedlabs.com,—,—,—,—,—
+telostrand.com,"TELOSTRAND LABORATORY WV, LLC",RONCEVERTE,WV,51D2289968,REFERENCE,550,1,brian@telostrand.com,—,—,—,—,—
+thechc.com,"CANCER AND HEMATOLOGY CENTERS, THE",BIG RAPIDS,MI,23D2277833,REFERENCE,51526,1,hlevanduski@thechc.com,—,—,—,—,—
+thrivelab.com,THRIVELAB LLC,LAGUNA HILLS,CA,05D2304140,REFERENCE,15000,1,jordan@thrivelab.com,—,—,—,—,—
+tricore.org,SANTA FE EAST BRANCH LAB,SANTA FE,NM,32D2092446,REFERENCE,5100,2,robin.divine@tricore.org; jesse.young@tricore.org,—,—,—,—,—
+trustcarehealth.com,TRUSTCARE HEALTH LABORATORY,RIDGELAND,MS,25D2305715,REFERENCE,181099,1,wherring@trustcarehealth.com,—,—,—,—,—
+tryonmed.com,TRYON MEDICAL PARTNERS CENTRAL LABORATORY,CHARLOTTE,NC,34D2176946,REFERENCE,2278079,1,sbender@tryonmed.com,—,—,—,—,—
+uab.edu,DEPARTMENT OF GENETICS CYTOGENETICS LABORATORY,BIRMINGHAM,AL,01D0715750,REFERENCE,5250,1,rhoward@uab.edu,—,—,—,—,—
+uci.edu,"UNIVERSITY OF CALIFORNIA IRVINE,",IRVINE,CA,05D1052619,REFERENCE,2185,2,bhervey@uci.edu; xiaofl12@uci.edu,—,—,—,—,—
+uclahealth.org,Y & Z WESTWOOD SURGICAL PATHOLOGY,LOS ANGELES,CA,05D2025143,REFERENCE,200,2,jspisso@mednet.ucla.edu; drseify@newportplastic.com,—,—,—,—,—
+ufhealthjax.org,UF HEALTH MOLECULAR PATHOLOGY LABORATORY -,JACKSONVILLE,FL,10D2170836,REFERENCE,1200,1,jedd.roe@jax.ufl.edu,—,—,—,—,—
+unity-health.org,UNITY HEALTH WHITE COUNTY ONCOLOGY,SEARCY,AR,04D2025650,REFERENCE,264045,1,randy.bosch@unity-health.org,—,—,—,—,—
+usahealthsystem.com,USA HEALTH FREESTANDING EMERGENCY DEPARTMENT,MOBILE,AL,01D2229845,REFERENCE,94900,1,oaltun@health.southalabama.edu,—,—,—,—,—
+uthsc.edu,UNIVERSITY OF TENNESSEE COLLEGE OF DENTISTRY,MEMPHIS,TN,44D0976823,REFERENCE,7350,1,wnovick@uthsc.edu,—,—,—,—,—
+utphysicians.com,UT PHYSICIANS-BELLAIRE DERMPATH LAB,BELLAIRE,TX,45D2000791,REFERENCE,15000,1,abhilash.durgam@uth.tmc.edu,—,—,—,—,—
+valleymedical.com,VALLEY MEDICAL AND WELLNESS,BURNSVILLE,MN,24D2072541,REFERENCE,455608,1,jmackey@valleymedical.com,—,—,—,—,—
+vanderbilthealth.com,VANDERBILT DERMATOPATHOLOGY,NASHVILLE,TN,44D2280179,REFERENCE,33500,3,james.d.phillips@vumc.org; edwina.o.mcneill-simaan@vumc.org; s.durbhakula@vumc.org,—,—,—,—,—
+virtualscientific.net,"VIRTUAL SCIENTIFIC, INC",QUEEN CREEK,AZ,03D1079575,REFERENCE,1300,1,ajohns@virtualscientific.net,—,—,—,—,—
+visualvisitor.com,STEMEXPRESS,FOLSOM,CA,05D2181681,REFERENCE,2000,1,kevin@visualvisitor.com,—,—,—,—,—
+vrlsat.com,VRL SAN ANTONIO LLC,SAN ANTONIO,TX,45D2312303,REFERENCE,2000,2,ron.berger@vrl.net; jon.moll@vrl.net,—,—,—,—,—
+wamhs.org,WOMEN'S & MEN'S HEALTH SERVICES OF THE COASTAL,CORPUS CHRISTI,TX,45D2333663,REFERENCE,0,1,mara@wamhs.org,—,—,—,—,—
+waynegov.com,NC HEALTH DEPTS - AREA C,GOLDSBORO,NC,34D0865177,REFERENCE,15026,1,julie.graham@waynegov.com,—,—,—,—,—
+wellspan.org,YORK HOSP PULM PHYSIOLOGY LAB,YORK,PA,39D1107858,REFERENCE,350,2,mridinger@wellspan.org; rkashyap@wellspan.org,—,—,—,—,—
+wkrbc.org,WESTERN KENTUCKY REGIONAL BLOOD CENTER,OWENSBORO,KY,18D0326385,REFERENCE,127072,1,janet@wkrbc.org,—,—,—,—,—
+wvapplabs.com,APPALACHIAN LABS OF WV,CHARLESTON,WV,51D2160356,REFERENCE,5628828,1,kwalls@wvapplabs.com,—,—,—,—,—
+www3.maine.gov,MAINE HEALTH & ENVIRONMENTAL TESTING LAB,AUGUSTA,ME,20D0649525,REFERENCE,68600,1,mattie.daughtry@legislature.maine.gov,—,—,—,—,—
+yalemedicine.org,YALE DERMATOLOGY-BRANFORD,BRANFORD,CT,07D2112485,REFERENCE,1860,1,shannon.orgel@yale.edu,—,—,—,—,—
+yvfwc.com,LABCORP- YVFW MIRASOL HERMISTON,HERMISTON,OR,38D1052678,REFERENCE,1140,2,williamco@yvfwc.org; laurent@yvfwc.org,—,—,—,—,—
+zoomcare.com,ZOOMCARE LLOYD DISTRICT SUPER,PORTLAND,OR,38D2100145,REFERENCE,59000,1,emartin@zoomcare.com,—,—,—,—,—
+zrtlab.com,ZRT LABORATORY,BEAVERTON,OR,38D0960950,REFERENCE,1299540,1,dzava@zrtlab.com,—,—,—,—,—

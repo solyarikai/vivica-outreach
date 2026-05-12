@@ -68,13 +68,13 @@ CEO/Owner persona is overrepresented (label matches title closely — Apollo cla
 
 | Metric | Value |
 |--------|-------|
-| Total cost (Apollo + FindyMail) | ~$11.70 |
+| Total cost (Apollo + FindyMail) | ~$22.70 |
 | Cost per verified contact | $0.034 |
 | Cost per enriched company | $0.043 |
 | Cost per CLIA record covered | $0.017 |
 
 Breakdown:
-- Apollo Reveal: $1.043 (1033 credits × $0.001)
+- Apollo Reveal: $10.33 (1033 credits × $0.01)
 - FindyMail verify: ~$10.33 (1033 × $0.01)
 - FindyMail misses (wasted): ~$0.01 (1 credit) + 32 credits wasted in earlier run (~$0.32)
 - Apollo search endpoints: $0 (free)

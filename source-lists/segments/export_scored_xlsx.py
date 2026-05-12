@@ -273,6 +273,9 @@ def add_contacts(ws):
 
     bucket_idx = headers.index("vivica_bucket")
     score_idx = headers.index("vivica_score")
+    rationale_idx = (
+        headers.index("vivica_rationale") if "vivica_rationale" in headers else -1
+    )
 
     for i, row in enumerate(rows, start=2):
         bucket = row[bucket_idx]
@@ -284,9 +287,15 @@ def add_contacts(ws):
                 except ValueError:
                     pass
             c = ws.cell(row=i, column=j, value=val)
+            c.alignment = Alignment(wrap_text=True, vertical="top")
             if fill and (j - 1) in (bucket_idx, score_idx):
                 c.fill = fill
                 c.font = Font(bold=True)
+        # Row height driven mainly by rationale column (width 90)
+        if rationale_idx >= 0:
+            rationale_text = row[rationale_idx]
+            lines = max(1, -(-len(rationale_text) // 85))
+            ws.row_dimensions[i].height = max(16, lines * 15)
 
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = f"A1:{get_column_letter(len(headers))}{len(rows) + 1}"

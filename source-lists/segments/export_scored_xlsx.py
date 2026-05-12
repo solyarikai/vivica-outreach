@@ -19,7 +19,7 @@ from openpyxl.utils import get_column_letter  # noqa: E402
 
 BASE = Path("/Users/user/vivica-outreach/source-lists/segments")
 SRC = BASE / "final_contacts_scored.csv"
-DST = BASE / "final_contacts_scored.xlsx"
+DST = BASE / "vivica_reference-labs_344-leads_smartlead-ready_2026-05.xlsx"
 
 BUCKET_FILL = {
     "HOT": PatternFill("solid", fgColor="FFD6D6"),

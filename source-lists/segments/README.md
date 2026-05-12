@@ -124,9 +124,13 @@ Run manifest (как воспроизвести):
 
 ## Что грузить в SmartLead
 
-- **Базовая кампания**: `final_contacts_verified.csv` (344) — всё, что верифицировано
-- **Приоритетная подкампания**: фильтр `final_contacts_tiered.csv` по `tier IN ('S+', 'S', 'B')` (11 контактов с известным тиром)
-- **Blocklist**: `russian_confirmed.csv` (19) — исключить до загрузки
+Используй **`final_contacts_scored.csv`** — там приоритизация уже сделана.
+
+- **Wave 1 (HOT, ≥75)**: 188 контактов — independent labs с реальным volume + CEO/Owner. Первая волна.
+- **Wave 2 (WARM, 50-74)**: 97 контактов — основной пул, послать после Wave 1
+- **Wave 3 (COOL, 25-49)**: 26 — добивка, если квота не закрылась
+- **SKIP (COLD, <25)**: 33 — это в основном ambulances / mobile_labs / ASCs / blood_banks (не реально labs). **Фильтровать до загрузки.**
+- **Blocklist**: `russian_confirmed.csv` (19) — отдельно исключить
 
 ---
 

@@ -202,6 +202,7 @@ def main():
     score_cols = [
         "vivica_score",
         "vivica_bucket",
+        "vivica_rationale",
         "s_facility_type",
         "s_test_volume",
         "s_site_count",

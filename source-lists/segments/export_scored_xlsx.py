@@ -88,6 +88,14 @@ def add_readme(ws):
             "Test volume | test_volume | 1k-50k +25 / 50k-500k +15 / 1-999 +10 / 500k+ 0 / 0 -10",
             None,
         ),
+        (
+            "    What is 'test volume'? Annual number of lab tests the lab self-reports to CMS during CLIA certification (drives the CLIA fee tier). Not revenue — literal test count per year. Range in our dataset: 0 to ~11M, median ~10k.",
+            wrap,
+        ),
+        (
+            "    Why the 1k-50k band scores highest: small enough that legacy LIMS pain is real and budget decisions are fast, large enough to afford Vivica. <1k = micro/just-launched, no budget. 500k+ = enterprise, multi-year sales cycle. 0 = data missing, usually non-lab facility.",
+            wrap,
+        ),
         ("Site count | site_count | 0-1 +10 / 2-5 0 / 6+ -10", None),
         ("Persona | persona | CEO/Owner +20 / Lab Dir +15 / Med Dir +10", None),
         ("LinkedIn | contact_linkedin not empty | +5", None),

@@ -60,6 +60,56 @@ def safe_int(v) -> int:
         return 0
 
 
+def rationale(bd: dict, clia_data: dict, contact: dict, score: int, bucket: str) -> str:
+    """One-line human rationale: why this contact landed in this bucket."""
+    parts = []
+
+    ftype = (clia_data.get("cms_facility_type_name") or "").strip().lower()
+    if bd["facility_type"] == 30:
+        parts.append("independent lab (+30)")
+    elif bd["facility_type"] == 15:
+        parts.append("public health lab (+15)")
+    elif bd["facility_type"] == -30:
+        parts.append(f"non-lab facility: {ftype} (-30)")
+    elif ftype:
+        parts.append(f"facility={ftype} (0)")
+
+    vol = clia_data.get("test_volume", "")
+    if bd["test_volume"] == 25:
+        parts.append(f"sweet-spot volume {vol} (+25)")
+    elif bd["test_volume"] == 15:
+        parts.append(f"large volume {vol} (+15)")
+    elif bd["test_volume"] == 10:
+        parts.append(f"very small volume {vol} (+10)")
+    elif bd["test_volume"] == 0:
+        parts.append(f"enterprise volume {vol} (0)")
+    elif bd["test_volume"] == -10:
+        parts.append("no volume data (-10)")
+
+    sites = clia_data.get("site_count", "0")
+    if bd["site_count"] == 10:
+        parts.append("single site (+10)")
+    elif bd["site_count"] == 0:
+        parts.append(f"{sites} sites (0)")
+    elif bd["site_count"] == -10:
+        parts.append(f"chain w/ {sites} sites (-10)")
+
+    persona = (contact.get("persona") or "").strip()
+    if bd["persona"]:
+        parts.append(f"{persona} (+{bd['persona']})")
+
+    if bd["has_linkedin"]:
+        parts.append("LinkedIn (+5)")
+
+    tier = (contact.get("tier") or "—").strip()
+    if bd["petr_tier"] > 0:
+        parts.append(f"Petr tier {tier} (+{bd['petr_tier']})")
+    elif bd["petr_tier"] < 0:
+        parts.append(f"Petr tier {tier} ({bd['petr_tier']})")
+
+    return f"{bucket} (score {score}): " + ", ".join(parts)
+
+
 def score_row(contact: dict, clia_data: dict):
     breakdown = {}
     score = 0

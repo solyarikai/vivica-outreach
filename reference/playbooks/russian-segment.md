@@ -165,8 +165,22 @@ Andrew offers $100 Amazon gift cards for 30-min interviews. This is **not standa
 - ❌ Cross-pollinating: using English-sequence verbatim translated; using US case studies in Russian sequences without Andrew's review
 - ❌ Bypassing Andrew's confirmation step on a candidate
 
+## Pre-verified list (2026-05-12 work)
+
+Параллельно с базовым flow «190 кандидатов → Andrew confirms» Yana собрала **pre-verified pool** русскоязычных лаб через NPI cross-reference:
+
+- File: `../../source-lists/segments/russian_confirmed.csv` — **21 confirmed labs**
+- Method: NPI Registry → director's first_name + last_name → russian-name double signal → CLIA POS address match
+- States covered: NY (10 Brooklyn), NJ (2), PA (1), CA (5), GA (2 Olansky — actually rejected on second pass), FL (1)
+- Confidence levels: HIGH (NPI confirmed russian first+last), MEDIUM (one signal + context)
+- Hospitals/chains (Quest, LabCorp, Cleveland Clinic, Kaiser etc.) intentionally excluded — not Vivica targets
+
+**Workflow change**: Andrew now starts from this pre-verified 21, not from 190 noisy. Original 190 list still useful as fallback for community-relationship signal Andrew has but NPI doesn't.
+
 ## Cross-references
 
+- Pre-verified candidates: `../../source-lists/segments/russian_confirmed.csv`
+- Session log: `../../tracking/log.md` (search "Russian segment")
 - Skill: `../../extensions/.claude/skills/clia-source/SKILL.md` — produces the candidates list
 - Skill: `../../extensions/.claude/skills/lims-detector/SKILL.md` — overlap with lims.net detection
 - Competitor: `../competitors/lims-net.md` — frequent overlap with russian-speaking segment

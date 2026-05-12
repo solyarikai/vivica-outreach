@@ -21,7 +21,8 @@
 | Файл | Строк | Что это |
 |------|-------|---------|
 | **`final_contacts_verified.csv`** | 344 | Базовые верифицированные контакты — готовы к SmartLead |
-| **`final_contacts_tiered.csv`** | 344 | То же + колонки `tier`, `score`, `cohort`, `primary_reason` (приоритизация) |
+| **`final_contacts_tiered.csv`** | 344 | + колонки `tier`, `score`, `cohort`, `primary_reason` (Петров скоринг) |
+| **`final_contacts_scored.csv`** | 344 | + `vivica_score`, `vivica_bucket` (HOT/WARM/COOL/COLD) — **финальный приоритизированный список** |
 | `companies_enriched.csv` | 281 | Лаборатории с ≥1 верифицированным контактом |
 | `companies_enriched_tiered.csv` | 281 | То же + тиры |
 | `companies_not_enriched.csv` | 738 | Лаборатории, требующие других методов enrichment (LinkedIn/Clay) |

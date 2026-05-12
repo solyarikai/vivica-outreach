@@ -93,6 +93,30 @@ At the end of every session, append to [[tracking/log]]:
 
 ---
 
+## Lead Pools — два источника, не путать
+
+В проекте **два независимых пула лидов**. Они не объединяются и работаются как **разные кампании с разным текстом писем**.
+
+| | 🟦 От Петра (HOT universe) | 🟧 Наше (CMS-enrichment) |
+|---|---|---|
+| **Что** | Свежеоткрытые US лабы ≤12 мес, со скорингом на тиры S+/S/A/B/C/D/E | Established reference-лабы из CMS Q1 2026, обогащённые контактами |
+| **Источник** | Мерж CMS POS + NPPES + Medicare PPEF (Пётр, 2026-05-12) | CMS CLIA Q1 2026 → Clay (домены) → Apollo (люди) → FindyMail (verify) |
+| **Где лежит** | `source-lists/lab-universe-petr-2026-05/` | `source-lists/clia-q1-2026/`, `source-lists/enrichment-runs/`, `source-lists/segments/` |
+| **Документация** | [[lab-universe-2026-05]] | [[lab-license-snapshot-2026-05]], `enrichment-runs/*/manifest.md` |
+| **Готовые артефакты** | `hot_194.csv` (194 лабы S+/S) | `final_contacts_verified.csv` (344 контакта / 270 компаний) |
+| **Угол outreach** | «Купи правильно с первого раза» — нет существующего LIMS | «Мигрируй с текущей системы» — established операторы |
+| **Кампания** | [[outreach-plan-vivica-hot-petr-universe]] | [[outreach-plan-vivica-clia-fresh]], [[outreach-plan-vivica-using-labware]], etc. |
+| **Пересечение** | 26 лаб overlap по CLIA # | 26 лаб overlap |
+
+**Правила работы:**
+
+1. **Никогда не мержить пулы** в один SmartLead-сегмент — у них разный copy angle. Дубликат-чек (по CLIA или email) обязателен.
+2. **При маркировке файлов** — пиши источник в manifest: `pool: petr-hot-universe` или `pool: our-cms-enrichment`.
+3. **При создании новой кампании** — явно укажи в плане какой пул использует. Если оба → отдельная sequence на пересечение (26 лаб).
+4. **Tier-маркировка**: контакты из 🟧 нашей воронки можно энричить тирами из 🟦 Петра — джойн по CLIA #. Скрипт: `source-lists/segments/apply_tiers.py`, результат: `source-lists/segments/tier_summary.md`. У ~97% наших лабов тира нет (они вне 12-мес окна Петра) — это нормально, не баг.
+
+---
+
 ## Enrichment Run Convention
 
 Every data operation (enrichment, scrape, batch lookup) lives in its own folder under `source-lists/enrichment-runs/`:
